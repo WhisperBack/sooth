@@ -50,11 +50,6 @@ export default function ExperienceHeading() {
         width="100%"
         bg="rgba(0, 0, 0, 0.3)"
         backdropFilter="blur(10px)"
-        borderRadius="2xl"
-        mx="auto"
-        mt={4}
-        px={4}
-        maxW="fit-content"
       >
         <Flex justify="center">
           <Flex
@@ -63,6 +58,11 @@ export default function ExperienceHeading() {
             py={4}
             gap={8}
             justify="center"
+            width="100%"
+            borderRadius="2xl"
+            mx={4}
+            bg="rgba(0, 0, 0, 0.3)"
+            backdropFilter="blur(10px)"
           >
             {[
               { href: '/about', label: 'About' },
@@ -142,7 +142,7 @@ export default function ExperienceHeading() {
           {[
             { icon: Mic, title: 'Whisper Freely', desc: 'Let your thoughts flow. No judgment. Just space.' },
             { icon: Sparkles, title: 'Gentle Reflections', desc: 'Sooth listens, then gives you back peace.' },
-            { icon: MessageCircle, title: 'Clarity in Seconds', desc: 'Your insights. Summarized. In your words.' }
+            { icon: MessageCircle, title: 'Clarity in Seconds', desc: 'Your insights. Summarized. In your words.' },
           ].map((item, index) => (
             <MotionBox
               key={index}
