@@ -122,11 +122,13 @@ export default function ExperienceHeading() {
             py={6}
             fontSize="lg"
             fontWeight="bold"
-            bgGradient="linear(to-r, #a78bfa, #38bdf8)"
             color="white"
             borderRadius="full"
+            bgGradient="linear(to-r, rgba(167, 139, 250, 0.3), rgba(56, 189, 248, 0.3))"
+            backdropFilter="blur(18px)"
+            border="1px solid rgba(255,255,255,0.15)"
             _hover={{
-              bgGradient: 'linear(to-r, #c084fc, #60a5fa)',
+              bgGradient: 'linear(to-r, rgba(192, 132, 252, 0.4), rgba(96, 165, 250, 0.4))',
               boxShadow: '0 0 40px rgba(167, 139, 250, 0.6)'
             }}
           >
