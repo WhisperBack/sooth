@@ -50,19 +50,18 @@ export default function ExperienceHeading() {
         width="100%"
         bg="rgba(0, 0, 0, 0.3)"
         backdropFilter="blur(10px)"
+        px={{ base: 4, md: 8 }}
       >
         <Flex justify="center">
           <Flex
             as="nav"
-            px={12}
+            px={{ base: 4, md: 12 }}
             py={4}
-            gap={8}
+            gap={6}
             justify="center"
+            wrap="wrap"
             width="100%"
             borderRadius="2xl"
-            mx={4}
-            bg="rgba(0, 0, 0, 0.3)"
-            backdropFilter="blur(10px)"
           >
             {[
               { href: '/about', label: 'About' },
@@ -73,7 +72,7 @@ export default function ExperienceHeading() {
               { href: '/contact', label: 'Contact' }
             ].map((link, i) => (
               <NextLink key={i} href={link.href} passHref>
-                <ChakraLink color="whiteAlpha.800" _hover={{ color: 'white' }} fontWeight="medium">
+                <ChakraLink color="whiteAlpha.800" _hover={{ color: 'white' }} fontWeight="medium" fontSize={{ base: 'sm', md: 'md' }}>
                   {link.label}
                 </ChakraLink>
               </NextLink>
