@@ -63,7 +63,7 @@ export default function ExperienceHeading() {
               { href: '/contact', label: 'Contact' }
             ].map((link, i) => (
               <NextLink key={i} href={link.href} passHref>
-                <ChakraLink color="whiteAlpha.800" _hover={{ color: 'white' }} fontWeight="medium" fontSize={{ base: 'sm', md: 'md' }}>
+                <ChakraLink color="whiteAlpha.900" _hover={{ color: 'white' }} fontWeight="semibold" fontSize={{ base: 'sm', md: 'md' }} letterSpacing="tight">
                   {link.label}
                 </ChakraLink>
               </NextLink>
