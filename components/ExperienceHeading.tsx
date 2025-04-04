@@ -81,10 +81,10 @@ export default function ExperienceHeading() {
         >
           <Box as={motion.span} display="inline-block" color="white" style={{
             WebkitTextFillColor: 'white',
-            WebkitTextStroke: '3px rgba(255,255,255,0.8)',  // Thicker outline
-            backgroundImage: 'linear-gradient(to right, #c084fc, #a78bfa, #60a5fa)',
+            WebkitTextStroke: '3px transparent',  // Transparent outline base
+            backgroundImage: 'linear-gradient(to right, #c084fc, #a78bfa, #60a5fa, #00ff99)',  // Added green to the gradient
             WebkitBackgroundClip: 'text',
-            textShadow: '0 0 32px rgba(167, 139, 250, 1), 0 0 8px rgba(255, 255, 255, 0.4)'  // Stronger, warm glow
+            textShadow: '0 0 32px rgba(167, 139, 250, 1), 0 0 8px rgba(0, 255, 153, 0.6)'  // Green glow
           }}>Experience</Box>{' '}
           <Box
             as={motion.span}
