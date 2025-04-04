@@ -48,8 +48,8 @@ export default function ExperienceHeading() {
         top={0}
         zIndex={10}
         width="100%"
-        bg="rgba(0, 0, 0, 0.3)"
-        backdropFilter="blur(10px)"
+        bg="rgba(0, 0, 0, 0.2)"
+        backdropFilter="blur(14px)"
         px={{ base: 4, md: 8 }}
       >
         <Flex justify="center">
@@ -61,7 +61,11 @@ export default function ExperienceHeading() {
             justify="center"
             wrap="wrap"
             width="100%"
-            borderRadius="2xl"
+            borderRadius="3xl"
+            boxShadow="0 4px 30px rgba(0, 0, 0, 0.2)"
+            bg="rgba(0, 0, 0, 0.25)"
+            backdropFilter="blur(12px)"
+            border="1px solid rgba(255, 255, 255, 0.1)"
           >
             {[
               { href: '/about', label: 'About' },
