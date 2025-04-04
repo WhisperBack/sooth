@@ -80,12 +80,12 @@ export default function ExperienceHeading() {
           textShadow="0 0 24px rgba(255,255,255,0.3)"
         >
           <Box as={motion.span} display="inline-block" color="white" style={{
-  WebkitTextFillColor: 'white',
-  WebkitTextStroke: '1px',
-  WebkitTextStrokeColor: 'transparent',
-  backgroundImage: 'linear-gradient(to right, #c084fc, #a78bfa, #60a5fa)',
-  WebkitBackgroundClip: 'text'
-}}>Experience</Box>{' '}
+            WebkitTextFillColor: 'white',
+            WebkitTextStroke: '2px',
+            WebkitTextStrokeColor: 'transparent',
+            backgroundImage: 'linear-gradient(to right, #c084fc, #a78bfa, #60a5fa)',
+            WebkitBackgroundClip: 'text'
+          }}>Experience</Box>{' '}
           <Box
             as={motion.span}
             display="inline-block"
@@ -125,7 +125,6 @@ export default function ExperienceHeading() {
             bgGradient="linear(to-r, #a78bfa, #38bdf8)"
             color="white"
             borderRadius="full"
-            
             _hover={{
               bgGradient: 'linear(to-r, #c084fc, #60a5fa)',
               boxShadow: '0 0 40px rgba(167, 139, 250, 0.6)'
@@ -149,7 +148,6 @@ export default function ExperienceHeading() {
               backdropFilter="blur(14px)"
               border="1px solid rgba(255, 255, 255, 0.1)"
               color="whiteAlpha.900"
-              
               _hover={{ transform: 'translateY(-4px)', boxShadow: '2xl' }}
             >
               <Box mb={4} color="whiteAlpha.700">
