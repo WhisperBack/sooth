@@ -1,6 +1,16 @@
 'use client';
 
-import { Heading, Text, VStack, Button, Box, Flex, Link as ChakraLink, SimpleGrid, Input } from '@chakra-ui/react';
+import {
+  Heading,
+  Text,
+  VStack,
+  Button,
+  Box,
+  Flex,
+  Link as ChakraLink,
+  SimpleGrid,
+  Input,
+} from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import NextLink from 'next/link';
 import { Global } from '@emotion/react';
@@ -32,12 +42,12 @@ const ScrollbarStyles = () => (
       * {
         scrollbar-width: thin;
         scrollbar-color: rgba(255,255,255,0.2) transparent;
+      }
 
       @keyframes chaseGradient {
         0% { background-position: 0% 50%; }
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
-      }
       }
     `}
   />
@@ -51,7 +61,11 @@ export default function ExperienceHeading() {
       {/* Sticky Top Navigation */}
       <Box position="sticky" top={0} zIndex={10} width="100%" px={{ base: 4, md: 8 }}>
         <Flex justify="center">
-          <Flex as="nav" bg="rgba(0, 0, 0, 0.2)" backdropFilter="blur(20px)" borderRadius="3xl"
+          <Flex
+            as="nav"
+            bg="rgba(0, 0, 0, 0.2)"
+            backdropFilter="blur(20px)"
+            borderRadius="3xl"
             px={{ base: 4, md: 12 }}
             py={4}
             gap={6}
@@ -66,10 +80,15 @@ export default function ExperienceHeading() {
               { href: '/privacy', label: 'Privacy' },
               { href: '/terms', label: 'Terms' },
               { href: '/how-it-works', label: 'How It Works' },
-              { href: '/contact', label: 'Contact' }
+              { href: '/contact', label: 'Contact' },
             ].map((link, i) => (
               <NextLink key={i} href={link.href} passHref>
-                <ChakraLink color="whiteAlpha.800" _hover={{ color: 'white' }} fontWeight="medium" fontSize={{ base: 'sm', md: 'md' }}>
+                <ChakraLink
+                  color="whiteAlpha.800"
+                  _hover={{ color: 'white' }}
+                  fontWeight="medium"
+                  fontSize={{ base: 'sm', md: 'md' }}
+                >
                   {link.label}
                 </ChakraLink>
               </NextLink>
@@ -85,57 +104,78 @@ export default function ExperienceHeading() {
           color="white"
           textShadow="0 0 24px rgba(255,255,255,0.3)"
         >
-          <Box position="relative" display="inline-block">
-  {/* Glowing animated outline layer */}
-  <Box
-    as={motion.span}
-    position="absolute"
-    top={0}
-    left={0}
-    zIndex={0}
-    bgGradient="linear(to-r, #60a5fa, #a78bfa, #c084fc, #60a5fa)"
-    bgClip="text"
-    backgroundSize="300% 100%"
-    animation="chaseGradient 6s ease-in-out infinite"
-    color="transparent"
-    fontWeight="extrabold"
-    textShadow="0 0 10px rgba(96,165,250,0.6)"
-  >
-    Experience
-  </Box>
-
-  {/* Solid white fill layer */}
-  <Box
-    as="span"
-    position="relative"
-    zIndex={1}
-    color="white"
-    fontWeight="extrabold"
-  >
-    Experience
-  </Box>
-</Box>{' '}
-          <Box
-            as={motion.span}
-            display="inline-block"
-            bgGradient="linear(to-r, #c084fc, #60a5fa)"
-            bgClip="text"
-            fontWeight="extrabold"
-            style={{ WebkitTextStroke: '1px white' }}
-          >
-            Sooth
+          <Box display="inline-block" position="relative">
+            <Box as={motion.div} display="inline-block" w="fit-content" h="auto">
+              <svg
+                viewBox="0 0 500 150"
+                xmlns="http://www.w3.org/2000/svg"
+                style={{ width: '100%', height: 'auto' }}
+              >
+                <defs>
+                  <linearGradient id="animatedGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#60a5fa">
+                      <animate
+                        attributeName="offset"
+                        values="0%;100%;0%"
+                        dur="4s"
+                        repeatCount="indefinite"
+                      />
+                    </stop>
+                    <stop offset="50%" stopColor="#a78bfa">
+                      <animate
+                        attributeName="offset"
+                        values="50%;150%;50%"
+                        dur="4s"
+                        repeatCount="indefinite"
+                      />
+                    </stop>
+                    <stop offset="100%" stopColor="#c084fc">
+                      <animate
+                        attributeName="offset"
+                        values="100%;200%;100%"
+                        dur="4s"
+                        repeatCount="indefinite"
+                      />
+                    </stop>
+                  </linearGradient>
+                </defs>
+                <text
+                  x="50%"
+                  y="50%"
+                  dominantBaseline="middle"
+                  textAnchor="middle"
+                  fontSize="72"
+                  fontWeight="bold"
+                  fill="white"
+                  stroke="url(#animatedGradient)"
+                  strokeWidth="2"
+                >
+                  Experience
+                </text>
+              </svg>
+            </Box>
             <Box
-              position="absolute"
-              top="50%"
-              left="50%"
-              transform="translate(-50%, -50%)"
-              w="150%"
-              h="150%"
-              borderRadius="full"
-              bgGradient="radial(at center, rgba(192,132,252,0.3), transparent)"
-              filter="blur(80px)"
-              zIndex={-1}
-            />
+              as={motion.span}
+              display="inline-block"
+              bgGradient="linear(to-r, #c084fc, #60a5fa)"
+              bgClip="text"
+              fontWeight="extrabold"
+              style={{ WebkitTextStroke: '1px white' }}
+            >
+              Sooth
+              <Box
+                position="absolute"
+                top="50%"
+                left="50%"
+                transform="translate(-50%, -50%)"
+                w="150%"
+                h="150%"
+                borderRadius="full"
+                bgGradient="radial(at center, rgba(192,132,252,0.3), transparent)"
+                filter="blur(80px)"
+                zIndex={-1}
+              />
+            </Box>
           </Box>
         </MotionHeading>
 
@@ -154,10 +194,9 @@ export default function ExperienceHeading() {
             bgGradient="linear(to-r, #a78bfa, #38bdf8)"
             color="white"
             borderRadius="full"
-            
             _hover={{
               bgGradient: 'linear(to-r, #c084fc, #60a5fa)',
-              boxShadow: '0 0 40px rgba(167, 139, 250, 0.6)'
+              boxShadow: '0 0 40px rgba(167, 139, 250, 0.6)',
             }}
           >
             Try the Demo
@@ -166,9 +205,21 @@ export default function ExperienceHeading() {
 
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} pt={16} maxW="6xl">
           {[
-            { icon: Mic, title: 'Whisper Freely', desc: 'Let your thoughts flow. No judgment. Just space.' },
-            { icon: Sparkles, title: 'Gentle Reflections', desc: 'Sooth listens, then gives you back peace.' },
-            { icon: MessageCircle, title: 'Clarity in Seconds', desc: 'Your insights. Summarized. In your words.' },
+            {
+              icon: Mic,
+              title: 'Whisper Freely',
+              desc: 'Let your thoughts flow. No judgment. Just space.',
+            },
+            {
+              icon: Sparkles,
+              title: 'Gentle Reflections',
+              desc: 'Sooth listens, then gives you back peace.',
+            },
+            {
+              icon: MessageCircle,
+              title: 'Clarity in Seconds',
+              desc: 'Your insights. Summarized. In your words.',
+            },
           ].map((item, index) => (
             <MotionBox
               key={index}
@@ -178,14 +229,17 @@ export default function ExperienceHeading() {
               backdropFilter="blur(14px)"
               border="1px solid rgba(255, 255, 255, 0.1)"
               color="whiteAlpha.900"
-              
               _hover={{ transform: 'translateY(-4px)', boxShadow: '2xl' }}
             >
               <Box mb={4} color="whiteAlpha.700">
                 <item.icon size={32} strokeWidth={1.2} />
               </Box>
-              <Text fontWeight="bold" fontSize="xl" mb={1}>{item.title}</Text>
-              <Text fontSize="md" opacity={0.8}>{item.desc}</Text>
+              <Text fontWeight="bold" fontSize="xl" mb={1}>
+                {item.title}
+              </Text>
+              <Text fontSize="md" opacity={0.8}>
+                {item.desc}
+              </Text>
             </MotionBox>
           ))}
         </SimpleGrid>
@@ -222,7 +276,16 @@ export default function ExperienceHeading() {
           </Box>
         </VStack>
 
-        <SimpleGrid mt={24} pt={12} borderTop="1px solid rgba(255,255,255,0.1)" columns={3} spacing={8} color="whiteAlpha.600" fontSize="sm" textAlign="center">
+        <SimpleGrid
+          mt={24}
+          pt={12}
+          borderTop="1px solid rgba(255,255,255,0.1)"
+          columns={3}
+          spacing={8}
+          color="whiteAlpha.600"
+          fontSize="sm"
+          textAlign="center"
+        >
           <NextLink href="/about">About</NextLink>
           <NextLink href="/demo">Demo</NextLink>
           <NextLink href="/privacy">Privacy</NextLink>
