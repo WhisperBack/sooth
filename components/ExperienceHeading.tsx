@@ -144,7 +144,7 @@ export default function ExperienceHeading() {
                   y="50%"
                   dominantBaseline="middle"
                   textAnchor="middle"
-                  fontSize="72"
+                  fontSize="120"
                   fontWeight="bold"
                   fill="white"
                   stroke="url(#animatedGradient)"
