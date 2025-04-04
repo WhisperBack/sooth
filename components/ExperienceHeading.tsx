@@ -80,11 +80,11 @@ export default function ExperienceHeading() {
           textShadow="0 0 24px rgba(255,255,255,0.3)"
         >
           <Box as={motion.span} display="inline-block" color="white" style={{
-  WebkitTextFillColor: 'transparent',
-  WebkitTextStroke: '2.5px rgba(255,255,255,0.6)',
-  backgroundImage: 'linear-gradient(to top, #ffffff 10%, #c4c4c4 90%)',
+  WebkitTextFillColor: 'white',
+  WebkitTextStroke: '2px transparent',
+  backgroundImage: 'linear-gradient(to right, #c084fc, #a78bfa, #60a5fa)',
   WebkitBackgroundClip: 'text',
-  textShadow: '0 4px 10px rgba(192,132,252,0.2)'
+  textShadow: '0 0 18px rgba(167, 139, 250, 0.5)'
 }}>Experience</Box>{' '}
           <Box
             as={motion.span}
