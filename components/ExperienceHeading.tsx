@@ -110,30 +110,30 @@ export default function ExperienceHeading() {
           </Box>
         </MotionHeading>
 
-        <MotionText fontSize="lg" color="whiteAlpha.800" maxW="2xl" mx="auto">
+        <MotionText fontSize="2xl" color="whiteAlpha.800" maxW="2xl" mx="auto">
           Your voice, your peace. Speak, and Sooth listens.
         </MotionText>
 
         <NextLink href="/demo" passHref>
           <MotionButton
-            as="a"
-            size="lg"
-            px={10}
-            py={6}
-            fontSize="lg"
-            fontWeight="bold"
-            color="white"
-            borderRadius="full"
-            bgGradient="linear(to-r, rgba(192, 132, 252, 0.6), rgba(96, 165, 250, 0.6))"
-            backdropFilter="blur(18px)"
-            border="1px solid rgba(255,255,255,0.2)"
-            _hover={{
-              bgGradient: 'linear(to-r, rgba(192, 132, 252, 0.75), rgba(96, 165, 250, 0.75))',
-              boxShadow: '0 0 40px rgba(167, 139, 250, 0.6)'
-            }}
-          >
-            Try the Demo
-          </MotionButton>
+  as="a"
+  size="lg"
+  px={10}
+  py={6}
+  fontSize="lg"
+  fontWeight="bold"
+  color="white"
+  borderRadius="full"
+  bgGradient="linear(to-r, rgba(192, 132, 252, 0.8), rgba(96, 165, 250, 0.8))"
+  backdropFilter="blur(20px)"
+  border="1px solid rgba(255,255,255,0.3)"
+  _hover={{
+    bgGradient: 'linear(to-r, rgba(192, 132, 252, 1), rgba(96, 165, 250, 1))',
+    boxShadow: '0 0 50px rgba(167, 139, 250, 0.7)'
+  }}
+>
+  Try the Demo
+</MotionButton>
         </NextLink>
 
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} pt={16} maxW="6xl">
