@@ -62,7 +62,7 @@ export default function ExperienceHeading() {
             wrap="wrap"
             width="100%"
             borderRadius="3xl"
-            boxShadow="0 2px 16px rgba(0, 0, 0, 0.15)"
+            
             border="1px solid rgba(255, 255, 255, 0.1)"
           >
             {[
@@ -129,7 +129,7 @@ export default function ExperienceHeading() {
             bgGradient="linear(to-r, #a78bfa, #38bdf8)"
             color="white"
             borderRadius="full"
-            boxShadow="0 0 20px rgba(167, 139, 250, 0.4)"
+            
             _hover={{
               bgGradient: 'linear(to-r, #c084fc, #60a5fa)',
               boxShadow: '0 0 40px rgba(167, 139, 250, 0.6)'
@@ -153,7 +153,7 @@ export default function ExperienceHeading() {
               backdropFilter="blur(14px)"
               border="1px solid rgba(255, 255, 255, 0.1)"
               color="whiteAlpha.900"
-              boxShadow="xl"
+              
               _hover={{ transform: 'translateY(-4px)', boxShadow: '2xl' }}
             >
               <Box mb={4} color="whiteAlpha.700">
