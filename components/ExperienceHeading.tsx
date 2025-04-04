@@ -80,12 +80,12 @@ export default function ExperienceHeading() {
           textShadow="0 0 24px rgba(255,255,255,0.3)"
         >
           <Box as={motion.span} display="inline-block" color="white" style={{
-  WebkitTextFillColor: 'white',
-  WebkitTextStroke: '2px rgba(255,255,255,0.25)',
-  backgroundImage: 'linear-gradient(to right, #c084fc, #a78bfa, #60a5fa)',
-  WebkitBackgroundClip: 'text',
-  textShadow: '0 0 24px rgba(167, 139, 250, 0.7)'
-}}>Experience</Box>{' '}
+            WebkitTextFillColor: 'white',
+            WebkitTextStroke: '3px rgba(255,255,255,0.8)',  // Thicker outline
+            backgroundImage: 'linear-gradient(to right, #c084fc, #a78bfa, #60a5fa)',
+            WebkitBackgroundClip: 'text',
+            textShadow: '0 0 32px rgba(167, 139, 250, 1), 0 0 8px rgba(255, 255, 255, 0.4)'  // Stronger, warm glow
+          }}>Experience</Box>{' '}
           <Box
             as={motion.span}
             display="inline-block"
@@ -111,29 +111,29 @@ export default function ExperienceHeading() {
         </MotionHeading>
 
         <MotionText fontSize="2xl" color="whiteAlpha.900" fontWeight="semibold" letterSpacing="tight" lineHeight="1.4" maxW="2xl" mx="auto">
-  Your voice, your peace. Speak, and Sooth listens.
-</MotionText>
+          Your voice, your peace. Speak, and Sooth listens.
+        </MotionText>
 
         <NextLink href="/demo" passHref>
           <MotionButton
-  as="a"
-  size="lg"
-  px={10}
-  py={6}
-  fontSize="lg"
-  fontWeight="bold"
-  color="white"
-  borderRadius="full"
-  bgGradient="linear(to-r, rgba(192, 132, 252, 0.8), rgba(96, 165, 250, 0.8))"
-  backdropFilter="blur(20px)"
-  border="1px solid rgba(255,255,255,0.3)"
-  _hover={{
-    bgGradient: 'linear(to-r, rgba(192, 132, 252, 1), rgba(96, 165, 250, 1))',
-    boxShadow: '0 0 50px rgba(167, 139, 250, 0.7)'
-  }}
->
-  Try the Demo
-</MotionButton>
+            as="a"
+            size="lg"
+            px={10}
+            py={6}
+            fontSize="lg"
+            fontWeight="bold"
+            color="white"
+            borderRadius="full"
+            bgGradient="linear(to-r, rgba(192, 132, 252, 0.8), rgba(96, 165, 250, 0.8))"
+            backdropFilter="blur(20px)"
+            border="1px solid rgba(255,255,255,0.3)"
+            _hover={{
+              bgGradient: 'linear(to-r, rgba(192, 132, 252, 1), rgba(96, 165, 250, 1))',
+              boxShadow: '0 0 50px rgba(167, 139, 250, 0.7)'
+            }}
+          >
+            Try the Demo
+          </MotionButton>
         </NextLink>
 
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} pt={16} maxW="6xl">
