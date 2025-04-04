@@ -110,9 +110,9 @@ export default function ExperienceHeading() {
           </Box>
         </MotionHeading>
 
-        <MotionText fontSize="2xl" color="whiteAlpha.800" maxW="2xl" mx="auto">
-          Your voice, your peace. Speak, and Sooth listens.
-        </MotionText>
+        <MotionText fontSize="2xl" color="whiteAlpha.900" fontWeight="semibold" letterSpacing="tight" lineHeight="1.4" maxW="2xl" mx="auto">
+  Your voice, your peace. Speak, and Sooth listens.
+</MotionText>
 
         <NextLink href="/demo" passHref>
           <MotionButton
