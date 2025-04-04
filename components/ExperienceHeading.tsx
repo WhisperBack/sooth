@@ -49,22 +49,24 @@ export default function ExperienceHeading() {
         bg="rgba(0, 0, 0, 0.3)"
         backdropFilter="blur(10px)"
       >
-        <Flex as="nav" justify="center" gap={8} px={6} py={4}>
-          {[
-            { href: '/about', label: 'About' },
-            { href: '/demo', label: 'Demo' },
-            { href: '/privacy', label: 'Privacy' },
-            { href: '/terms', label: 'Terms' },
-            { href: '/how-it-works', label: 'How It Works' },
-            { href: '/contact', label: 'Contact' }
-          ].map((link, i) => (
-            <NextLink key={i} href={link.href} passHref>
-              <ChakraLink color="whiteAlpha.800" _hover={{ color: 'white' }} fontWeight="medium">
-                {link.label}
-              </ChakraLink>
-            </NextLink>
-          ))}
-        </Flex>
+        <Box maxW="7xl" mx="auto">
+          <Flex as="nav" justify="center" gap={8} px={6} py={4}>
+            {[
+              { href: '/about', label: 'About' },
+              { href: '/demo', label: 'Demo' },
+              { href: '/privacy', label: 'Privacy' },
+              { href: '/terms', label: 'Terms' },
+              { href: '/how-it-works', label: 'How It Works' },
+              { href: '/contact', label: 'Contact' }
+            ].map((link, i) => (
+              <NextLink key={i} href={link.href} passHref>
+                <ChakraLink color="whiteAlpha.800" _hover={{ color: 'white' }} fontWeight="medium">
+                  {link.label}
+                </ChakraLink>
+              </NextLink>
+            ))}
+          </Flex>
+        </Box>
       </Box>
 
       <MotionVStack spacing={12} textAlign="center" py={{ base: 28, md: 40 }}>
