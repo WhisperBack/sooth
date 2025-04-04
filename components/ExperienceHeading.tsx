@@ -45,7 +45,7 @@ export default function ExperienceHeading() {
         position="sticky"
         top={0}
         zIndex={10}
-        width="100%"
+        width="100vw"
         bg="rgba(0, 0, 0, 0.3)"
         backdropFilter="blur(10px)"
       >
@@ -57,7 +57,7 @@ export default function ExperienceHeading() {
             px={6}
             py={4}
             width="100%"
-            maxW="100%"
+            maxW="100vw"
           >
             {[
               { href: '/about', label: 'About' },
