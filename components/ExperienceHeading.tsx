@@ -85,19 +85,36 @@ export default function ExperienceHeading() {
           color="white"
           textShadow="0 0 24px rgba(255,255,255,0.3)"
         >
-          <Box
-            as={motion.span}
-            display="inline-block"
-            bgGradient="linear(to-r, #60a5fa, #a78bfa, #c084fc, #60a5fa)"
-            bgClip="text"
-            fontWeight="extrabold"
-            backgroundSize="300% 100%"
-            animation="chaseGradient 6s ease-in-out infinite"
-            color="transparent"
-            textShadow="0 0 10px rgba(96,165,250,0.5)"
-          >
-            Experience
-          </Box>{' '}
+          <Box position="relative" display="inline-block">
+  {/* Glowing animated outline layer */}
+  <Box
+    as={motion.span}
+    position="absolute"
+    top={0}
+    left={0}
+    zIndex={0}
+    bgGradient="linear(to-r, #60a5fa, #a78bfa, #c084fc, #60a5fa)"
+    bgClip="text"
+    backgroundSize="300% 100%"
+    animation="chaseGradient 6s ease-in-out infinite"
+    color="transparent"
+    fontWeight="extrabold"
+    textShadow="0 0 10px rgba(96,165,250,0.6)"
+  >
+    Experience
+  </Box>
+
+  {/* Solid white fill layer */}
+  <Box
+    as="span"
+    position="relative"
+    zIndex={1}
+    color="white"
+    fontWeight="extrabold"
+  >
+    Experience
+  </Box>
+</Box>{' '}
           <Box
             as={motion.span}
             display="inline-block"
