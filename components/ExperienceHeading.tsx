@@ -83,7 +83,7 @@ export default function ExperienceHeading() {
   WebkitTextFillColor: 'white',
   WebkitTextStroke: '1px',
   WebkitTextStrokeColor: 'transparent',
-  backgroundImage: 'linear-gradient(to right, #c084fc, #60a5fa)',
+  backgroundImage: 'linear-gradient(to right, #c084fc, #a78bfa, #60a5fa)',
   WebkitBackgroundClip: 'text'
 }}>Experience</Box>{' '}
           <Box
