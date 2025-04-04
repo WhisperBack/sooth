@@ -86,6 +86,7 @@ export default function ExperienceHeading() {
             bgGradient="linear(to-r, #c084fc, #60a5fa)"
             bgClip="text"
             fontWeight="extrabold"
+            style={{ WebkitTextStroke: '1px white' }}
           >
             Sooth
             <Box
