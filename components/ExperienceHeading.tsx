@@ -124,11 +124,11 @@ export default function ExperienceHeading() {
             fontWeight="bold"
             color="white"
             borderRadius="full"
-            bgGradient="linear(to-r, rgba(167, 139, 250, 0.3), rgba(56, 189, 248, 0.3))"
+            bgGradient="linear(to-r, rgba(192, 132, 252, 0.6), rgba(96, 165, 250, 0.6))"
             backdropFilter="blur(18px)"
-            border="1px solid rgba(255,255,255,0.15)"
+            border="1px solid rgba(255,255,255,0.2)"
             _hover={{
-              bgGradient: 'linear(to-r, rgba(192, 132, 252, 0.4), rgba(96, 165, 250, 0.4))',
+              bgGradient: 'linear(to-r, rgba(192, 132, 252, 0.75), rgba(96, 165, 250, 0.75))',
               boxShadow: '0 0 40px rgba(167, 139, 250, 0.6)'
             }}
           >
