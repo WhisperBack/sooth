@@ -81,10 +81,11 @@ export default function ExperienceHeading() {
         >
           <Box as={motion.span} display="inline-block" color="white" style={{
   WebkitTextFillColor: 'white',
-  WebkitTextStroke: '2px',
+  WebkitTextStroke: '2.5px',
   WebkitTextStrokeColor: 'transparent',
   backgroundImage: 'linear-gradient(to right, #60a5fa, #a78bfa, #c084fc)',
-  WebkitBackgroundClip: 'text'
+  WebkitBackgroundClip: 'text',
+  textShadow: '0 0 4px rgba(96, 165, 250, 0.4)'
 }}>Experience</Box>{' '}
           <Box
             as={motion.span}
