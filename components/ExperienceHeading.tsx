@@ -43,27 +43,16 @@ export default function ExperienceHeading() {
       <ScrollbarStyles />
 
       {/* Sticky Top Navigation */}
-      <Box
-        position="sticky"
-        top={0}
-        zIndex={10}
-        width="100%"
-        bg="rgba(0, 0, 0, 0.1)"
-        backdropFilter="blur(20px)"
-        px={{ base: 4, md: 8 }}
-      >
+      <Box position="sticky" top={0} zIndex={10} width="100%" px={{ base: 4, md: 8 }}>
         <Flex justify="center">
-          <Flex
-            as="nav"
+          <Flex as="nav" bg="rgba(0, 0, 0, 0.2)" backdropFilter="blur(20px)" borderRadius="3xl"
             px={{ base: 4, md: 12 }}
             py={4}
             gap={6}
             justify="center"
             wrap="wrap"
             width="100%"
-            borderRadius="3xl"
-            
-             border="1px solid rgba(255, 255, 255, 0.1)"
+            border="1px solid rgba(255, 255, 255, 0.1)"
           >
             {[
               { href: '/about', label: 'About' },
