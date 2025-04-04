@@ -49,15 +49,15 @@ export default function ExperienceHeading() {
         bg="rgba(0, 0, 0, 0.3)"
         backdropFilter="blur(10px)"
       >
-        <Flex justify="center" width="100%">
+        <Flex width="100%" justify="center">
           <Flex
             as="nav"
-            justify="center"
-            gap={8}
-            px={6}
-            py={4}
             width="100%"
-            maxW="none"
+            maxW="100%"
+            px={12}
+            py={4}
+            gap={8}
+            justify="center"
           >
             {[
               { href: '/about', label: 'About' },
