@@ -32,6 +32,12 @@ const ScrollbarStyles = () => (
       * {
         scrollbar-width: thin;
         scrollbar-color: rgba(255,255,255,0.2) transparent;
+
+      @keyframes chaseGradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
       }
     `}
   />
@@ -79,14 +85,19 @@ export default function ExperienceHeading() {
           color="white"
           textShadow="0 0 24px rgba(255,255,255,0.3)"
         >
-          <Box as={motion.span} display="inline-block" color="white" style={{
-  WebkitTextFillColor: 'white',
-  WebkitTextStroke: '2.5px',
-  WebkitTextStrokeColor: 'transparent',
-  backgroundImage: 'linear-gradient(to right, #60a5fa, #a78bfa, #c084fc)',
-  WebkitBackgroundClip: 'text',
-  textShadow: '0 0 4px rgba(96, 165, 250, 0.4)'
-}}>Experience</Box>{' '}
+          <Box
+            as={motion.span}
+            display="inline-block"
+            bgGradient="linear(to-r, #60a5fa, #a78bfa, #c084fc, #60a5fa)"
+            bgClip="text"
+            fontWeight="extrabold"
+            backgroundSize="300% 100%"
+            animation="chaseGradient 6s ease-in-out infinite"
+            color="transparent"
+            textShadow="0 0 10px rgba(96,165,250,0.5)"
+          >
+            Experience
+          </Box>{' '}
           <Box
             as={motion.span}
             display="inline-block"
