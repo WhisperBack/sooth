@@ -2,25 +2,17 @@
 
 import {
   Heading,
-  Text,
   VStack,
-  Button,
   Box,
   Flex,
   Link as ChakraLink,
-  SimpleGrid,
-  Input,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import NextLink from 'next/link';
 import { Global } from '@emotion/react';
-import { Mic, Sparkles, MessageCircle } from 'lucide-react';
 
-const MotionText = motion(Text);
 const MotionVStack = motion(VStack);
 const MotionHeading = motion(Heading);
-const MotionButton = motion(Button);
-const MotionBox = motion(Box);
 
 const ScrollbarStyles = () => (
   <Global
@@ -105,11 +97,12 @@ export default function ExperienceHeading() {
           textShadow="0 0 24px rgba(255,255,255,0.3)"
         >
           <Box display="inline-block" position="relative">
-            <Box as={motion.div} display="inline-block" w="fit-content" h="auto">
+            <Box as={motion.div} display="inline-block" w={{ base: '300px', md: '460px' }} h="auto">
               <svg
-                viewBox="0 0 500 150"
+                viewBox="0 0 900 200"
                 xmlns="http://www.w3.org/2000/svg"
-                style={{ width: '100%', height: 'auto' }}
+                width="100%"
+                height="auto"
               >
                 <defs>
                   <linearGradient id="animatedGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -144,8 +137,9 @@ export default function ExperienceHeading() {
                   y="50%"
                   dominantBaseline="middle"
                   textAnchor="middle"
-                  fontSize="120"
-                  fontWeight="bold"
+                  fontSize="130"
+                  fontFamily="Geist, sans-serif"
+                  fontWeight="800"
                   fill="white"
                   stroke="url(#animatedGradient)"
                   strokeWidth="2"
@@ -178,122 +172,6 @@ export default function ExperienceHeading() {
             </Box>
           </Box>
         </MotionHeading>
-
-        <MotionText fontSize="lg" color="whiteAlpha.800" maxW="2xl" mx="auto">
-          Your voice, your peace. Speak, and Sooth listens.
-        </MotionText>
-
-        <NextLink href="/demo" passHref>
-          <MotionButton
-            as="a"
-            size="lg"
-            px={10}
-            py={6}
-            fontSize="lg"
-            fontWeight="bold"
-            bgGradient="linear(to-r, #a78bfa, #38bdf8)"
-            color="white"
-            borderRadius="full"
-            _hover={{
-              bgGradient: 'linear(to-r, #c084fc, #60a5fa)',
-              boxShadow: '0 0 40px rgba(167, 139, 250, 0.6)',
-            }}
-          >
-            Try the Demo
-          </MotionButton>
-        </NextLink>
-
-        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} pt={16} maxW="6xl">
-          {[
-            {
-              icon: Mic,
-              title: 'Whisper Freely',
-              desc: 'Let your thoughts flow. No judgment. Just space.',
-            },
-            {
-              icon: Sparkles,
-              title: 'Gentle Reflections',
-              desc: 'Sooth listens, then gives you back peace.',
-            },
-            {
-              icon: MessageCircle,
-              title: 'Clarity in Seconds',
-              desc: 'Your insights. Summarized. In your words.',
-            },
-          ].map((item, index) => (
-            <MotionBox
-              key={index}
-              p={6}
-              borderRadius="2xl"
-              bg="rgba(255,255,255,0.06)"
-              backdropFilter="blur(14px)"
-              border="1px solid rgba(255, 255, 255, 0.1)"
-              color="whiteAlpha.900"
-              _hover={{ transform: 'translateY(-4px)', boxShadow: '2xl' }}
-            >
-              <Box mb={4} color="whiteAlpha.700">
-                <item.icon size={32} strokeWidth={1.2} />
-              </Box>
-              <Text fontWeight="bold" fontSize="xl" mb={1}>
-                {item.title}
-              </Text>
-              <Text fontSize="md" opacity={0.8}>
-                {item.desc}
-              </Text>
-            </MotionBox>
-          ))}
-        </SimpleGrid>
-
-        <VStack spacing={6} mt={24} px={6} textAlign="center" maxW="2xl" mx="auto">
-          <Text fontSize="xl" fontStyle="italic" color="whiteAlpha.800">
-            “Sooth was born from the need for a place where thoughts could be spoken freely, without judgment.”
-          </Text>
-          <Text color="whiteAlpha.600">— Jaycob, Founder</Text>
-        </VStack>
-
-        <VStack spacing={6} mt={24} px={6} textAlign="center">
-          <Heading size="lg" color="white">
-            Get Early Access
-          </Heading>
-          <Text color="whiteAlpha.700" maxW="lg" mx="auto">
-            Join the waitlist and be the first to try Sooth. No spam. Just peace.
-          </Text>
-          <Box as="form" maxW="md" w="full" mx="auto">
-            <VStack spacing={4}>
-              <Input
-                type="email"
-                placeholder="Your email"
-                bg="white"
-                color="black"
-                borderRadius="md"
-                size="lg"
-                _placeholder={{ color: 'gray.500' }}
-              />
-              <Button type="submit" colorScheme="blue" size="lg" w="full">
-                Join Waitlist
-              </Button>
-            </VStack>
-          </Box>
-        </VStack>
-
-        <SimpleGrid
-          mt={24}
-          pt={12}
-          borderTop="1px solid rgba(255,255,255,0.1)"
-          columns={3}
-          spacing={8}
-          color="whiteAlpha.600"
-          fontSize="sm"
-          textAlign="center"
-        >
-          <NextLink href="/about">About</NextLink>
-          <NextLink href="/demo">Demo</NextLink>
-          <NextLink href="/privacy">Privacy</NextLink>
-        </SimpleGrid>
-
-        <Box mt={20} textAlign="center" fontSize="sm" color="whiteAlpha.700" px={6} pb={10}>
-          “Peace begins with a whisper.”
-        </Box>
       </MotionVStack>
     </>
   );
