@@ -49,8 +49,16 @@ export default function ExperienceHeading() {
         bg="rgba(0, 0, 0, 0.3)"
         backdropFilter="blur(10px)"
       >
-        <Box maxW="7xl" mx="auto">
-          <Flex as="nav" justify="center" gap={8} px={6} py={4}>
+        <Flex justify="center" width="100%">
+          <Flex
+            as="nav"
+            justify="center"
+            gap={8}
+            px={6}
+            py={4}
+            width="100%"
+            maxW="100%"
+          >
             {[
               { href: '/about', label: 'About' },
               { href: '/demo', label: 'Demo' },
@@ -66,7 +74,7 @@ export default function ExperienceHeading() {
               </NextLink>
             ))}
           </Flex>
-        </Box>
+        </Flex>
       </Box>
 
       <MotionVStack spacing={12} textAlign="center" py={{ base: 28, md: 40 }}>
