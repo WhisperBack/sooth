@@ -50,12 +50,15 @@ export default function ExperienceHeading() {
         width="100%"
         bg="rgba(0, 0, 0, 0.3)"
         backdropFilter="blur(10px)"
+        borderRadius="2xl"
+        mx="auto"
+        mt={4}
+        px={4}
+        maxW="fit-content"
       >
-        <Flex width="100%" justify="center">
+        <Flex justify="center">
           <Flex
             as="nav"
-            width="100%"
-            maxW="100%"
             px={12}
             py={4}
             gap={8}
@@ -85,18 +88,14 @@ export default function ExperienceHeading() {
           fontWeight="extrabold"
           color="white"
           textShadow="0 0 24px rgba(255,255,255,0.3)"
-          position="relative"
-          zIndex={1}
         >
           Experience{' '}
           <Box
             as={motion.span}
-            position="relative"
             display="inline-block"
             bgGradient="linear(to-r, #c084fc, #60a5fa)"
             bgClip="text"
             fontWeight="extrabold"
-            zIndex={1}
           >
             Sooth
             <Box
@@ -132,7 +131,7 @@ export default function ExperienceHeading() {
             boxShadow="0 0 20px rgba(167, 139, 250, 0.4)"
             _hover={{
               bgGradient: 'linear(to-r, #c084fc, #60a5fa)',
-              boxShadow: '0 0 40px rgba(167, 139, 250, 0.6)',
+              boxShadow: '0 0 40px rgba(167, 139, 250, 0.6)'
             }}
           >
             Try the Demo
@@ -143,7 +142,7 @@ export default function ExperienceHeading() {
           {[
             { icon: Mic, title: 'Whisper Freely', desc: 'Let your thoughts flow. No judgment. Just space.' },
             { icon: Sparkles, title: 'Gentle Reflections', desc: 'Sooth listens, then gives you back peace.' },
-            { icon: MessageCircle, title: 'Clarity in Seconds', desc: 'Your insights. Summarized. In your words.' },
+            { icon: MessageCircle, title: 'Clarity in Seconds', desc: 'Your insights. Summarized. In your words.' }
           ].map((item, index) => (
             <MotionBox
               key={index}
