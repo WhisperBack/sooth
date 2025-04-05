@@ -76,12 +76,23 @@ export default function ExperienceHeading() {
         <MotionHeading
   fontSize="8xl"
   fontWeight="extrabold"
-  bgGradient="linear(to-r, blue.400, purple.500)"
-  bgClip="text"
   lineHeight="1"
   letterSpacing="-1px"
 >
-  Experience Sooth
+  <Box
+    as="span"
+    bgGradient="linear(to-r, blue.400, purple.400)"
+    bgClip="text"
+  >
+    Experience
+  </Box>{' '}
+  <Box
+    as="span"
+    bgGradient="linear(to-r, green.200, gray.200, pink.200, purple.200, gray.400)"
+    bgClip="text"
+  >
+    Sooth
+  </Box>
 </MotionHeading>
 
         <MotionText fontSize="2xl" color="whiteAlpha.900" fontWeight="semibold" letterSpacing="tight" lineHeight="1.4" maxW="2xl" mx="auto">
