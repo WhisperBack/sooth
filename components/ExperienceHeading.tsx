@@ -164,8 +164,11 @@ export default function ExperienceHeading() {
                 placeholder="Your email"
                 variant="outline"
                 size="lg"
+                borderColor="brand.softGray"
+                focusBorderColor="brand.green"
+                _placeholder={{ color: 'gray.500' }}
               />
-              <Button type="submit" variant="solid" size="lg" w="full">
+              <Button type="submit" variant="solid" size="lg" w="full" backdropFilter="blur(12px)" boxShadow="0 4px 20px rgba(168, 225, 210, 0.3)" _hover={{ boxShadow: '0 6px 24px rgba(168, 225, 210, 0.5)' }}>
                 Join Waitlist
               </Button>
             </VStack>
