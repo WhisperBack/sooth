@@ -14,28 +14,40 @@ export default function HomePage() {
       px={4}
     >
       <Container maxW="container.lg" textAlign="center">
-        {/* Experience Heading */}
+        {/* ExperienceHeading Component */}
         <ExperienceHeading />
+
+        {/* Experience Sooth Heading */}
+        <Heading
+          as="h1"
+          size="4xl"
+          mt={4}
+          color="gray.700" // Warm, readable text
+          _hover={{
+            color: 'purple.200', // Subtle lavender on hover
+            cursor: 'pointer',
+          }}
+        >
+          Experience Sooth
+        </Heading>
 
         {/* Main CTA Button */}
         <Button
           mt={6}
           colorScheme="pink"
-          bg="pink.200" // Soft pink for warmth and compassion
+          bg="pink.200"
           color="white"
-          _hover={{
-            bg: "purple.200", // Lavender on hover for calmness
-          }}
+          _hover={{ bg: "purple.200" }}
           size="lg"
         >
           Start Your Journey
         </Button>
 
-        {/* Section with Beige/Taupe Background */}
+        {/* Section with Cozy Background */}
         <Box
           mt={12}
           p={6}
-          bg="gray.100" // Beige/Taupe equivalent (soft, cozy feel)
+          bg="gray.100"
           borderRadius="md"
           boxShadow="lg"
         >
@@ -49,11 +61,9 @@ export default function HomePage() {
         <Button
           mt={6}
           colorScheme="purple"
-          bg="purple.200" // Lavender for peaceful, emotional support
+          bg="purple.200"
           color="white"
-          _hover={{
-            bg: "pink.200", // Pink on hover for warmth
-          }}
+          _hover={{ bg: "pink.200" }}
           size="lg"
         >
           Learn More
