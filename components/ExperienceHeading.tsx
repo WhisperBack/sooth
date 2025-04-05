@@ -146,10 +146,10 @@ export default function ExperienceHeading() {
         </SimpleGrid>
 
         <VStack spacing={6} mt={24} px={6} textAlign="center" maxW="2xl" mx="auto">
-          <Text fontSize="xl" fontStyle="italic">
+          <Text fontSize="xl" fontStyle="italic" color="brand.taupe" textShadow="0 1px 6px rgba(168, 225, 210, 0.3)">
             “Sooth was born from the need for a place where thoughts could be spoken freely, without judgment.”
           </Text>
-          <Text>— Jaycob, Founder</Text>
+          <Text color="brand.softGray" fontWeight="medium">— Jaycob, Founder</Text>
         </VStack>
 
         <VStack spacing={6} mt={24} px={6} textAlign="center">
