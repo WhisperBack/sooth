@@ -39,7 +39,7 @@ const ScrollbarStyles = () => (
 
 export default function ExperienceHeading() {
   return (
-    <>
+    <Box minH="100vh" w="full" bgGradient="linear(to-b, #A8D5BA, #A9D1E8)" overflow="hidden">
       <ScrollbarStyles />
 
       {/* Sticky Top Navigation */}
@@ -64,7 +64,7 @@ export default function ExperienceHeading() {
               { href: '/contact', label: 'Contact' }
             ].map((link, i) => (
               <NextLink key={i} href={link.href} passHref>
-                <ChakraLink fontWeight="semibold" fontSize={{ base: 'sm', md: 'md' }} letterSpacing="tight">
+                <ChakraLink fontWeight="semibold" fontSize={{ base: 'sm', md: 'md' }} letterSpacing="tight" color="#D3D3D3" _hover={{ color: '#FFFFFF' }}>
                   {link.label}
                 </ChakraLink>
               </NextLink>
@@ -73,18 +73,17 @@ export default function ExperienceHeading() {
         </Flex>
       </Box>
 
-      <MotionVStack spacing={12} textAlign="center" py={{ base: 28, md: 40 }} bgGradient="linear(to-br, #A8D5BA, #A9D1E8)" minH="100vh" w="full">
+      <MotionVStack spacing={12} textAlign="center" py={{ base: 28, md: 40 }}>
         <MotionHeading
           fontSize={{ base: '6xl', md: '8xl' }}
           fontWeight="extrabold"
-          textShadow="0 0 24px rgba(255,255,255,0.3)"
+          lineHeight="1.2"
         >
-          <Box as={motion.span} display="inline-block" color="white" style={{
-            WebkitTextFillColor: '#FFFFFF',
-            WebkitTextStroke: '2px transparent',
-            backgroundImage: 'linear-gradient(to right, #D8BFD8, #A8D5BA, #A9D1E8)',
+          <Box as={motion.span} display="inline-block" style={{
+            WebkitTextFillColor: 'transparent',
             WebkitBackgroundClip: 'text',
-            textShadow: '0 0 32px rgba(168, 225, 210, 0.6), 0 0 12px rgba(216, 191, 216, 0.5)'
+            backgroundImage: 'linear-gradient(to right, #D8BFD8, #A8D5BA, #A9D1E8)',
+            textShadow: '0 0 60px rgba(168, 225, 210, 0.4), 0 0 20px rgba(216, 191, 216, 0.3)'
           }}>Experience</Box>{' '}
           <Box
             as={motion.span}
@@ -92,30 +91,22 @@ export default function ExperienceHeading() {
             bgGradient="linear(to-r, #D8BFD8, #A9D1E8)"
             bgClip="text"
             fontWeight="extrabold"
-            style={{ WebkitTextStroke: '1px rgba(216,191,216,0.8)' }}
+            style={{ WebkitTextStroke: '1px rgba(255,255,255,0.3)' }}
           >
             Sooth
-            <Box
-              position="absolute"
-              top="50%"
-              left="50%"
-              transform="translate(-50%, -50%)"
-              w="150%"
-              h="150%"
-              borderRadius="full"
-              bgGradient="radial(at center, rgba(168,225,210,0.2), transparent)"
-              filter="blur(80px)"
-              zIndex={-1}
-            />
           </Box>
         </MotionHeading>
 
-        <MotionText fontSize={{ base: '2xl', md: '3xl' }} fontWeight="medium" lineHeight="1.5" letterSpacing="tight" color="#D8CFC4" textShadow="0 1px 8px rgba(168, 225, 210, 0.4)" maxW="2xl" mx="auto">
+        <MotionText fontSize={{ base: '2xl', md: '3xl' }} fontWeight="semibold" lineHeight="1.5" letterSpacing="tight" color="#D8CFC4" textShadow="0 1px 8px rgba(168, 225, 210, 0.4)" maxW="2xl" mx="auto">
           Your voice, your peace. Speak, and Sooth listens.
         </MotionText>
 
         <NextLink href="/demo" passHref>
-          <MotionButton as="a" size="lg" px={10} py={6} fontSize="lg" variant="solid" backdropFilter="blur(20px)" boxShadow="0 4px 24px rgba(248, 192, 229, 0.4)">
+          <MotionButton as="a" size="lg" px={10} py={6} fontSize="lg" fontWeight="bold" color="white" borderRadius="full"
+            bgGradient="linear(to-r, #FAD0C9, #D8BFD8)"
+            backdropFilter="blur(20px)"
+            boxShadow="0 0 30px rgba(248, 192, 229, 0.35)"
+            _hover={{ bgGradient: 'linear(to-r, #D8BFD8, #A9D1E8)', boxShadow: '0 0 40px rgba(216, 191, 216, 0.6)' }}>
             Try the Demo
           </MotionButton>
         </NextLink>
@@ -130,7 +121,7 @@ export default function ExperienceHeading() {
               key={index}
               p={6}
               borderRadius="2xl"
-              bg="rgba(255,255,255,0.06)"
+              bg="rgba(255,255,255,0.05)"
               backdropFilter="blur(14px)"
               border="1px solid rgba(255, 255, 255, 0.1)"
               boxShadow="0 6px 18px rgba(168, 225, 210, 0.15)"
@@ -146,15 +137,17 @@ export default function ExperienceHeading() {
         </SimpleGrid>
 
         <VStack spacing={6} mt={24} px={6} textAlign="center" maxW="2xl" mx="auto">
-          <Text fontSize="xl" fontStyle="italic" color="brand.taupe" textShadow="0 1px 6px rgba(168, 225, 210, 0.3)">
+          <Text fontSize="xl" fontStyle="italic" color="#D8CFC4" textShadow="0 1px 6px rgba(168, 225, 210, 0.3)">
             “Sooth was born from the need for a place where thoughts could be spoken freely, without judgment.”
           </Text>
-          <Text color="brand.softGray" fontWeight="medium">— Jaycob, Founder</Text>
+          <Text color="#D3D3D3" fontWeight="medium">— Jaycob, Founder</Text>
         </VStack>
 
         <VStack spacing={6} mt={24} px={6} textAlign="center">
-          <Heading size="lg">Get Early Access</Heading>
-          <Text maxW="lg" mx="auto">
+          <Heading size="lg" color="#FFFFFF">
+            Get Early Access
+          </Heading>
+          <Text color="#D3D3D3" maxW="lg" mx="auto">
             Join the waitlist and be the first to try Sooth. No spam. Just peace.
           </Text>
           <Box as="form" maxW="md" w="full" mx="auto">
@@ -162,29 +155,32 @@ export default function ExperienceHeading() {
               <Input
                 type="email"
                 placeholder="Your email"
-                variant="outline"
+                bg="white"
+                color="black"
+                borderRadius="md"
                 size="lg"
-                borderColor="#D3D3D3"
-                focusBorderColor="#A8D5BA"
                 _placeholder={{ color: 'gray.500' }}
               />
-              <Button type="submit" variant="solid" size="lg" w="full" backdropFilter="blur(12px)" boxShadow="0 4px 20px rgba(168, 225, 210, 0.3)" _hover={{ boxShadow: '0 6px 24px rgba(168, 225, 210, 0.5)' }}>
+              <Button type="submit" size="lg" w="full" bgGradient="linear(to-r, #FAD0C9, #D8BFD8)" color="white" fontWeight="bold"
+                backdropFilter="blur(12px)"
+                boxShadow="0 4px 20px rgba(168, 225, 210, 0.3)"
+                _hover={{ boxShadow: '0 6px 24px rgba(168, 225, 210, 0.5)' }}>
                 Join Waitlist
               </Button>
             </VStack>
           </Box>
         </VStack>
 
-        <SimpleGrid mt={24} pt={12} borderTop="1px solid rgba(255,255,255,0.1)" columns={3} spacing={8} fontSize="sm" textAlign="center">
+        <SimpleGrid mt={24} pt={12} borderTop="1px solid rgba(255,255,255,0.1)" columns={3} spacing={8} fontSize="sm" textAlign="center" color="#D3D3D3">
           <NextLink href="/about">About</NextLink>
           <NextLink href="/demo">Demo</NextLink>
           <NextLink href="/privacy">Privacy</NextLink>
         </SimpleGrid>
 
-        <Box mt={20} textAlign="center" fontSize="sm" px={6} pb={10} color="brand.taupe" textShadow="0 1px 6px rgba(168, 225, 210, 0.3)">
+        <Box mt={20} textAlign="center" fontSize="sm" color="#D8CFC4" px={6} pb={10}>
           “Peace begins with a whisper.”
         </Box>
       </MotionVStack>
-    </>
+    </Box>
   );
 }
