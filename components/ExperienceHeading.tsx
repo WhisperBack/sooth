@@ -50,7 +50,18 @@ export default function ExperienceHeading() {
 
       {/* Sticky Top Navigation */}
       <Box position="sticky" top={0} zIndex={10} width="100%" px={{ base: 4, md: 8 }}>
-        <Flex justify="center">
+        <Flex justify="center" maxW="7xl" mx="auto" position="relative">
+          <Box
+            position="absolute"
+            top="0"
+            left="50%"
+            transform="translateX(-50%)"
+            w="80%"
+            h="100%"
+            bgGradient="radial(at center, rgba(255,255,255,0.06), transparent)"
+            filter="blur(40px)"
+            zIndex={-1}
+          />
           <Flex
             as="nav"
             backgroundImage="linear(to right, var(--chakra-colors-blue-200), var(--chakra-colors-purple-300), var(--chakra-colors-pink-300))"
@@ -58,7 +69,7 @@ export default function ExperienceHeading() {
             backgroundSize="300% 300%"
             backgroundPosition="center"
             backdropFilter="blur(30px)"
-            borderRadius="3xl"
+            borderRadius="2xl"
             px={{ base: 4, md: 12 }}
             animation="drift 20s ease-in-out infinite"
             py={4}
@@ -67,7 +78,7 @@ export default function ExperienceHeading() {
             wrap="wrap"
             width="100%"
             border="1px solid rgba(255, 255, 255, 0.05)"
-boxShadow="0 4px 24px rgba(0, 0, 0, 0.2)"
+            boxShadow="0 4px 24px rgba(0, 0, 0, 0.2)"
           >
             {[
               { href: '/about', label: 'About' },
