@@ -32,6 +32,12 @@ const ScrollbarStyles = () => (
       * {
         scrollbar-width: thin;
         scrollbar-color: rgba(255,255,255,0.2) transparent;
+
+      @keyframes drift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
       }
     `}
   />
@@ -49,11 +55,12 @@ export default function ExperienceHeading() {
             as="nav"
             backgroundImage="linear(to right, var(--chakra-colors-blue-200), var(--chakra-colors-purple-300), var(--chakra-colors-pink-300))"
             backgroundColor="rgba(255, 255, 255, 0.025)"
-            backgroundSize="cover"
+            backgroundSize="300% 300%"
             backgroundPosition="center"
             backdropFilter="blur(30px)"
             borderRadius="3xl"
             px={{ base: 4, md: 12 }}
+            animation="drift 20s ease-in-out infinite"
             py={4}
             gap={6}
             justify="center"
