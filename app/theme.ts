@@ -1,4 +1,4 @@
-import { extendTheme } from '@chakra-ui/react';
+import { extendTheme, type StyleFunctionProps } from '@chakra-ui/react';
 
 const theme = extendTheme({
   colors: {
@@ -10,16 +10,26 @@ const theme = extendTheme({
       taupe: '#D8CFC4',       // Warmth, stability
       gray: '#BEBEBE',        // Minimal text, icons
       softGray: '#D3D3D3',    // Borders, highlights
-      white: '#FFFFFF'        // Clean canvas
+      white: '#FFFFFF',       // Clean canvas
+
+      background: '#A9D1E8',  // Shortcut for soft blue background
+      accent: '#FAD0C9'       // Shortcut for soft pink accent
     }
   },
+  shadows: {
+    soft: '0 4px 12px rgba(0, 0, 0, 0.06)',
+    deep: '0 8px 20px rgba(0, 0, 0, 0.1)'
+  },
   styles: {
-    global: {
+    global: (props: StyleFunctionProps) => ({
       body: {
-        bgGradient: 'linear(to right, #A8D5BA, #A9D1E8)',
-        color: 'brand.gray'
+        bgGradient:
+          props.colorMode === 'light'
+            ? 'linear(to right, brand.green, brand.blue)'
+            : 'gray.900',
+        color: props.colorMode === 'light' ? 'brand.gray' : 'gray.100'
       }
-    }
+    })
   },
   components: {
     Button: {
@@ -32,7 +42,21 @@ const theme = extendTheme({
           bg: 'brand.pink',
           color: 'white',
           _hover: {
-            bg: 'brand.lavender'
+            bg: '#E6B6E6' // darker lavender
+          }
+        },
+        calm: {
+          bg: 'brand.lavender',
+          color: 'white',
+          _hover: {
+            bg: 'brand.taupe'
+          }
+        },
+        ghost: {
+          bg: 'transparent',
+          color: 'brand.pink',
+          _hover: {
+            bg: 'brand.softGray'
           }
         }
       }

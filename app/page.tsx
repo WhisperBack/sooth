@@ -7,7 +7,7 @@ export default function HomePage() {
   return (
     <Box
       minH="100vh"
-      bgGradient="linear(to-b, #E0C3FC, #8EC5FC)"
+      bgGradient="linear(to right, brand.green, brand.blue)" // Uses Chakra theme colors
       display="flex"
       alignItems="center"
       justifyContent="center"
