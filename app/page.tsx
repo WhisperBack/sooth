@@ -7,43 +7,39 @@ export default function HomePage() {
   return (
     <Box
       minH="100vh"
-      bgGradient="linear(to right, green.200, blue.200)" // Chakra green → blue gradient
+      bgGradient="linear(to right, green.200, blue.200)"
       display="flex"
       alignItems="center"
       justifyContent="center"
       px={4}
     >
       <Container maxW="container.lg" textAlign="center">
-        {/* ExperienceHeading Component */}
         <ExperienceHeading />
 
-        {/* Experience Sooth Heading */}
         <Heading
           as="h1"
-          size="4xl"
+          fontSize="7xl"
+          fontWeight="semibold"
+          bgGradient="linear(to-r, purple.200, pink.200)"
+          bgClip="text"
+          lineHeight="1.2"
+          letterSpacing="-0.5px"
           mt={4}
-          color="gray.700" // Warm, readable text
-          _hover={{
-            color: 'purple.200', // Subtle lavender on hover
-            cursor: 'pointer',
-          }}
         >
           Experience Sooth
         </Heading>
 
-        {/* Main CTA Button */}
         <Button
           mt={6}
           colorScheme="pink"
           bg="pink.200"
           color="white"
-          _hover={{ bg: "purple.200" }}
+          _hover={{ bg: 'purple.200' }}
           size="lg"
         >
           Start Your Journey
         </Button>
 
-        {/* Section with Cozy Background */}
         <Box
           mt={12}
           p={6}
@@ -57,13 +53,12 @@ export default function HomePage() {
           </Text>
         </Box>
 
-        {/* Secondary CTA Button */}
         <Button
           mt={6}
           colorScheme="purple"
           bg="purple.200"
           color="white"
-          _hover={{ bg: "pink.200" }}
+          _hover={{ bg: 'pink.200' }}
           size="lg"
         >
           Learn More
