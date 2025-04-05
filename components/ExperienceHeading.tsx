@@ -113,16 +113,17 @@ export default function ExperienceHeading() {
 
         <Box position="relative" display="inline-block" width="100%">
   <MotionBox
-    position="absolute"
-    top="50%"
-    left="50%"
-    transform="translate(-50%, -50%)"
-    width="120%"
-    height="100%"
-    bgGradient="radial(at center, rgba(164,120,255,0.25), transparent)"
-    filter="blur(100px)"
-    zIndex={-1}
-  />
+  position="absolute"
+  top="50%"
+  left="50%"
+  transform="translate(-50%, -50%)"
+  width="300%"
+  height="300%"
+  bgGradient="radial(at center, rgba(164,120,255,0.35), transparent)"
+  filter="blur(120px)"
+  zIndex={0}
+  pointerEvents="none"
+>
   <MotionText
   mt={6}
   initial={{ opacity: 0, y: 10 }}
@@ -138,9 +139,10 @@ export default function ExperienceHeading() {
   color="whiteAlpha.900"
   textShadow="0 1px 2px rgba(0,0,0,0.2)"
 >
-    Your voice, your peace. <br />
-    Speak, and <Box as="span" fontWeight="bold">Sooth</Box> listens.
-  </MotionText>
+  Your voice, your peace. <br />
+  Speak, and <Box as="span" fontWeight="bold">Sooth</Box> listens.
+</MotionText>
+</MotionBox>
 </Box>
 
         <NextLink href="/demo" passHref>
