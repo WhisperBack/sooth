@@ -85,7 +85,6 @@ export default function ExperienceHeading() {
     ))}
   </Flex>
   </Flex>
-$1
 </Box>
 
       <MotionVStack spacing={12} textAlign="center" py={{ base: 28, md: 40 }}>
@@ -125,19 +124,20 @@ $1
     zIndex={-1}
   />
   <MotionText
-    mt={6}
-    initial={{ opacity: 0, y: 10 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.9, duration: 1.2 }}
-    fontSize={{ base: '2xl', md: '3xl' }}
-    fontWeight="semibold"
-    letterSpacing="-0.5px"
-    lineHeight="1.4"
-    maxW="2xl"
-    mx="auto"
-    color="whiteAlpha.900"
-    textShadow="0 1px 2px rgba(0,0,0,0.2)"
-  >
+  mt={6}
+  initial={{ opacity: 0, y: 10 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ delay: 0.6, duration: 1.2, ease: 'easeOut' }}
+  fontSize={{ base: '2xl', md: '3xl' }}
+  fontWeight="semibold"
+  letterSpacing="-0.5px"
+  lineHeight="1.4"
+  maxW="2xl"
+  mx="auto"
+  color="whiteAlpha.900"
+  textShadow="0 1px 2px rgba(0,0,0,0.2)"
+>
     Your voice, your peace. <br />
     Speak, and <Box as="span" fontWeight="bold">Sooth</Box> listens.
   </MotionText>
