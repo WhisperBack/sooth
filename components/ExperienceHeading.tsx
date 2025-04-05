@@ -1,16 +1,14 @@
 'use client';
 
-import { Heading, Text, VStack, Button, Box, Flex, Link as ChakraLink, SimpleGrid, Input } from '@chakra-ui/react';
+import { Heading, Text, VStack, Button, Box, Flex, Link as ChakraLink } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import NextLink from 'next/link';
 import { Global } from '@emotion/react';
-import { Mic, Sparkles, MessageCircle } from 'lucide-react';
 
 const MotionText = motion(Text);
 const MotionVStack = motion(VStack);
 const MotionHeading = motion(Heading);
 const MotionButton = motion(Button);
-const MotionBox = motion(Box);
 
 const ScrollbarStyles = () => (
   <Global
@@ -54,17 +52,10 @@ export default function ExperienceHeading() {
             width="100%"
             border="1px solid rgba(255, 255, 255, 0.1)"
           >
-            {[
-              { href: '/about', label: 'About' },
-              { href: '/demo', label: 'Demo' },
-              { href: '/privacy', label: 'Privacy' },
-              { href: '/terms', label: 'Terms' },
-              { href: '/how-it-works', label: 'How It Works' },
-              { href: '/contact', label: 'Contact' }
-            ].map((link, i) => (
-              <NextLink key={i} href={link.href} passHref>
+            {['about', 'demo', 'privacy', 'terms', 'how-it-works', 'contact'].map((route, i) => (
+              <NextLink key={i} href={`/${route}`} passHref>
                 <ChakraLink color="whiteAlpha.900" _hover={{ color: 'white' }} fontWeight="semibold" fontSize={{ base: 'sm', md: 'md' }} letterSpacing="tight">
-                  {link.label}
+                  {route.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
                 </ChakraLink>
               </NextLink>
             ))}
@@ -74,25 +65,36 @@ export default function ExperienceHeading() {
 
       <MotionVStack spacing={12} textAlign="center" py={{ base: 28, md: 40 }}>
         <MotionHeading
+          as="h1"
           fontSize={{ base: '6xl', md: '8xl' }}
           fontWeight="extrabold"
-          color="white"
-          textShadow="0 0 24px rgba(255,255,255,0.3)"
+          lineHeight="1.1"
+          display="inline-block"
         >
-          <Box as={motion.span} display="inline-block" color="white" style={{
-            WebkitTextFillColor: 'white',
-            WebkitTextStroke: '2.5px',
-            WebkitTextStrokeColor: 'transparent',
-            backgroundImage: 'linear-gradient(to right, #c084fc, #a78bfa, #60a5fa)',
-            WebkitBackgroundClip: 'text'
-          }}>Experience</Box>{' '}
           <Box
-            as={motion.span}
+            as="span"
             display="inline-block"
-            bgGradient="linear(to-r, #c084fc, #60a5fa)"
-            bgClip="text"
-            fontWeight="extrabold"
-            style={{ WebkitTextStroke: '1px white' }}
+            sx={{
+              bgGradient: 'linear(to-r, purple.300, pink.200)',
+              bgClip: 'text',
+              color: 'transparent',
+              fontWeight: 'extrabold',
+              position: 'relative',
+              WebkitTextStroke: '1px white'
+            }}
+          >
+            Experience{' '}
+          </Box>
+          <Box
+            as="span"
+            display="inline-block"
+            sx={{
+              bgGradient: 'linear(to-r, pink.200, blue.200)',
+              bgClip: 'text',
+              color: 'transparent',
+              fontWeight: 'extrabold',
+              position: 'relative'
+            }}
           >
             Sooth
             <Box
@@ -100,11 +102,11 @@ export default function ExperienceHeading() {
               top="50%"
               left="50%"
               transform="translate(-50%, -50%)"
-              w="150%"
-              h="150%"
+              w="200%"
+              h="200%"
               borderRadius="full"
               bgGradient="radial(at center, rgba(192,132,252,0.3), transparent)"
-              filter="blur(80px)"
+              filter="blur(100px)"
               zIndex={-1}
             />
           </Box>
@@ -135,73 +137,6 @@ export default function ExperienceHeading() {
             Try the Demo
           </MotionButton>
         </NextLink>
-
-        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} pt={16} maxW="6xl">
-          {[
-            { icon: Mic, title: 'Whisper Freely', desc: 'Let your thoughts flow. No judgment. Just space.' },
-            { icon: Sparkles, title: 'Gentle Reflections', desc: 'Sooth listens, then gives you back peace.' },
-            { icon: MessageCircle, title: 'Clarity in Seconds', desc: 'Your insights. Summarized. In your words.' },
-          ].map((item, index) => (
-            <MotionBox
-              key={index}
-              p={6}
-              borderRadius="2xl"
-              bg="rgba(255,255,255,0.06)"
-              backdropFilter="blur(14px)"
-              border="1px solid rgba(255, 255, 255, 0.1)"
-              color="whiteAlpha.900"
-              _hover={{ transform: 'translateY(-4px)', boxShadow: '2xl' }}
-            >
-              <Box mb={4} color="whiteAlpha.700">
-                <item.icon size={32} strokeWidth={1.2} />
-              </Box>
-              <Text fontWeight="bold" fontSize="xl" mb={1}>{item.title}</Text>
-              <Text fontSize="md" opacity={0.8}>{item.desc}</Text>
-            </MotionBox>
-          ))}
-        </SimpleGrid>
-
-        <VStack spacing={6} mt={24} px={6} textAlign="center" maxW="2xl" mx="auto">
-          <Text fontSize="xl" fontStyle="italic" color="whiteAlpha.800">
-            “Sooth was born from the need for a place where thoughts could be spoken freely, without judgment.”
-          </Text>
-          <Text color="whiteAlpha.600">— Jaycob, Founder</Text>
-        </VStack>
-
-        <VStack spacing={6} mt={24} px={6} textAlign="center">
-          <Heading size="lg" color="white">
-            Get Early Access
-          </Heading>
-          <Text color="whiteAlpha.700" maxW="lg" mx="auto">
-            Join the waitlist and be the first to try Sooth. No spam. Just peace.
-          </Text>
-          <Box as="form" maxW="md" w="full" mx="auto">
-            <VStack spacing={4}>
-              <Input
-                type="email"
-                placeholder="Your email"
-                bg="white"
-                color="black"
-                borderRadius="md"
-                size="lg"
-                _placeholder={{ color: 'gray.500' }}
-              />
-              <Button type="submit" colorScheme="blue" size="lg" w="full">
-                Join Waitlist
-              </Button>
-            </VStack>
-          </Box>
-        </VStack>
-
-        <SimpleGrid mt={24} pt={12} borderTop="1px solid rgba(255,255,255,0.1)" columns={3} spacing={8} color="whiteAlpha.600" fontSize="sm" textAlign="center">
-          <NextLink href="/about">About</NextLink>
-          <NextLink href="/demo">Demo</NextLink>
-          <NextLink href="/privacy">Privacy</NextLink>
-        </SimpleGrid>
-
-        <Box mt={20} textAlign="center" fontSize="sm" color="whiteAlpha.700" px={6} pb={10}>
-          “Peace begins with a whisper.”
-        </Box>
       </MotionVStack>
     </>
   );
