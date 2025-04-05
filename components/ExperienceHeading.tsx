@@ -133,7 +133,8 @@ export default function ExperienceHeading() {
               bg="rgba(255,255,255,0.06)"
               backdropFilter="blur(14px)"
               border="1px solid rgba(255, 255, 255, 0.1)"
-              _hover={{ transform: 'translateY(-4px)', boxShadow: '2xl' }}
+              boxShadow="0 6px 18px rgba(168, 225, 210, 0.15)"
+              _hover={{ transform: 'translateY(-6px)', boxShadow: '0 10px 24px rgba(168, 225, 210, 0.25)' }}
             >
               <Box mb={4} color="brand.softGray">
                 <item.icon size={32} strokeWidth={1.2} />
