@@ -142,7 +142,7 @@ export default function ExperienceHeading() {
     as="span"
     fontSize="8xl"
     bgGradient="linear(to-r, blue.300, purple.300)"
-    textShadow="0 0 32px rgba(255, 255, 255, 0.1)"
+    
     bgClip="text"
   >
     Experience
