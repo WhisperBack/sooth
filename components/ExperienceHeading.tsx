@@ -47,7 +47,7 @@ export default function ExperienceHeading() {
         <Flex justify="center">
           <Flex
             as="nav"
-            backgroundImage="linear(to right, var(--chakra-colors-purple-700), var(--chakra-colors-blue-700))"
+            backgroundImage="linear(to right, var(--chakra-colors-blue-400), var(--chakra-colors-purple-500))"
             backgroundColor="transparent"
             backgroundSize="cover"
             backgroundPosition="center"
