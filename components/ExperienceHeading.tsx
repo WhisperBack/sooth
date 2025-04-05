@@ -85,6 +85,7 @@ export default function ExperienceHeading() {
     ))}
   </Flex>
   </Flex>
+$1
 </Box>
 
       <MotionVStack spacing={12} textAlign="center" py={{ base: 28, md: 40 }}>
@@ -113,36 +114,33 @@ export default function ExperienceHeading() {
 
         <Box position="relative" display="inline-block" width="100%">
   <MotionBox
-  position="absolute"
-  top="50%"
-  left="50%"
-  transform="translate(-50%, -50%)"
-  width="300%"
-  height="300%"
-  bgGradient="radial(at center, rgba(164,120,255,0.35), transparent)"
-  filter="blur(120px)"
-  zIndex={0}
-  pointerEvents="none"
->
+    position="absolute"
+    top="50%"
+    left="50%"
+    transform="translate(-50%, -50%)"
+    width="120%"
+    height="100%"
+    bgGradient="radial(at center, rgba(255,255,255,0.08), transparent)"
+    filter="blur(60px)"
+    zIndex={-1}
+  />
   <MotionText
-  mt={6}
-  initial={{ opacity: 0, y: 10 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ delay: 0.6, duration: 1.2, ease: 'easeOut' }}
-  fontSize={{ base: '2xl', md: '3xl' }}
-  fontWeight="semibold"
-  letterSpacing="-0.5px"
-  lineHeight="1.4"
-  maxW="2xl"
-  mx="auto"
-  color="whiteAlpha.900"
-  textShadow="0 1px 2px rgba(0,0,0,0.2)"
->
-  Your voice, your peace. <br />
-  Speak, and <Box as="span" fontWeight="bold">Sooth</Box> listens.
-</MotionText>
-</MotionBox>
+    mt={6}
+    initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.9, duration: 1.2 }}
+    fontSize={{ base: '2xl', md: '3xl' }}
+    fontWeight="semibold"
+    letterSpacing="-0.5px"
+    lineHeight="1.4"
+    maxW="2xl"
+    mx="auto"
+    color="whiteAlpha.900"
+    textShadow="0 1px 2px rgba(0,0,0,0.2)"
+  >
+    Your voice, your peace. <br />
+    Speak, and <Box as="span" fontWeight="bold">Sooth</Box> listens.
+  </MotionText>
 </Box>
 
         <NextLink href="/demo" passHref>
