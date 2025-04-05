@@ -77,19 +77,19 @@ export default function ExperienceHeading() {
   fontSize="8xl"
   fontWeight="extrabold"
   lineHeight="1"
-  letterSpacing="-1px"
+  letterSpacing="-0.5px"
 >
   <Box
     as="span"
-    bgGradient="linear(to-r, blue.400, purple.400)"
+    bgGradient="linear(to-r, blue.300, purple.300)"
     bgClip="text"
   >
     Experience
   </Box>{' '}
   <Box
     as="span"
-    fontSize={{ base: '7xl', md: '8xl' }}
-    bgGradient="linear(to-r, pink.200, purple.300, blue.300)"
+    fontSize="8xl"
+    bgGradient="linear(to-r, pink.300, purple.300, blue.300)"
     bgClip="text"
   >
     Sooth
