@@ -140,6 +140,7 @@ export default function ExperienceHeading() {
   />
   <Box
     as="span"
+    fontSize="8xl"
     bgGradient="linear(to-r, blue.300, purple.300)"
     bgClip="text"
   >
