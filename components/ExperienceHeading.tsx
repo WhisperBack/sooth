@@ -80,19 +80,19 @@ export default function ExperienceHeading() {
           textShadow="0 0 24px rgba(255,255,255,0.3)"
         >
           <Box as={motion.span} display="inline-block" color="white" style={{
-            WebkitTextFillColor: 'white',
-            WebkitTextStroke: '3px transparent',
-            backgroundImage: 'linear-gradient(to right, #c084fc, #a78bfa, #60a5fa, #00ff99)',
+            WebkitTextFillColor: 'brand.white',
+            WebkitTextStroke: '2px transparent',
+            backgroundImage: 'linear-gradient(to right, #D8BFD8, #A8D5BA, #A9D1E8)',
             WebkitBackgroundClip: 'text',
-            textShadow: '0 0 32px rgba(167, 139, 250, 1), 0 0 8px rgba(0, 255, 153, 0.6)'
+            textShadow: '0 0 32px rgba(168, 225, 210, 0.6), 0 0 12px rgba(216, 191, 216, 0.5)'
           }}>Experience</Box>{' '}
           <Box
             as={motion.span}
             display="inline-block"
-            bgGradient="linear(to-r, #c084fc, #60a5fa)"
+            bgGradient="linear(to-r, brand.lavender, brand.blue)"
             bgClip="text"
             fontWeight="extrabold"
-            style={{ WebkitTextStroke: '1px white' }}
+            style={{ WebkitTextStroke: '1px rgba(216,191,216,0.8)' }}
           >
             Sooth
             <Box
@@ -103,7 +103,7 @@ export default function ExperienceHeading() {
               w="150%"
               h="150%"
               borderRadius="full"
-              bgGradient="radial(at center, rgba(192,132,252,0.3), transparent)"
+              bgGradient="radial(at center, rgba(168,225,210,0.2), transparent)"
               filter="blur(80px)"
               zIndex={-1}
             />
