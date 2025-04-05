@@ -119,8 +119,8 @@ export default function ExperienceHeading() {
     transform="translate(-50%, -50%)"
     width="120%"
     height="100%"
-    bgGradient="radial(at center, rgba(255,255,255,0.08), transparent)"
-    filter="blur(60px)"
+    bgGradient="radial(at center, rgba(164,120,255,0.25), transparent)"
+    filter="blur(100px)"
     zIndex={-1}
   />
   <MotionText
