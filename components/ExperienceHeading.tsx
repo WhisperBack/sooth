@@ -115,7 +115,7 @@ export default function ExperienceHeading() {
         </MotionText>
 
         <NextLink href="/demo" passHref>
-          <MotionButton as="a" size="lg" px={10} py={6} fontSize="lg" variant="solid">
+          <MotionButton as="a" size="lg" px={10} py={6} fontSize="lg" variant="solid" backdropFilter="blur(20px)" boxShadow="0 4px 24px rgba(248, 192, 229, 0.4)">
             Try the Demo
           </MotionButton>
         </NextLink>
