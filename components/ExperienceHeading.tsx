@@ -73,7 +73,7 @@ export default function ExperienceHeading() {
         </Flex>
       </Box>
 
-      <MotionVStack spacing={12} textAlign="center" py={{ base: 28, md: 40 }}>
+      <MotionVStack spacing={12} textAlign="center" py={{ base: 28, md: 40 }} bgGradient="linear(to-br, brand.green, brand.blue)" minH="100vh" w="full">
         <MotionHeading
           fontSize={{ base: '6xl', md: '8xl' }}
           fontWeight="extrabold"
