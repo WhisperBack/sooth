@@ -47,7 +47,7 @@ export default function ExperienceHeading() {
         <Flex justify="center">
           <Flex
             as="nav"
-            backgroundImage="linear(to right, var(--chakra-colors-blue-100), var(--chakra-colors-purple-200), var(--chakra-colors-pink-200))"
+            backgroundImage="linear(to right, var(--chakra-colors-blue-200), var(--chakra-colors-purple-300), var(--chakra-colors-pink-300))"
             backgroundColor="rgba(255, 255, 255, 0.025)"
             backgroundSize="cover"
             backgroundPosition="center"
@@ -60,6 +60,7 @@ export default function ExperienceHeading() {
             wrap="wrap"
             width="100%"
             border="1px solid rgba(255, 255, 255, 0.05)"
+boxShadow="0 4px 24px rgba(0, 0, 0, 0.2)"
           >
             {[
               { href: '/about', label: 'About' },
