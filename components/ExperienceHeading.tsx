@@ -118,27 +118,37 @@ export default function ExperienceHeading() {
 
       <MotionVStack spacing={12} textAlign="center" py={{ base: 28, md: 40 }}>
         <MotionHeading
-          fontSize="8xl"
-          fontWeight="extrabold"
-          lineHeight="1"
-          letterSpacing="-0.5px"
-        >
-          <Box
-            as="span"
-            bgGradient="linear(to-r, blue.300, purple.300)"
-            bgClip="text"
-          >
-            Experience
-          </Box>{' '}
-          <Box
-            as="span"
-            fontSize="8xl"
-            bgGradient="linear(to-r, blue.200, purple.300, pink.200)" backgroundSize="300% 300%" animation="drift 20s ease-in-out infinite"
-            bgClip="text"
-          >
-            Sooth
-          </Box>
-        </MotionHeading>
+  position="relative"
+>
+  <MotionBox
+    position="absolute"
+    top="50%"
+    left="50%"
+    transform="translate(-50%, -50%)"
+    w="200%"
+    h="200%"
+    bgGradient="radial(at center, rgba(255,255,255,0.05), transparent)"
+    filter="blur(100px)"
+    zIndex={-1}
+  />
+  <Box
+    as="span"
+    bgGradient="linear(to-r, blue.300, purple.300)"
+    bgClip="text"
+  >
+    Experience
+  </Box>{' '}
+  <Box
+    as="span"
+    fontSize="8xl"
+    bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
+    backgroundSize="300% 300%"
+    animation="drift 20s ease-in-out infinite"
+    bgClip="text"
+  >
+    Sooth
+  </Box>
+</MotionHeading>
 
         <Box position="relative" display="inline-block" width="100%">
           <MotionBox
@@ -154,9 +164,9 @@ export default function ExperienceHeading() {
           />
           <MotionText
             mt={6}
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9, duration: 1.2 }}
+            transition={{ delay: 1.0, duration: 1.2, ease: 'easeOut' }}
             fontSize={{ base: '2xl', md: '3xl' }}
             fontWeight="semibold"
             letterSpacing="-0.5px"
@@ -185,20 +195,7 @@ export default function ExperienceHeading() {
               zIndex={-1}
             />
             <MotionButton
-              as="a"
-              size="lg"
-              px={10}
-              py={6}
-              fontSize="lg"
-              fontWeight="bold"
-              color="white"
-              borderRadius="full"
-              bgGradient="linear(to-r, blue.200, purple.200, pink.200)"
-              backdropFilter="blur(20px)"
-              border="1px solid rgba(255,255,255,0.3)"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.2, duration: 0.6, ease: 'easeOut' }}
+              whileHover={{ scale: 1.04 }}
               _hover={{
                 transform: 'translateY(-2px)',
                 boxShadow: '0 0 30px rgba(167, 139, 250, 0.4)'
