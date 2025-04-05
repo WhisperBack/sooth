@@ -74,13 +74,13 @@ export default function ExperienceHeading() {
 
       <MotionVStack spacing={12} textAlign="center" py={{ base: 28, md: 40 }}>
         <MotionHeading
-  fontSize="7xl"
-  fontWeight="semibold"
-  bgGradient="linear(to-r, purple.300, blue.300)"
+  fontSize="8xl"
+  fontWeight="extrabold"
+  bgGradient="linear(to-r, purple.400, blue.400)"
   bgClip="text"
-  lineHeight="1.1"
-  letterSpacing="-0.5px"
-  textShadow="0 1px 2px rgba(0,0,0,0.15)"
+  lineHeight="1"
+  letterSpacing="-1px"
+  textShadow="0 2px 4px rgba(0,0,0,0.25)"
 >
   Experience Sooth
 </MotionHeading>
