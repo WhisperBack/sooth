@@ -76,11 +76,10 @@ export default function ExperienceHeading() {
         <MotionHeading
   fontSize="8xl"
   fontWeight="extrabold"
-  bgGradient="linear(to-r, blue.400, purple.400)"
+  bgGradient="linear(to-r, blue.400, purple.500)"
   bgClip="text"
   lineHeight="1"
   letterSpacing="-1px"
-  textShadow="0 2px 4px rgba(0,0,0,0.25)"
 >
   Experience Sooth
 </MotionHeading>
