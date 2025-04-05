@@ -181,7 +181,7 @@ export default function ExperienceHeading() {
           <NextLink href="/privacy">Privacy</NextLink>
         </SimpleGrid>
 
-        <Box mt={20} textAlign="center" fontSize="sm" px={6} pb={10}>
+        <Box mt={20} textAlign="center" fontSize="sm" px={6} pb={10} color="brand.taupe" textShadow="0 1px 6px rgba(168, 225, 210, 0.3)">
           “Peace begins with a whisper.”
         </Box>
       </MotionVStack>
