@@ -110,7 +110,7 @@ export default function ExperienceHeading() {
           </Box>
         </MotionHeading>
 
-        <MotionText fontSize="2xl" fontWeight="semibold" letterSpacing="tight" lineHeight="1.4" maxW="2xl" mx="auto">
+        <MotionText fontSize={{ base: '2xl', md: '3xl' }} fontWeight="medium" lineHeight="1.5" letterSpacing="tight" color="brand.taupe" textShadow="0 1px 8px rgba(168, 225, 210, 0.4)" maxW="2xl" mx="auto">
           Your voice, your peace. Speak, and Sooth listens.
         </MotionText>
 
