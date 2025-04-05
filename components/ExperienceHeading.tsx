@@ -39,7 +39,23 @@ const ScrollbarStyles = () => (
 
 export default function ExperienceHeading() {
   return (
-    <Box minH="100vh" w="full" bgGradient="linear(to-b, #A8D5BA, #A9D1E8)" overflow="hidden">
+    <Box
+  minH="100vh"
+  w="full"
+  position="relative"
+  bg="linear-gradient(to bottom, #A8D5BA 0%, #A9D1E8 100%)"
+  overflow="hidden"
+  _before={{
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    w: '100%',
+    h: '100%',
+    bg: 'radial-gradient(ellipse at 50% 20%, rgba(255, 255, 255, 0.08), transparent 70%)',
+    zIndex: 0
+  }}
+>
       <ScrollbarStyles />
 
       {/* Sticky Top Navigation */}
