@@ -172,25 +172,41 @@ export default function ExperienceHeading() {
         </Box>
 
         <NextLink href="/demo" passHref>
-          <MotionButton
-            as="a"
-            size="lg"
-            px={10}
-            py={6}
-            fontSize="lg"
-            fontWeight="bold"
-            color="white"
-            borderRadius="full"
-            bgGradient="linear(to-r, rgba(192, 132, 252, 0.8), rgba(96, 165, 250, 0.8))"
-            backdropFilter="blur(20px)"
-            border="1px solid rgba(255,255,255,0.3)"
-            _hover={{
-              bgGradient: 'linear(to-r, rgba(192, 132, 252, 1), rgba(96, 165, 250, 1))',
-              boxShadow: '0 0 50px rgba(167, 139, 250, 0.7)'
-            }}
-          >
-            Try the Demo
-          </MotionButton>
+          <Box position="relative" display="inline-block">
+            <Box
+              position="absolute"
+              top="50%"
+              left="50%"
+              transform="translate(-50%, -50%)"
+              w="200%"
+              h="200%"
+              bgGradient="radial(at center, rgba(255,255,255,0.08), transparent)"
+              filter="blur(80px)"
+              zIndex={-1}
+            />
+            <MotionButton
+              as="a"
+              size="lg"
+              px={10}
+              py={6}
+              fontSize="lg"
+              fontWeight="bold"
+              color="white"
+              borderRadius="full"
+              bgGradient="linear(to-r, blue.200, purple.200, pink.200)"
+              backdropFilter="blur(20px)"
+              border="1px solid rgba(255,255,255,0.3)"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1.2, duration: 0.6, ease: 'easeOut' }}
+              _hover={{
+                transform: 'translateY(-2px)',
+                boxShadow: '0 0 30px rgba(167, 139, 250, 0.4)'
+              }}
+            >
+              Try the Demo
+            </MotionButton>
+          </Box>
         </NextLink>
 
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} pt={16} maxW="6xl">
