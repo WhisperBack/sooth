@@ -76,7 +76,7 @@ export default function ExperienceHeading() {
         <MotionHeading
   fontSize="8xl"
   fontWeight="extrabold"
-  bgGradient="linear(to-r, purple.400, blue.400)"
+  bgGradient="linear(to-r, blue.400, purple.400)"
   bgClip="text"
   lineHeight="1"
   letterSpacing="-1px"
