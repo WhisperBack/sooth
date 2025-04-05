@@ -45,103 +45,102 @@ export default function ExperienceHeading() {
       {/* Sticky Top Navigation */}
       <Box position="sticky" top={0} zIndex={10} width="100%" px={{ base: 4, md: 8 }}>
         <Flex justify="center">
-  <Flex
-    as="nav"
-    bg="rgba(0, 0, 0, 0.2)"
-    backdropFilter="blur(20px)"
-    borderRadius="3xl"
-    px={{ base: 4, md: 12 }}
-    py={4}
-    gap={6}
-    justify="center"
-    wrap="wrap"
-    width="100%"
-    border="1px solid rgba(255, 255, 255, 0.1)"
-  >
-    {[
-      { href: '/about', label: 'About' },
-      { href: '/demo', label: 'Demo' },
-      { href: '/privacy', label: 'Privacy' },
-      { href: '/terms', label: 'Terms' },
-      { href: '/how-it-works', label: 'How It Works' },
-      { href: '/contact', label: 'Contact' }
-    ].map((link, i) => (
-      <NextLink key={i} href={link.href} passHref>
-        <ChakraLink
-          fontWeight="semibold"
-          fontSize={{ base: 'sm', md: 'md' }}
-          letterSpacing="tight"
-          bgClip="text"
-          bgGradient="linear(to-r, whiteAlpha.800, whiteAlpha.900)"
-          _hover={{
-            bgGradient: 'linear(to-r, blue.300, purple.300)',
-            color: 'transparent',
-            bgClip: 'text'
-          }}
-        >
-          {link.label}
-        </ChakraLink>
-      </NextLink>
-    ))}
-  </Flex>
-  </Flex>
-$1
-</Box>
+          <Flex
+            as="nav"
+            bgGradient="linear(to-r, purple.800, blue.800)"
+            backdropFilter="blur(20px)"
+            borderRadius="3xl"
+            px={{ base: 4, md: 12 }}
+            py={4}
+            gap={6}
+            justify="center"
+            wrap="wrap"
+            width="100%"
+            border="1px solid rgba(255, 255, 255, 0.1)"
+          >
+            {[
+              { href: '/about', label: 'About' },
+              { href: '/demo', label: 'Demo' },
+              { href: '/privacy', label: 'Privacy' },
+              { href: '/terms', label: 'Terms' },
+              { href: '/how-it-works', label: 'How It Works' },
+              { href: '/contact', label: 'Contact' }
+            ].map((link, i) => (
+              <NextLink key={i} href={link.href} passHref>
+                <ChakraLink
+                  fontWeight="semibold"
+                  fontSize={{ base: 'sm', md: 'md' }}
+                  letterSpacing="tight"
+                  bgClip="text"
+                  bgGradient="linear(to-r, whiteAlpha.800, whiteAlpha.900)"
+                  _hover={{
+                    bgGradient: 'linear(to-r, blue.300, purple.300)',
+                    color: 'transparent',
+                    bgClip: 'text'
+                  }}
+                >
+                  {link.label}
+                </ChakraLink>
+              </NextLink>
+            ))}
+          </Flex>
+        </Flex>
+      </Box>
 
       <MotionVStack spacing={12} textAlign="center" py={{ base: 28, md: 40 }}>
         <MotionHeading
-  fontSize="8xl"
-  fontWeight="extrabold"
-  lineHeight="1"
-  letterSpacing="-0.5px"
->
-  <Box
-    as="span"
-    bgGradient="linear(to-r, blue.300, purple.300)"
-    bgClip="text"
-  >
-    Experience
-  </Box>{' '}
-  <Box
-    as="span"
-    fontSize="8xl"
-    bgGradient="linear(to-r, pink.300, purple.300, blue.300)"
-    bgClip="text"
-  >
-    Sooth
-  </Box>
-</MotionHeading>
+          fontSize="8xl"
+          fontWeight="extrabold"
+          lineHeight="1"
+          letterSpacing="-0.5px"
+        >
+          <Box
+            as="span"
+            bgGradient="linear(to-r, blue.300, purple.300)"
+            bgClip="text"
+          >
+            Experience
+          </Box>{' '}
+          <Box
+            as="span"
+            fontSize="8xl"
+            bgGradient="linear(to-r, pink.300, purple.300, blue.300)"
+            bgClip="text"
+          >
+            Sooth
+          </Box>
+        </MotionHeading>
 
         <Box position="relative" display="inline-block" width="100%">
-  <MotionBox
-    position="absolute"
-    top="50%"
-    left="50%"
-    transform="translate(-50%, -50%)"
-    width="120%"
-    height="100%"
-    bgGradient="radial(at center, rgba(255,255,255,0.08), transparent)"
-    filter="blur(60px)"
-    zIndex={-1}
-  />
-  <MotionText
-    mt={6}
-    initial={{ opacity: 0, y: 10 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.9, duration: 1.2 }}
-    fontSize={{ base: '2xl', md: '3xl' }}
-    fontWeight="semibold"
-    letterSpacing="-0.5px"
-    lineHeight="1.4"
-    maxW="2xl"
-    mx="auto"
-    color="whiteAlpha.900"
-    textShadow="0 1px 2px rgba(0,0,0,0.2)"
-  >
-    Your voice, your peace. <br />
-    Speak, and <Box as="span" fontWeight="bold">Sooth</Box> listens.
-  </MotionText>
-</Box>
+          <MotionBox
+            position="absolute"
+            top="50%"
+            left="50%"
+            transform="translate(-50%, -50%)"
+            width="120%"
+            height="100%"
+            bgGradient="radial(at center, rgba(255,255,255,0.08), transparent)"
+            filter="blur(60px)"
+            zIndex={-1}
+          />
+          <MotionText
+            mt={6}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9, duration: 1.2 }}
+            fontSize={{ base: '2xl', md: '3xl' }}
+            fontWeight="semibold"
+            letterSpacing="-0.5px"
+            lineHeight="1.4"
+            maxW="2xl"
+            mx="auto"
+            color="whiteAlpha.900"
+            textShadow="0 1px 2px rgba(0,0,0,0.2)"
+          >
+            Your voice, your peace. <br />
+            Speak, and <Box as="span" fontWeight="bold">Sooth</Box> listens.
+          </MotionText>
+        </Box>
 
         <NextLink href="/demo" passHref>
           <MotionButton
@@ -232,6 +231,6 @@ $1
           “Peace begins with a whisper.”
         </Box>
       </MotionVStack>
-</>
+    </>
   );
 }
