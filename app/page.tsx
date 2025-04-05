@@ -7,7 +7,7 @@ export default function HomePage() {
   return (
     <Box
       minH="100vh"
-      bgGradient="linear(to right, brand.green, brand.blue)" // Using Chakra's theme gradient (green → blue)
+      bgGradient="linear(to right, #68D391, #63B3ED)"  // Green -> Blue gradient using Chakra's default colors
       display="flex"
       alignItems="center"
       justifyContent="center"
