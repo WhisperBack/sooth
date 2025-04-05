@@ -7,7 +7,7 @@ export default function HomePage() {
   return (
     <Box
       minH="100vh"
-      bgGradient="linear(to-b, purple.100, blue.100)"
+      bgGradient="linear(to-r, purple.100, blue.100)"
       display="flex"
       flexDirection="column"
     >
