@@ -45,32 +45,48 @@ export default function ExperienceHeading() {
       {/* Sticky Top Navigation */}
       <Box position="sticky" top={0} zIndex={10} width="100%" px={{ base: 4, md: 8 }}>
         <Flex justify="center">
-          <Flex as="nav" bg="rgba(0, 0, 0, 0.2)" backdropFilter="blur(20px)" borderRadius="3xl"
-            px={{ base: 4, md: 12 }}
-            py={4}
-            gap={6}
-            justify="center"
-            wrap="wrap"
-            width="100%"
-            border="1px solid rgba(255, 255, 255, 0.1)"
-          >
-            {[
-              { href: '/about', label: 'About' },
-              { href: '/demo', label: 'Demo' },
-              { href: '/privacy', label: 'Privacy' },
-              { href: '/terms', label: 'Terms' },
-              { href: '/how-it-works', label: 'How It Works' },
-              { href: '/contact', label: 'Contact' }
-            ].map((link, i) => (
-              <NextLink key={i} href={link.href} passHref>
-                <ChakraLink color="whiteAlpha.900" _hover={{ color: 'white' }} fontWeight="semibold" fontSize={{ base: 'sm', md: 'md' }} letterSpacing="tight">
-                  {link.label}
-                </ChakraLink>
-              </NextLink>
-            ))}
-          </Flex>
-        </Flex>
-      </Box>
+  <Flex
+    as="nav"
+    bg="rgba(0, 0, 0, 0.2)"
+    backdropFilter="blur(20px)"
+    borderRadius="3xl"
+    px={{ base: 4, md: 12 }}
+    py={4}
+    gap={6}
+    justify="center"
+    wrap="wrap"
+    width="100%"
+    border="1px solid rgba(255, 255, 255, 0.1)"
+  >
+    {[
+      { href: '/about', label: 'About' },
+      { href: '/demo', label: 'Demo' },
+      { href: '/privacy', label: 'Privacy' },
+      { href: '/terms', label: 'Terms' },
+      { href: '/how-it-works', label: 'How It Works' },
+      { href: '/contact', label: 'Contact' }
+    ].map((link, i) => (
+      <NextLink key={i} href={link.href} passHref>
+        <ChakraLink
+          fontWeight="semibold"
+          fontSize={{ base: 'sm', md: 'md' }}
+          letterSpacing="tight"
+          bgClip="text"
+          bgGradient="linear(to-r, whiteAlpha.800, whiteAlpha.900)"
+          _hover={{
+            bgGradient: 'linear(to-r, blue.300, purple.300)',
+            color: 'transparent',
+            bgClip: 'text'
+          }}
+        >
+          {link.label}
+        </ChakraLink>
+      </NextLink>
+    ))}
+  </Flex>
+  </Flex>
+$1
+</Box>
 
       <MotionVStack spacing={12} textAlign="center" py={{ base: 28, md: 40 }}>
         <MotionHeading
@@ -216,6 +232,6 @@ export default function ExperienceHeading() {
           “Peace begins with a whisper.”
         </Box>
       </MotionVStack>
-    </>
+</>
   );
 }
