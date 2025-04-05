@@ -73,14 +73,14 @@ export default function ExperienceHeading() {
         </Flex>
       </Box>
 
-      <MotionVStack spacing={12} textAlign="center" py={{ base: 28, md: 40 }} bgGradient="linear(to-br, brand.green, brand.blue)" minH="100vh" w="full">
+      <MotionVStack spacing={12} textAlign="center" py={{ base: 28, md: 40 }} bgGradient="linear(to-br, #A8D5BA, #A9D1E8)" minH="100vh" w="full">
         <MotionHeading
           fontSize={{ base: '6xl', md: '8xl' }}
           fontWeight="extrabold"
           textShadow="0 0 24px rgba(255,255,255,0.3)"
         >
           <Box as={motion.span} display="inline-block" color="white" style={{
-            WebkitTextFillColor: 'brand.white',
+            WebkitTextFillColor: '#FFFFFF',
             WebkitTextStroke: '2px transparent',
             backgroundImage: 'linear-gradient(to right, #D8BFD8, #A8D5BA, #A9D1E8)',
             WebkitBackgroundClip: 'text',
@@ -89,7 +89,7 @@ export default function ExperienceHeading() {
           <Box
             as={motion.span}
             display="inline-block"
-            bgGradient="linear(to-r, brand.lavender, brand.blue)"
+            bgGradient="linear(to-r, #D8BFD8, #A9D1E8)"
             bgClip="text"
             fontWeight="extrabold"
             style={{ WebkitTextStroke: '1px rgba(216,191,216,0.8)' }}
@@ -110,7 +110,7 @@ export default function ExperienceHeading() {
           </Box>
         </MotionHeading>
 
-        <MotionText fontSize={{ base: '2xl', md: '3xl' }} fontWeight="medium" lineHeight="1.5" letterSpacing="tight" color="brand.taupe" textShadow="0 1px 8px rgba(168, 225, 210, 0.4)" maxW="2xl" mx="auto">
+        <MotionText fontSize={{ base: '2xl', md: '3xl' }} fontWeight="medium" lineHeight="1.5" letterSpacing="tight" color="#D8CFC4" textShadow="0 1px 8px rgba(168, 225, 210, 0.4)" maxW="2xl" mx="auto">
           Your voice, your peace. Speak, and Sooth listens.
         </MotionText>
 
@@ -136,7 +136,7 @@ export default function ExperienceHeading() {
               boxShadow="0 6px 18px rgba(168, 225, 210, 0.15)"
               _hover={{ transform: 'translateY(-6px)', boxShadow: '0 10px 24px rgba(168, 225, 210, 0.25)' }}
             >
-              <Box mb={4} color="brand.softGray">
+              <Box mb={4} color="#D3D3D3">
                 <item.icon size={32} strokeWidth={1.2} />
               </Box>
               <Text fontWeight="bold" fontSize="xl" mb={1}>{item.title}</Text>
@@ -164,8 +164,8 @@ export default function ExperienceHeading() {
                 placeholder="Your email"
                 variant="outline"
                 size="lg"
-                borderColor="brand.softGray"
-                focusBorderColor="brand.green"
+                borderColor="#D3D3D3"
+                focusBorderColor="#A8D5BA"
                 _placeholder={{ color: 'gray.500' }}
               />
               <Button type="submit" variant="solid" size="lg" w="full" backdropFilter="blur(12px)" boxShadow="0 4px 20px rgba(168, 225, 210, 0.3)" _hover={{ boxShadow: '0 6px 24px rgba(168, 225, 210, 0.5)' }}>
