@@ -39,6 +39,14 @@ const ScrollbarStyles = () => (
         0% { background-position: 0% 50%; }
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
+      }
+
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.6; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.05); }
+      }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
       
 
       @keyframes drift {
@@ -143,7 +151,7 @@ export default function ExperienceHeading() {
     fontSize="8xl"
     bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
     backgroundSize="300% 300%"
-    animation="drift 20s ease-in-out infinite"
+    animation="drift 20s ease-in-out infinite" style={{ animationDelay: '0.4s' }}
     
     bgClip="text"
   >
@@ -189,7 +197,7 @@ export default function ExperienceHeading() {
             textShadow="0 1px 2px rgba(0,0,0,0.2)"
           >
             Your voice, your peace. <br />
-            Speak, and <Box as="span" fontWeight="bold">Sooth</Box> listens.
+            Speak, and <Box as="span" fontWeight="bold" textShadow="0 0 8px rgba(255,255,255,0.1)">Sooth</Box> listens.
           </MotionText>
         </Box>
 
@@ -205,6 +213,7 @@ export default function ExperienceHeading() {
               bgGradient="radial(at center, rgba(255,255,255,0.08), transparent)"
               filter="blur(80px)"
               zIndex={-1}
+              animation="pulseGlow 3s ease-in-out infinite"
             />
             <MotionButton
               as="a"
