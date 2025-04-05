@@ -141,7 +141,7 @@ export default function ExperienceHeading() {
   <Box
     as="span"
     fontSize="8xl"
-    bgGradient="linear(to-r, blue.300, purple.300)"
+    bgGradient="linear(to-r, blue.200, purple.300, whiteAlpha.800)"
     backgroundSize="300% 300%"
     animation="drift 20s ease-in-out infinite"
     
