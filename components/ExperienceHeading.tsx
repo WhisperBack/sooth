@@ -88,7 +88,7 @@ export default function ExperienceHeading() {
   </Box>{' '}
   <Box
     as="span"
-    bgGradient="linear(to-r, green.200, gray.200, pink.200, purple.200, gray.400)"
+    bgGradient="linear(to-r, green.300, pink.200, purple.300, blue.300, gray.300)"
     bgClip="text"
   >
     Sooth
