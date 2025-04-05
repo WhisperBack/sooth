@@ -107,7 +107,7 @@ export default function ExperienceHeading() {
           </MotionButton>
         </NextLink>
 
-        {/* Remaining content stays unchanged */}
+        
 
       </MotionVStack>
     </>
