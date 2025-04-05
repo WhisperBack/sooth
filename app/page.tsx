@@ -9,9 +9,7 @@ export default function HomePage() {
       minH="100vh"
       bgGradient="linear(to right, green.200, blue.200)"
       display="flex"
-      alignItems="center"
-      justifyContent="center"
-      px={4}
+      flexDirection="column"
     >
       <ExperienceHeading />
     </Box>
