@@ -101,13 +101,13 @@ export default function ExperienceHeading() {
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.3, duration: 0.6 }}
   fontSize={{ base: '2xl', md: '3xl' }}
-  fontWeight="medium"
-  letterSpacing="-0.25px"
+  fontWeight="semibold"
+  letterSpacing="-0.5px"
   lineHeight="1.4"
   maxW="2xl"
   mx="auto"
-  bgGradient="linear(to-r, blue.300, purple.300)"
-  bgClip="text"
+  color="whiteAlpha.900"
+  textShadow="0 1px 2px rgba(0,0,0,0.2)"
 >
   Your voice, your peace. <br />
   Speak, and Sooth listens.
