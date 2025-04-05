@@ -80,7 +80,7 @@ export default function ExperienceHeading() {
             backdropFilter="blur(30px)"
             borderRadius="2xl"
             px={{ base: 4, md: 12 }}
-            animation="drift 20s ease-in-out infinite"
+            animation="drift 16s ease-in-out infinite"
             py={4}
             gap={6}
             justify="center"
@@ -141,7 +141,7 @@ export default function ExperienceHeading() {
   <Box
     as="span"
     fontSize="8xl"
-    bgGradient="linear(to-r, blue.200, purple.300, whiteAlpha.800)"
+    bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
     backgroundSize="300% 300%"
     animation="drift 20s ease-in-out infinite"
     
