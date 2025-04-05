@@ -96,9 +96,22 @@ export default function ExperienceHeading() {
   </Box>
 </MotionHeading>
 
-        <MotionText fontSize="2xl" color="whiteAlpha.900" fontWeight="semibold" letterSpacing="tight" lineHeight="1.4" maxW="2xl" mx="auto">
-          Your voice, your peace. Speak, and Sooth listens.
-        </MotionText>
+        <MotionText
+  initial={{ opacity: 0, y: 10 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.3, duration: 0.6 }}
+  fontSize={{ base: '2xl', md: '3xl' }}
+  fontWeight="medium"
+  letterSpacing="-0.25px"
+  lineHeight="1.4"
+  maxW="2xl"
+  mx="auto"
+  bgGradient="linear(to-r, blue.300, purple.300)"
+  bgClip="text"
+>
+  Your voice, your peace. <br />
+  Speak, and Sooth listens.
+</MotionText>
 
         <NextLink href="/demo" passHref>
           <MotionButton
