@@ -88,7 +88,7 @@ export default function ExperienceHeading() {
   </Box>{' '}
   <Box
     as="span"
-    fontSize={{ base: '8xl', md: '9xl' }}
+    fontSize={{ base: '7xl', md: '8xl' }}
     bgGradient="linear(to-r, pink.200, purple.300, blue.300)"
     bgClip="text"
   >
