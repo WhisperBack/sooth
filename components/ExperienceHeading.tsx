@@ -1,6 +1,7 @@
 'use client';
 
 import { Heading, Text, VStack, Button, Box, Flex, Link as ChakraLink, SimpleGrid, Input } from '@chakra-ui/react';
+import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import NextLink from 'next/link';
 import { Global } from '@emotion/react';
@@ -44,6 +45,7 @@ const ScrollbarStyles = () => (
 );
 
 export default function ExperienceHeading() {
+  const pathname = usePathname();
   return (
     <>
       <ScrollbarStyles />
@@ -80,7 +82,8 @@ export default function ExperienceHeading() {
             border="1px solid rgba(255, 255, 255, 0.05)"
             boxShadow="0 4px 24px rgba(0, 0, 0, 0.2)"
           >
-            {[
+
+          {[
               { href: '/about', label: 'About' },
               { href: '/demo', label: 'Demo' },
               { href: '/privacy', label: 'Privacy' },
@@ -90,12 +93,16 @@ export default function ExperienceHeading() {
             ].map((link, i) => (
               <NextLink key={i} href={link.href} passHref>
                 <ChakraLink
+                  bgClip="text"
+                  bgGradient={pathname === link.href ? 'linear(to-r, purple.300, blue.300)' : 'linear(to-r, whiteAlpha.800, whiteAlpha.900)'}
                   fontWeight="semibold"
                   fontSize={{ base: 'md', md: 'lg' }}
-                  letterSpacing="wide" textShadow="0 0 6px rgba(255,255,255,0.2)"
-                  bgClip="text"
-                  bgGradient="linear(to-r, whiteAlpha.800, whiteAlpha.900)"
+                  fontFamily="heading"
+                  letterSpacing="wide"
+                  textShadow="0 0 6px rgba(255,255,255,0.2)"
+                  transition="all 0.2s"
                   _hover={{
+                    transform: 'translateY(-2px)',
                     bgGradient: 'linear(to-r, blue.300, purple.300)',
                     color: 'transparent',
                     bgClip: 'text'
