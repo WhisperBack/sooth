@@ -74,66 +74,40 @@ export default function ExperienceHeading() {
 
       <MotionVStack spacing={12} textAlign="center" py={{ base: 28, md: 40 }}>
         <MotionHeading
-          fontSize={{ base: '6xl', md: '8xl' }}
-          fontWeight="extrabold"
-          color="white"
-          textShadow="0 0 24px rgba(255,255,255,0.3)"
+          fontSize="7xl"
+          fontWeight="semibold"
+          bgGradient="linear(to-r, purple.200, pink.200)"
+          bgClip="text"
+          lineHeight="1.2"
+          letterSpacing="-0.5px"
         >
-          <Box as={motion.span} display="inline-block" color="white" style={{
-            WebkitTextFillColor: 'white',
-            WebkitTextStroke: '2.5px',
-            WebkitTextStrokeColor: 'transparent',
-            backgroundImage: 'linear-gradient(to right, #c084fc, #a78bfa, #60a5fa)',
-            WebkitBackgroundClip: 'text'
-          }}>Experience</Box>{' '}
-          <Box
-            as={motion.span}
-            display="inline-block"
-            bgGradient="linear(to-r, #c084fc, #60a5fa)"
-            bgClip="text"
-            fontWeight="extrabold"
-            style={{ WebkitTextStroke: '1px white' }}
-          >
-            Sooth
-            <Box
-              position="absolute"
-              top="50%"
-              left="50%"
-              transform="translate(-50%, -50%)"
-              w="150%"
-              h="150%"
-              borderRadius="full"
-              bgGradient="radial(at center, rgba(192,132,252,0.3), transparent)"
-              filter="blur(80px)"
-              zIndex={-1}
-            />
-          </Box>
+          Experience Sooth
         </MotionHeading>
 
         <MotionText fontSize="2xl" color="whiteAlpha.900" fontWeight="semibold" letterSpacing="tight" lineHeight="1.4" maxW="2xl" mx="auto">
-  Your voice, your peace. Speak, and Sooth listens.
-</MotionText>
+          Your voice, your peace. Speak, and Sooth listens.
+        </MotionText>
 
         <NextLink href="/demo" passHref>
           <MotionButton
-  as="a"
-  size="lg"
-  px={10}
-  py={6}
-  fontSize="lg"
-  fontWeight="bold"
-  color="white"
-  borderRadius="full"
-  bgGradient="linear(to-r, rgba(192, 132, 252, 0.8), rgba(96, 165, 250, 0.8))"
-  backdropFilter="blur(20px)"
-  border="1px solid rgba(255,255,255,0.3)"
-  _hover={{
-    bgGradient: 'linear(to-r, rgba(192, 132, 252, 1), rgba(96, 165, 250, 1))',
-    boxShadow: '0 0 50px rgba(167, 139, 250, 0.7)'
-  }}
->
-  Try the Demo
-</MotionButton>
+            as="a"
+            size="lg"
+            px={10}
+            py={6}
+            fontSize="lg"
+            fontWeight="bold"
+            color="white"
+            borderRadius="full"
+            bgGradient="linear(to-r, rgba(192, 132, 252, 0.8), rgba(96, 165, 250, 0.8))"
+            backdropFilter="blur(20px)"
+            border="1px solid rgba(255,255,255,0.3)"
+            _hover={{
+              bgGradient: 'linear(to-r, rgba(192, 132, 252, 1), rgba(96, 165, 250, 1))',
+              boxShadow: '0 0 50px rgba(167, 139, 250, 0.7)'
+            }}
+          >
+            Try the Demo
+          </MotionButton>
         </NextLink>
 
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} pt={16} maxW="6xl">
@@ -206,4 +180,3 @@ export default function ExperienceHeading() {
     </>
   );
 }
-
