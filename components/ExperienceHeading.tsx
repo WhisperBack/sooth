@@ -91,8 +91,8 @@ export default function ExperienceHeading() {
               <NextLink key={i} href={link.href} passHref>
                 <ChakraLink
                   fontWeight="semibold"
-                  fontSize={{ base: 'sm', md: 'md' }}
-                  letterSpacing="tight"
+                  fontSize={{ base: 'md', md: 'lg' }}
+                  letterSpacing="wide" textShadow="0 0 6px rgba(255,255,255,0.2)"
                   bgClip="text"
                   bgGradient="linear(to-r, whiteAlpha.800, whiteAlpha.900)"
                   _hover={{
