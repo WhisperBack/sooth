@@ -306,8 +306,8 @@ export default function ExperienceHeading() {
         <VStack spacing={6} mt={24} px={6} textAlign="center">
           <MotionHeading
   position="relative"
-  fontSize="8xl"
-  fontWeight="extrabold"
+  fontSize="6xl"
+  fontWeight="bold"
   bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
   backgroundSize="300% 300%"
   animation="drift 20s ease-in-out infinite"
