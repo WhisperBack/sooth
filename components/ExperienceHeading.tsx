@@ -151,7 +151,7 @@ export default function ExperienceHeading() {
     fontSize="8xl"
     bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
     backgroundSize="300% 300%"
-    animation="drift 20s ease-in-out infinite" style={{ animationDelay: '0.4s' }}
+    animation="drift 18s ease-in-out infinite"
     
     bgClip="text"
   >
@@ -217,6 +217,7 @@ export default function ExperienceHeading() {
             />
             <MotionButton
               as="a"
+              leftIcon={<Mic size={18} style={{ marginRight: '6px' }} />} 
               size="lg"
               px={10}
               py={6}
