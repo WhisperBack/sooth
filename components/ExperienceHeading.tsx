@@ -37,18 +37,22 @@ const ScrollbarStyles = () => (
       }
 
       @keyframes drift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-      }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
-      @keyframes pulseGlow {
+@keyframes pulseGlow {
   0%, 100% { opacity: 0.6; transform: scale(1); }
   50% { opacity: 1; transform: scale(1.05); }
 }
 
 @keyframes scrollText {
   0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+  100% { transform: translateX(-100%); }
+}
   100% { transform: translateX(-100%); }
 }
         50% { opacity: 1; transform: scale(1.05); }
