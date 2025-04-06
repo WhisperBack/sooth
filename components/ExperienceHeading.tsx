@@ -399,7 +399,7 @@ export default function ExperienceHeading() {
     bgGradient="linear(to-r, blue.100, blue.300, white, purple.200, white, pink.200, pink.300)"
     bgClip="text"
     backgroundSize="300% 300%"
-    animation="drift 12s ease-in-out infinite, scrollText 24s linear infinite"
+    animation="drift 18s ease-in-out infinite, scrollText 32s linear infinite"
     minW="max-content"
     color="transparent"
     textAlign="center"
