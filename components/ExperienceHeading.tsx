@@ -43,8 +43,8 @@ const ScrollbarStyles = () => (
       }
 
       @keyframes pulseGlow {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.08); }
+        0%, 100% { opacity: 0.6; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.05); }
       }
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
@@ -137,16 +137,15 @@ export default function ExperienceHeading() {
   position="relative"
 >
   <MotionBox
-  position="absolute"
-  top="50%"
-  left="50%"
-  transform="translate(-50%, -50%)"
-  w="120%"
-  h="120%"
-  bgGradient="radial(at center, rgba(255,255,255,0.2), transparent)"
-  filter="blur(100px)"
-  zIndex={-1}
-  animation="pulseGlow 12s ease-in-out infinite"
+    position="absolute"
+    top="50%"
+    left="50%"
+    transform="translate(-50%, -50%)"
+    w="200%"
+    h="200%"
+    bgGradient="radial(at center, rgba(255,255,255,0.05), transparent)"
+    filter="blur(160px)"
+    zIndex={-1}
   />
   <Box
     as="span"
