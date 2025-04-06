@@ -304,12 +304,23 @@ export default function ExperienceHeading() {
         
 
         <VStack spacing={6} mt={24} px={6} textAlign="center">
-          <Heading size="lg" color="white">
-            Get Early Access
-          </Heading>
-          <Text color="whiteAlpha.700" maxW="lg" mx="auto">
-            Join the waitlist and be the first to try Sooth. No spam. Just peace.
-          </Text>
+          <Heading
+  fontSize={{ base: '2xl', md: '3xl' }}
+  fontWeight="semibold"
+  color="whiteAlpha.900"
+  letterSpacing="-0.5px"
+>
+  Get Early Access
+</Heading>
+          <Text
+  fontSize={{ base: 'md', md: 'lg' }}
+  color="whiteAlpha.700"
+  maxW="lg"
+  mx="auto"
+  lineHeight="1.6"
+>
+  Join the waitlist and be the first to try Sooth. No spam. Just peace.
+</Text>
           <Box as="form" maxW="md" w="full" mx="auto">
             <VStack spacing={4}>
               <Input
@@ -337,4 +348,3 @@ export default function ExperienceHeading() {
     </>
   );
 }
-
