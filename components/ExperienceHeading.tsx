@@ -89,7 +89,7 @@ export default function ExperienceHeading() {
             backdropFilter="blur(30px)"
             borderRadius="2xl"
             px={{ base: 4, md: 12 }}
-            animation="drift 16s ease-in-out infinite"
+            animation="drift 20s ease-in-out infinite"
             py={4}
             gap={6}
             justify="center"
