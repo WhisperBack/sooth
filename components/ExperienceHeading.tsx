@@ -7,12 +7,10 @@ import NextLink from 'next/link';
 import { Global } from '@emotion/react';
 import { Mic, Sparkles, MessageCircle } from 'lucide-react';
 
-
 const MotionVStack = motion(VStack);
 const MotionHeading = motion(Heading);
 const MotionText = motion(Text);
 const MotionButton = motion(Button);
-
 
 const MotionBox = motion(Box);
 
@@ -218,20 +216,34 @@ export default function ExperienceHeading() {
               zIndex={-1}
               animation="pulseGlow 3s ease-in-out infinite"
             />
-            <MotionButton>
-  Try the Demo
-</MotionButton>
-</Box>
-</NextLink>
+            <MotionButton
+              as="a"
+              leftIcon={<Mic size={18} style={{ marginRight: '6px' }} />} 
+              size="lg"
+              px={10}
+              py={6}
+              fontSize="lg"
+              fontWeight="bold"
+              color="white"
+              borderRadius="full"
+              bgGradient="linear(to-r, blue.200, purple.200, pink.200)"
+              backdropFilter="blur(20px)"
+              border="1px solid rgba(255,255,255,0.3)"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1.2, duration: 0.6, ease: 'easeOut' }}
+              whileHover={{ scale: 1.04 }}
+              _hover={{
+                transform: 'translateY(-2px)',
+                boxShadow: '0 0 30px rgba(167, 139, 250, 0.4)'
+              }}
+            >
+              Try the Demo
+            </MotionButton>
+          </Box>
+        </NextLink>
 
-<VStack spacing={6} mt={24} px={6} textAlign="center" maxW="2xl" mx="auto">
-  <Text fontSize="xl" fontStyle="italic" color="whiteAlpha.800">
-    “Sooth was born from the need for a place where thoughts could be spoken freely, without judgment.”
-  </Text>
-  <Text color="whiteAlpha.600">— Jaycob, Founder</Text>
-</VStack>
-
-<Box position="relative" w="full" maxW="6xl" mx="auto">
+        <Box position="relative" w="full" maxW="6xl" mx="auto">
           <Box
             position="absolute"
             top="50%"
