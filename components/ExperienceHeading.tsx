@@ -268,31 +268,12 @@ export default function ExperienceHeading() {
               transition={{ delay: 0.4 + index * 0.2, duration: 0.8, ease: 'easeOut' }}
               h="full"
             >
-              <Box
-                p={6}
-                h="full"
-                display="flex"
-                flexDirection="column"
-                justifyContent="space-evenly"
-                borderRadius="2xl"
-                bgGradient="linear(to-br, rgba(167, 139, 250, 0.06), rgba(255, 255, 255, 0.08))"
-                backdropFilter="blur(14px)"
-                border="1px solid rgba(255, 255, 255, 0.18)"
-                boxShadow="0 12px 32px rgba(0, 0, 0, 0.25), inset 0 0 20px rgba(255,255,255,0.05)"
-                _hover={{
-                  boxShadow: '0 8px 40px rgba(192,132,252,0.35)',
-                  transform: 'translateY(-6px)',
-                  borderColor: 'rgba(255, 255, 255, 0.3)'
-                }}
-                color="whiteAlpha.900"
-                textAlign="center"
+              <VStack spacing={5} p={6}$1textAlign="center"
               >
-                <Box mb={6} color="white" textShadow="0 0 6px rgba(167, 139, 250, 0.3)">
-                <item.icon size={32} strokeWidth={1.2} />
-              </Box>
-              <Text fontWeight="bold" fontSize="2xl" letterSpacing="-0.5px" textShadow="0 0 4px rgba(255,255,255,0.05)" mb={6} flexGrow={1}>{item.title}</Text>
+                <Box color="white" textShadow="0 0 6px rgba(167, 139, 250, 0.3)">$1</Box>
+              <Text fontWeight="bold" fontSize="2xl" letterSpacing="-0.5px" textShadow="0 0 4px rgba(255,255,255,0.05)">{item.title}</Text>
               <Text fontSize="md" opacity={0.8}>{item.desc}</Text>
-              </Box>
+              </VStack>
             </MotionBox>
           ))}
         </SimpleGrid>
