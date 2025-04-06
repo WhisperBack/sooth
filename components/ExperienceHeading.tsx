@@ -270,7 +270,9 @@ export default function ExperienceHeading() {
             >
               <VStack spacing={5} p={6} textAlign="center"
               >
-                <Box color="white" textShadow="0 0 6px rgba(167, 139, 250, 0.3)">$1</Box>
+                <Box color="white" textShadow="0 0 6px rgba(167, 139, 250, 0.3)">
+  <item.icon size={32} strokeWidth={1.2} />
+</Box>
               <Text fontWeight="bold" fontSize="2xl" letterSpacing="-0.5px" textShadow="0 0 4px rgba(255,255,255,0.05)">{item.title}</Text>
               <Text fontSize="md" opacity={0.8}>{item.desc}</Text>
               </VStack>
