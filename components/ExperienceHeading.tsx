@@ -100,7 +100,7 @@ export default function ExperienceHeading() {
             backdropFilter="blur(30px)"
             borderRadius="2xl"
             px={{ base: 4, md: 12 }}
-            animation="drift 20s ease-in-out infinite"
+            animation="drift 18s ease-in-out infinite"
             py={4}
             gap={6}
             justify="center"
@@ -161,7 +161,7 @@ export default function ExperienceHeading() {
   <Box
     as="span"
     fontSize="8xl"
-    bgGradient="linear(to-r, blue.100, blue.300, white, purple.200, white, pink.200, pink.300)"
+    bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
     backgroundSize="300% 300%"
     animation="drift 18s ease-in-out infinite"
     
@@ -172,7 +172,7 @@ export default function ExperienceHeading() {
   <Box
     as="span"
     fontSize="8xl"
-    bgGradient="linear(to-r, blue.100, blue.300, white, purple.200, white, pink.200, pink.300)"
+    bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
     textShadow="0 0 32px rgba(255, 255, 255, 0.1)"
     backgroundSize="300% 300%"
     animation="drift 20s ease-in-out infinite"
@@ -234,7 +234,7 @@ export default function ExperienceHeading() {
   fontSize="lg"
   fontWeight="semibold"
   color="white"
-  bgGradient="linear(to-r, blue.100, blue.300, white, purple.200, white, pink.200, pink.300)"
+  bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
   backgroundSize="300% 300%"
   animation="drift 18s ease-in-out infinite"
   backdropFilter="blur(20px)"
@@ -318,7 +318,7 @@ export default function ExperienceHeading() {
   position="relative"
   fontSize="6xl"
   fontWeight="bold"
-  bgGradient="linear(to-r, blue.100, blue.300, white, purple.200, white, pink.200, pink.300)"
+  bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
   backgroundSize="300% 300%"
   animation="drift 20s ease-in-out infinite"
   bgClip="text"
@@ -359,7 +359,7 @@ export default function ExperienceHeading() {
   fontSize="lg"
   fontWeight="semibold"
   color="white"
-  bgGradient="linear(to-r, blue.100, blue.300, white, purple.200, white, pink.200, pink.300)"
+  bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
   backgroundSize="300% 300%"
   animation="drift 20s ease-in-out infinite"
   backdropFilter="blur(20px)"
@@ -396,10 +396,10 @@ export default function ExperienceHeading() {
     px={8}
     fontSize={{ base: '2xl', md: '4xl', lg: '5xl' }}
     fontWeight="extrabold"
-    bgGradient="linear(to-r, blue.100, blue.300, white, purple.200, white, pink.200, pink.300)"
+    bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
     bgClip="text"
     backgroundSize="300% 300%"
-    animation="drift 12s ease-in-out infinite, scrollText 24s linear infinite"
+    animation="drift 18s ease-in-out infinite, scrollText 40s linear infinite"
     minW="max-content"
     color="transparent"
     textAlign="center"
