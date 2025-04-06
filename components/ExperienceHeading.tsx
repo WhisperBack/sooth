@@ -275,10 +275,10 @@ export default function ExperienceHeading() {
                 flexDirection="column"
                 justifyContent="space-between"
                 borderRadius="2xl"
-                bgGradient="linear(to-br, rgba(167, 139, 250, 0.08), rgba(255, 255, 255, 0.04))"
+                bg="rgba(255, 255, 255, 0.08)"
                 backdropFilter="blur(14px)"
-                border="1px solid rgba(255, 255, 255, 0.1)"
-                boxShadow="0 4px 12px rgba(0, 0, 0, 0.1)"
+                border="1px solid rgba(255, 255, 255, 0.18)"
+                boxShadow="0 12px 32px rgba(0, 0, 0, 0.25), inset 0 0 20px rgba(255,255,255,0.05)"
                 _hover={{
                   boxShadow: '0 8px 40px rgba(192,132,252,0.35)',
                   transform: 'translateY(-6px)',
@@ -287,10 +287,10 @@ export default function ExperienceHeading() {
                 color="whiteAlpha.900"
                 textAlign="center"
               >
-                <Box mb={6} color="purple.200">
+                <Box mb={6} color="white" textShadow="0 0 16px rgba(167, 139, 250, 0.5)">
                 <item.icon size={32} strokeWidth={1.2} />
               </Box>
-              <Text fontWeight="bold" fontSize="2xl" letterSpacing="-0.5px" textShadow="0 0 4px rgba(255,255,255,0.05)" mb={6}>{item.title}</Text>
+              <Text fontWeight="bold" fontSize="2xl" letterSpacing="-0.5px" textShadow="0 0 4px rgba(255,255,255,0.05)" mb={6} flexGrow={1}>{item.title}</Text>
               <Text fontSize="md" opacity={0.8}>{item.desc}</Text>
               </Box>
             </MotionBox>
