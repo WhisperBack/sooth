@@ -273,7 +273,7 @@ export default function ExperienceHeading() {
                 borderRadius="2xl"
                 _hover={{
                   transform: 'translateY(-4px)',
-                  boxShadow: '0 0 40px rgba(167, 139, 250, 0.3)',
+                  boxShadow: '0 0 48px rgba(167, 139, 250, 0.35), 0 0 12px rgba(255,255,255,0.08)',
                   borderColor: 'rgba(255,255,255,0.3)'
                 }}
                 transition="all 0.3s ease"
@@ -281,7 +281,7 @@ export default function ExperienceHeading() {
                 bg="rgba(255,255,255,0.10)"
                 backdropFilter="blur(20px)"
                 border="1px solid rgba(255, 255, 255, 0.18)"
-                boxShadow="0 8px 40px rgba(0,0,0,0.2), inset 0 0 20px rgba(255,255,255,0.05)"
+                boxShadow="0 8px 48px rgba(167, 139, 250, 0.25), inset 0 0 32px rgba(255,255,255,0.06)"
                 h="full"
               >
                 <VStack spacing={5} textAlign="center"
