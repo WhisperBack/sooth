@@ -132,7 +132,7 @@ export default function ExperienceHeading() {
         </Flex>
       </Box>
 
-      <MotionVStack spacing={12} textAlign="center" py={{ base: 28, md: 40 }}>
+      <MotionVStack spacing={12} textAlign="center" py={{ base: 20, md: 28 }}>
         <MotionHeading
   position="relative"
 >
