@@ -377,13 +377,53 @@ export default function ExperienceHeading() {
 
         
 
-        <Box mt={20} w="100%" overflow="hidden" whiteSpace="nowrap" position="relative" px={6} pb={10}>
-  <Box as="span" display="inline-block" px={4} fontSize={{ base: 'lg', md: '2xl' }} fontWeight="bold" color="whiteAlpha.900" animation="scrollText 40s linear infinite"
+        <Box
+  mt={20}
+  w="100%"
+  overflow="hidden"
+  whiteSpace="nowrap"
+  position="relative"
+  px={6}
+  pb={10}
+  _before={{
+    content: '""',
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    w: 24,
+    h: '100%',
+    bgGradient: 'linear(to-r, rgba(0,0,0,1), transparent)',
+    zIndex: 1,
+  }}
+  _after={{
+    content: '""',
+    position: 'absolute',
+    right: 0,
+    top: 0,
+    w: 24,
+    h: '100%',
+    bgGradient: 'linear(to-l, rgba(0,0,0,1), transparent)',
+    zIndex: 1,
+  }}
+>
+  <Box
+    as="span"
+    display="inline-block"
+    px={8}
+    fontSize={{ base: '2xl', md: '4xl', lg: '5xl' }}
+    fontWeight="extrabold"
+    bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
+    bgClip="text"
+    backgroundSize="300% 300%"
+    animation="drift 18s ease-in-out infinite, scrollText 40s linear infinite"
+    minW="max-content"
+    color="transparent"
+    textAlign="center"
   >
     Sooth is where your voice becomes feeling, your silence is sacred, and healing finally has a home.
   </Box>
 </Box>
-      </MotionVStack>
+</MotionVStack>
     </>
   );
 }
