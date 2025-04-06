@@ -43,7 +43,14 @@ const ScrollbarStyles = () => (
       }
 
       @keyframes pulseGlow {
-        0%, 100% { opacity: 0.6; transform: scale(1); }
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes scrollText {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
         50% { opacity: 1; transform: scale(1.05); }
       }
         50% { background-position: 100% 50%; }
@@ -370,9 +377,18 @@ export default function ExperienceHeading() {
 
         
 
-        <Box mt={20} textAlign="center" fontSize="sm" color="whiteAlpha.700" px={6} pb={10}>
-          “Peace begins with a whisper.”
-        </Box>
+        <Box mt={20} w="100%" overflow="hidden" whiteSpace="nowrap" position="relative" px={6} pb={10}>
+  <Box
+    as="span"
+    display="inline-block"
+    px={4}
+    fontSize="sm"
+    color="whiteAlpha.800"
+    animation="scrollText 40s linear infinite"
+  >
+    Sooth is where your voice becomes feeling, your silence is sacred, and healing finally has a home.
+  </Box>
+</Box>
       </MotionVStack>
     </>
   );
