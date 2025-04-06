@@ -266,15 +266,15 @@ export default function ExperienceHeading() {
               <Box
                 p={6}
                 borderRadius="2xl"
-                bg="rgba(255,255,255,0.08)"
+                bg="rgba(255,255,255,0.10)"
                 backdropFilter="blur(20px)"
                 border="1px solid rgba(255, 255, 255, 0.18)"
                 boxShadow="0 8px 40px rgba(0,0,0,0.2), inset 0 0 20px rgba(255,255,255,0.05)"
                 h="full"
               >
-                <VStack spacing={5} p={6} textAlign="center"
+                <VStack spacing={5} textAlign="center"
               >
-                <Box color="white" textShadow="0 0 6px rgba(167, 139, 250, 0.3)">
+                <Box color="white" textShadow="0 0 6px rgba(167, 139, 250, 0.3)" minH="40px">
   <item.icon size={32} strokeWidth={1.2} />
 </Box>
               <Text fontWeight="bold" fontSize="2xl" letterSpacing="-0.5px" textShadow="0 0 4px rgba(255,255,255,0.05)">{item.title}</Text>
