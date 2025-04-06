@@ -217,16 +217,10 @@ export default function ExperienceHeading() {
               animation="pulseGlow 3s ease-in-out infinite"
             />
             <MotionButton
-              as="a"
-              leftIcon={<Mic size={18} style={{ marginRight: '6px' }} />} 
-              size="lg"
-              px={10}
-              py={6}
-              fontSize="lg"
-              fontWeight="bold"
-              color="white"
-              borderRadius="full"
-              bgGradient="linear(to-r, blue.200, purple.200, pink.200)"
+  as="a"
+  bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
+  backgroundSize="300% 300%"
+  animation="drift 18s ease-in-out infinite"
               backdropFilter="blur(20px)"
               border="1px solid rgba(255,255,255,0.3)"
               initial={{ opacity: 0, scale: 0.95 }}
@@ -344,11 +338,9 @@ export default function ExperienceHeading() {
 />
               <MotionButton
   type="submit"
-  size="lg"
-  w="full"
-  color="white"
-  borderRadius="full"
-  bgGradient="linear(to-r, blue.200, purple.200, pink.200)"
+  bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
+  backgroundSize="300% 300%"
+  animation="drift 20s ease-in-out infinite"
   backdropFilter="blur(20px)"
   border="1px solid rgba(255,255,255,0.3)"
   initial={{ opacity: 0, scale: 0.95 }}
