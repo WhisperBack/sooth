@@ -272,10 +272,10 @@ export default function ExperienceHeading() {
                 p={6}
                 borderRadius="2xl"
                 _hover={{
-                  transform: 'translateY(-4px)',
-                  boxShadow: '0 0 64px rgba(251, 182, 206, 0.45), 0 0 16px rgba(255,255,255,0.12)',
-                  borderColor: 'rgba(255,255,255,0.3)'
-                }}
+  transform: 'translateY(-4px)',
+  boxShadow: `${index === 0 ? '0 0 72px rgba(144, 205, 244, 0.55)' : index === 1 ? '0 0 72px rgba(214, 188, 250, 0.55)' : '0 0 72px rgba(251, 182, 206, 0.55)'}, 0 0 20px rgba(255,255,255,0.15)`,
+  borderColor: 'rgba(255,255,255,0.3)'
+}}
                 transition="all 0.3s ease"
                 cursor="default"
                 bg="rgba(255,255,255,0.10)"
