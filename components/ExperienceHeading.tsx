@@ -324,14 +324,17 @@ export default function ExperienceHeading() {
           <Box as="form" maxW="md" w="full" mx="auto">
             <VStack spacing={4}>
               <Input
-                type="email"
-                placeholder="Your email"
-                bg="white"
-                color="black"
-                borderRadius="md"
-                size="lg"
-                _placeholder={{ color: 'gray.500' }}
-              />
+  type="email"
+  placeholder="Your email"
+  bg="rgba(255, 255, 255, 0.08)"
+  color="white"
+  border="1px solid rgba(255, 255, 255, 0.15)"
+  backdropFilter="blur(14px)"
+  borderRadius="xl"
+  size="lg"
+  _placeholder={{ color: 'whiteAlpha.600' }}
+  _focus={{ borderColor: 'blue.300', boxShadow: '0 0 0 1px rgba(144,205,244,0.6)' }}
+/>
               <Button type="submit" colorScheme="blue" size="lg" w="full">
                 Join Waitlist
               </Button>
