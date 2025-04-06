@@ -53,6 +53,12 @@ const ScrollbarStyles = () => (
     box-shadow: 0 0 40px rgba(167,139,250,0.4);
   }
 }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(167,139,250,0.4);
+  }
+}
   50% { opacity: 1; transform: scale(1.05); box-shadow: 0 0 40px rgba(167,139,250,0.4); }
 }
         50% { opacity: 1; transform: scale(1.05); }
@@ -266,17 +272,17 @@ export default function ExperienceHeading() {
             filter="blur(100px)"
             zIndex={-1}
           />
-          <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} pt={16} maxW="6xl" alignItems="stretch">
+          <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} pt={16} maxW="6xl" alignItems="stretch" bgGradient="linear(to-b, rgba(255,255,255,0.04), rgba(255,255,255,0.08))" borderRadius="2xl" p={2}>
   {[
     { icon: Mic, title: 'Whisper Freely', desc: 'Let your thoughts flow. No judgment. Just space.' },
     { icon: Sparkles, title: 'Gentle Reflections', desc: 'Sooth listens, then gives you back peace.', pulse: true },
     { icon: MessageCircle, title: 'Clarity in Seconds', desc: 'Your insights. Summarized. In your words.' }
   ].map((item, index) => (
-    <MotionBox key={index} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: 'easeOut' }}
+    <MotionBox key={index} initial={{ opacity: 0, scale: 0.95, filter: 'blur(8px)' }} whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }} viewport={{ once: true }} transition={{ duration: 0.8, ease: 'easeOut' }}
       animation={item.pulse ? "pulseGlow 4s ease-in-out infinite" : undefined}
     >
       <VStack spacing={5} textAlign="center" h="full">
-        <MotionBox whileHover={{ scale: 1.08 }} transition={{ duration: 0.3 }} boxShadow="0 0 20px rgba(167,139,250,0.35), 0 0 40px rgba(255,255,255,0.08)"
+        <MotionBox whileHover={{ scale: 1.08 }} transition={{ duration: 0.3 }} boxShadow="0 0 18px rgba(255,255,255,0.06), 0 0 32px rgba(167,139,250,0.3)"
         >
           <item.icon size={32} strokeWidth={1.2} />
         </MotionBox>
