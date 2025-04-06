@@ -286,13 +286,13 @@ export default function ExperienceHeading() {
               >
                 <VStack spacing={5} textAlign="center"
               >
-                <Box color={index === 0 ? 'blue.200' : index === 1 ? 'purple.200' : 'pink.200'} textShadow={index === 0 ? '0 0 8px rgba(147,197,253,0.4)' : index === 1 ? '0 0 8px rgba(216,180,254,0.4)' : '0 0 8px rgba(251,207,232,0.4)'} minH="40px">
+                <MotionBox whileHover={{ scale: 1.08 }} transition={{ duration: 0.3 }}>
   <item.icon size={32} strokeWidth={1.2} />
-</Box>
-              <Text fontWeight="bold" fontSize="2xl" letterSpacing="-0.5px" bgGradient={index === 0 ? 'linear(to-r, blue.200, blue.400)' : index === 1 ? 'linear(to-r, purple.200, purple.400)' : 'linear(to-r, pink.200, pink.400)'} textShadow="0 0 6px rgba(0,0,0,0.25)" bgClip="text">
+</MotionBox>
+              <Text fontWeight="bold" fontSize="2xl" letterSpacing="-0.5px" bgGradient={index === 0 ? 'linear(to-r, blue.300, blue.500)' : index === 1 ? 'linear(to-r, purple.300, purple.500)' : 'linear(to-r, pink.300, pink.500)'} textShadow="0 0 6px rgba(0,0,0,0.25)" bgClip="text">
   {item.title}
 </Text>
-              <Text fontSize="md" color="whiteAlpha.900">{item.desc}</Text>
+              <Text fontSize="lg" lineHeight="1.6" color="whiteAlpha.900">{item.desc}</Text>
               </VStack>
               </Box>
             </MotionBox>
