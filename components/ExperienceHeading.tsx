@@ -48,7 +48,9 @@ const ScrollbarStyles = () => (
 }
 
 @keyframes scrollText {
-  0% { transform: translateX(100%); }
+  0% { transform: translateX(50%); }
+  100% { transform: translateX(-100%); }
+}
   100% { transform: translateX(-100%); }
 }
   100% { transform: translateX(-100%); }
@@ -394,8 +396,8 @@ export default function ExperienceHeading() {
     as="span"
     display="inline-block"
     px={8}
-    fontSize={{ base: '2xl', md: '4xl', lg: '5xl' }}
-    fontWeight="extrabold"
+    fontSize={{ base: '2xl', md: '4xl', lg: '4xl' }}
+    fontWeight="bold"
     bgGradient="linear(to-r, blue.100, blue.300, white, purple.200, white, pink.200, pink.300)"
     bgClip="text"
     backgroundSize="300% 300%"
