@@ -389,26 +389,6 @@ export default function ExperienceHeading() {
   position="relative"
   px={6}
   pb={10}
-  _before={{
-    content: '""',
-    position: 'absolute',
-    left: 0,
-    top: 0,
-    w: 24,
-    h: '100%',
-    bgGradient: 'linear(to-r, rgba(0,0,0,1), transparent)',
-    zIndex: 1,
-  }}
-  _after={{
-    content: '""',
-    position: 'absolute',
-    right: 0,
-    top: 0,
-    w: 24,
-    h: '100%',
-    bgGradient: 'linear(to-l, rgba(0,0,0,1), transparent)',
-    zIndex: 1,
-  }}
 >
   <Box
     as="span"
