@@ -378,13 +378,7 @@ export default function ExperienceHeading() {
         
 
         <Box mt={20} w="100%" overflow="hidden" whiteSpace="nowrap" position="relative" px={6} pb={10}>
-  <Box
-    as="span"
-    display="inline-block"
-    px={4}
-    fontSize="sm"
-    color="whiteAlpha.800"
-    animation="scrollText 40s linear infinite"
+  <Box as="span" display="inline-block" px={4} fontSize={{ base: 'lg', md: '2xl' }} fontWeight="bold" color="whiteAlpha.900" animation="scrollText 40s linear infinite"
   >
     Sooth is where your voice becomes feeling, your silence is sacred, and healing finally has a home.
   </Box>
