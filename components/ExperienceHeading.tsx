@@ -335,24 +335,26 @@ export default function ExperienceHeading() {
   _placeholder={{ color: 'whiteAlpha.600' }}
   _focus={{ borderColor: 'blue.300', boxShadow: '0 0 0 1px rgba(144,205,244,0.6)' }}
 />
-              <Button
+              <MotionButton
   type="submit"
   size="lg"
   w="full"
   color="white"
-  borderRadius="xl"
-  bg="rgba(255, 255, 255, 0.08)"
-  border="1px solid rgba(255, 255, 255, 0.2)"
-  backdropFilter="blur(14px)"
-  bgGradient="linear(to-r, blue.300, purple.300, pink.300)"
+  borderRadius="full"
+  bgGradient="linear(to-r, blue.200, purple.200, pink.200)"
+  backdropFilter="blur(20px)"
+  border="1px solid rgba(255,255,255,0.3)"
+  initial={{ opacity: 0, scale: 0.95 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ delay: 1.2, duration: 0.6, ease: 'easeOut' }}
+  whileHover={{ scale: 1.04 }}
   _hover={{
     transform: 'translateY(-2px)',
-    boxShadow: '0 0 30px rgba(167, 139, 250, 0.4)',
-    bg: 'rgba(255, 255, 255, 0.15)'
+    boxShadow: '0 0 30px rgba(167, 139, 250, 0.4)'
   }}
 >
   Join Waitlist
-</Button>
+</MotionButton>
             </VStack>
           </Box>
         </VStack>
