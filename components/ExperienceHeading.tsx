@@ -282,9 +282,9 @@ export default function ExperienceHeading() {
       animation={item.pulse ? "pulseGlow 4s ease-in-out infinite" : undefined}
     >
       <VStack spacing={5} textAlign="center" h="full">
-        <MotionBox whileHover={{ scale: 1.08 }} transition={{ duration: 0.3 }} boxShadow="0 0 18px rgba(255,255,255,0.06), 0 0 32px rgba(167,139,250,0.3)"
+        <MotionBox whileHover={{ scale: 1.08 }} transition={{ duration: 0.3 }} boxShadow="0 0 16px rgba(255,255,255,0.1), 0 0 36px rgba(167,139,250,0.45)" borderRadius="2xl" bg="rgba(255,255,255,0.04)" backdropFilter="blur(14px)" border="1px solid rgba(255,255,255,0.1)"
         >
-          <item.icon size={32} strokeWidth={1.2} />
+          <item.icon size={32} strokeWidth={1.2} color={index === 0 ? 'blue.300' : index === 1 ? 'purple.300' : 'pink.300'} />
         </MotionBox>
         <Text
           fontWeight="bold"
