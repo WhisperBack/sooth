@@ -266,11 +266,22 @@ export default function ExperienceHeading() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 + index * 0.2, duration: 0.8, ease: 'easeOut' }}
             >
-              <Box mb={4} color="whiteAlpha.700">
+              <Box
+                p={6}
+                borderRadius="2xl"
+                bg="rgba(255,255,255,0.06)"
+                backdropFilter="blur(14px)"
+                border="1px solid rgba(255, 255, 255, 0.1)"
+                boxShadow="0 4px 12px rgba(0, 0, 0, 0.1)"
+                color="whiteAlpha.900"
+                textAlign="center"
+              >
+                <Box mb={4} color="whiteAlpha.700">
                 <item.icon size={32} strokeWidth={1.2} />
               </Box>
               <Text fontWeight="bold" fontSize="2xl" letterSpacing="-0.5px" textShadow="0 0 4px rgba(255,255,255,0.05)" mb={1}>{item.title}</Text>
               <Text fontSize="md" opacity={0.8}>{item.desc}</Text>
+              </Box>
             </MotionBox>
           ))}
         </SimpleGrid>
