@@ -287,7 +287,7 @@ export default function ExperienceHeading() {
                 <VStack spacing={5} textAlign="center"
               >
                 <MotionBox whileHover={{ scale: 1.08 }} transition={{ duration: 0.3 }}>
-  <item.icon size={32} strokeWidth={1.2} />
+  <item.icon size={32} strokeWidth={1.2} color={index === 0 ? 'blue.300' : index === 1 ? 'purple.300' : 'pink.300'} />
 </MotionBox>
               <Text fontWeight="bold" fontSize="2xl" letterSpacing="-0.5px" bgGradient={index === 0 ? 'linear(to-r, blue.300, blue.500)' : index === 1 ? 'linear(to-r, purple.300, purple.500)' : 'linear(to-r, pink.300, pink.500)'} textShadow="0 0 6px rgba(0,0,0,0.25)" bgClip="text">
   {item.title}
