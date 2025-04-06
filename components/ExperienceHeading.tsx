@@ -42,7 +42,9 @@ const ScrollbarStyles = () => (
       }
 
       @keyframes pulseGlow {
-        0%, 100% { opacity: 0.6; transform: scale(1); }
+  0%, 100% { opacity: 0.6; transform: scale(1); box-shadow: 0 0 30px rgba(167,139,250,0.2); }
+  50% { opacity: 1; transform: scale(1.05); box-shadow: 0 0 40px rgba(167,139,250,0.4); }
+}
         50% { opacity: 1; transform: scale(1.05); }
       }
         50% { background-position: 100% 50%; }
@@ -264,7 +266,7 @@ export default function ExperienceHeading() {
       key={index}
       p={6}
       borderRadius="2xl"
-      bg="rgba(255,255,255,0.06)"
+      bgGradient="linear(to-b, rgba(255,255,255,0.04), rgba(255,255,255,0.08))"
       backdropFilter="blur(14px)"
       border="1px solid rgba(255, 255, 255, 0.1)"
       color="whiteAlpha.900"
@@ -273,10 +275,7 @@ export default function ExperienceHeading() {
       animation={item.pulse ? "pulseGlow 4s ease-in-out infinite" : undefined}
     >
       <VStack spacing={5} textAlign="center" h="full">
-        <MotionBox
-          whileHover={{ scale: 1.08 }}
-          transition={{ duration: 0.3 }}
-          textShadow="0 0 6px rgba(255,255,255,0.08), 0 0 24px rgba(167,139,250,0.3)"
+        <MotionBox whileHover={{ scale: 1.08 }} transition={{ duration: 0.3 }} textShadow="0 0 10px rgba(255,255,255,0.1), 0 0 32px rgba(167,139,250,0.4)"
         >
           <item.icon size={32} strokeWidth={1.2} />
         </MotionBox>
