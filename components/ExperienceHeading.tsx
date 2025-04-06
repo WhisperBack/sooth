@@ -248,7 +248,7 @@ export default function ExperienceHeading() {
             top="50%"
             left="50%"
             transform="translate(-50%, -50%)"
-            w="140%"
+            w="180%"
             h="140%"
             bgGradient="radial(at center, rgba(255,255,255,0.04), transparent)"
             filter="blur(100px)"
@@ -275,19 +275,19 @@ export default function ExperienceHeading() {
                 flexDirection="column"
                 justifyContent="space-between"
                 borderRadius="2xl"
-                bgGradient="linear(to-br, rgba(255,255,255,0.08), rgba(255,255,255,0.03))"
+                bgGradient="linear(to-br, rgba(167, 139, 250, 0.08), rgba(255, 255, 255, 0.04))"
                 backdropFilter="blur(14px)"
                 border="1px solid rgba(255, 255, 255, 0.1)"
                 boxShadow="0 4px 12px rgba(0, 0, 0, 0.1)"
                 _hover={{
-                  boxShadow: '0 0 30px rgba(167, 139, 250, 0.25)',
-                  transform: 'translateY(-4px)',
-                  borderColor: 'rgba(255, 255, 255, 0.2)'
+                  boxShadow: '0 8px 40px rgba(192,132,252,0.35)',
+                  transform: 'translateY(-6px)',
+                  borderColor: 'rgba(255, 255, 255, 0.3)'
                 }}
                 color="whiteAlpha.900"
                 textAlign="center"
               >
-                <Box mb={4} color="whiteAlpha.700">
+                <Box mb={6} color="purple.200">
                 <item.icon size={32} strokeWidth={1.2} />
               </Box>
               <Text fontWeight="bold" fontSize="2xl" letterSpacing="-0.5px" textShadow="0 0 4px rgba(255,255,255,0.05)" mb={6}>{item.title}</Text>
