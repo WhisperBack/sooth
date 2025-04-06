@@ -268,7 +268,7 @@ export default function ExperienceHeading() {
               transition={{ delay: 0.4 + index * 0.2, duration: 0.8, ease: 'easeOut' }}
               h="full"
             >
-              <VStack spacing={5} p={6}$1textAlign="center"
+              <VStack spacing={5} p={6} textAlign="center"
               >
                 <Box color="white" textShadow="0 0 6px rgba(167, 139, 250, 0.3)">$1</Box>
               <Text fontWeight="bold" fontSize="2xl" letterSpacing="-0.5px" textShadow="0 0 4px rgba(255,255,255,0.05)">{item.title}</Text>
