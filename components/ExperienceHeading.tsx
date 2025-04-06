@@ -275,10 +275,15 @@ export default function ExperienceHeading() {
                 flexDirection="column"
                 justifyContent="space-between"
                 borderRadius="2xl"
-                bg="rgba(255,255,255,0.06)"
+                bgGradient="linear(to-br, rgba(255,255,255,0.05), rgba(255,255,255,0.03))"
                 backdropFilter="blur(14px)"
                 border="1px solid rgba(255, 255, 255, 0.1)"
                 boxShadow="0 4px 12px rgba(0, 0, 0, 0.1)"
+                _hover={{
+                  boxShadow: '0 0 30px rgba(167, 139, 250, 0.25)',
+                  transform: 'translateY(-4px)',
+                  borderColor: 'rgba(255, 255, 255, 0.2)'
+                }}
                 color="whiteAlpha.900"
                 textAlign="center"
               >
