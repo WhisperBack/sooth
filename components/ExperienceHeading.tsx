@@ -273,7 +273,7 @@ export default function ExperienceHeading() {
                 borderRadius="2xl"
                 _hover={{
                   transform: 'translateY(-4px)',
-                  boxShadow: '0 0 48px rgba(251, 182, 206, 0.35), 0 0 12px rgba(255,255,255,0.08)',
+                  boxShadow: '0 0 64px rgba(251, 182, 206, 0.45), 0 0 16px rgba(255,255,255,0.12)',
                   borderColor: 'rgba(255,255,255,0.3)'
                 }}
                 transition="all 0.3s ease"
