@@ -305,10 +305,12 @@ export default function ExperienceHeading() {
 
         <VStack spacing={6} mt={24} px={6} textAlign="center">
           <Heading
-  fontSize={{ base: '2xl', md: '3xl' }}
-  fontWeight="semibold"
-  color="whiteAlpha.900"
+  fontSize={{ base: '3xl', md: '4xl' }}
+  fontWeight="extrabold"
+  bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
+  bgClip="text"
   letterSpacing="-0.5px"
+  textShadow="0 1px 2px rgba(0,0,0,0.25)"
 >
   Get Early Access
 </Heading>
