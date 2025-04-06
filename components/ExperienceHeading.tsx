@@ -326,14 +326,17 @@ export default function ExperienceHeading() {
               <Input
   type="email"
   placeholder="Your email"
-  bg="rgba(255, 255, 255, 0.08)"
+  bg="rgba(255, 255, 255, 0.18)"
   color="white"
-  border="1px solid rgba(255, 255, 255, 0.15)"
-  backdropFilter="blur(14px)"
+  border="1px solid rgba(255, 255, 255, 0.3)"
+  backdropFilter="blur(20px)"
   borderRadius="xl"
   size="lg"
-  _placeholder={{ color: 'whiteAlpha.600' }}
+  fontSize="lg"
+  _placeholder={{ color: 'whiteAlpha.800', fontSize: 'lg' }}
   _focus={{ borderColor: 'blue.300', boxShadow: '0 0 0 1px rgba(144,205,244,0.6)' }}
+  _hover={{ bg: 'rgba(255, 255, 255, 0.22)' }}
+  bgGradient="linear(to-r, rgba(144, 205, 244, 0.4), rgba(203, 152, 255, 0.4))"
 />
               <MotionButton
   type="submit"
