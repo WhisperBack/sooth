@@ -7,10 +7,13 @@ import NextLink from 'next/link';
 import { Global } from '@emotion/react';
 import { Mic, Sparkles, MessageCircle } from 'lucide-react';
 
-const MotionText = motion(Text);
+
 const MotionVStack = motion(VStack);
 const MotionHeading = motion(Heading);
+const MotionText = motion(Text);
 const MotionButton = motion(Button);
+
+
 const MotionBox = motion(Box);
 
 const ScrollbarStyles = () => (
@@ -345,4 +348,3 @@ export default function ExperienceHeading() {
     </>
   );
 }
-
