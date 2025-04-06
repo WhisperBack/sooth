@@ -254,7 +254,7 @@ export default function ExperienceHeading() {
             filter="blur(100px)"
             zIndex={-1}
           />
-          <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} pt={16} maxW="6xl">
+          <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} pt={16} maxW="6xl" alignItems="stretch">
           {[
             { icon: Mic, title: 'Whisper Freely', desc: 'Let your thoughts flow. No judgment. Just space.' },
             { icon: Sparkles, title: 'Gentle Reflections', desc: 'Sooth listens, then gives you back peace.' },
@@ -263,11 +263,17 @@ export default function ExperienceHeading() {
             <MotionBox
               key={index}
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: 0.4 + index * 0.2, duration: 0.8, ease: 'easeOut' }}
+              h="full"
             >
               <Box
                 p={6}
+                h="full"
+                display="flex"
+                flexDirection="column"
+                justifyContent="space-between"
                 borderRadius="2xl"
                 bg="rgba(255,255,255,0.06)"
                 backdropFilter="blur(14px)"
