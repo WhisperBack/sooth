@@ -43,8 +43,8 @@ const ScrollbarStyles = () => (
       }
 
       @keyframes pulseGlow {
-        0%, 100% { opacity: 0.6; transform: scale(1); }
-        50% { opacity: 1; transform: scale(1.05); }
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
       }
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
@@ -143,8 +143,8 @@ export default function ExperienceHeading() {
   transform="translate(-50%, -50%)"
   w="200%"
   h="200%"
-  bgGradient="radial(at center, rgba(255,255,255,0.05), transparent)"
-  filter="blur(160px)"
+  bgGradient="radial(at center, rgba(255,255,255,0.12), transparent)"
+  filter="blur(120px)"
   zIndex={-1}
   animation="pulseGlow 12s ease-in-out infinite"
   />
