@@ -42,7 +42,17 @@ const ScrollbarStyles = () => (
       }
 
       @keyframes pulseGlow {
-  0%, 100% { opacity: 0.6; transform: scale(1); box-shadow: 0 0 30px rgba(167,139,250,0.2); }
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+    box-shadow: 0 0 30px rgba(167,139,250,0.2);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(167,139,250,0.4);
+  }
+}
   50% { opacity: 1; transform: scale(1.05); box-shadow: 0 0 40px rgba(167,139,250,0.4); }
 }
         50% { opacity: 1; transform: scale(1.05); }
@@ -262,20 +272,11 @@ export default function ExperienceHeading() {
     { icon: Sparkles, title: 'Gentle Reflections', desc: 'Sooth listens, then gives you back peace.', pulse: true },
     { icon: MessageCircle, title: 'Clarity in Seconds', desc: 'Your insights. Summarized. In your words.' }
   ].map((item, index) => (
-    <MotionBox
-      key={index}
-      p={6}
-      borderRadius="2xl"
-      bgGradient="linear(to-b, rgba(255,255,255,0.04), rgba(255,255,255,0.08))"
-      backdropFilter="blur(14px)"
-      border="1px solid rgba(255, 255, 255, 0.1)"
-      color="whiteAlpha.900"
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.3 }}
+    <MotionBox key={index} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: 'easeOut' }}
       animation={item.pulse ? "pulseGlow 4s ease-in-out infinite" : undefined}
     >
       <VStack spacing={5} textAlign="center" h="full">
-        <MotionBox whileHover={{ scale: 1.08 }} transition={{ duration: 0.3 }} textShadow="0 0 10px rgba(255,255,255,0.1), 0 0 32px rgba(167,139,250,0.4)"
+        <MotionBox whileHover={{ scale: 1.08 }} transition={{ duration: 0.3 }} boxShadow="0 0 20px rgba(167,139,250,0.35), 0 0 40px rgba(255,255,255,0.08)"
         >
           <item.icon size={32} strokeWidth={1.2} />
         </MotionBox>
