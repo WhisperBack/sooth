@@ -143,7 +143,7 @@ export default function ExperienceHeading() {
     w="200%"
     h="200%"
     bgGradient="radial(at center, rgba(255,255,255,0.05), transparent)"
-    filter="blur(100px)"
+    filter="blur(160px)"
     zIndex={-1}
   />
   <Box
@@ -248,7 +248,7 @@ export default function ExperienceHeading() {
             top="50%"
             left="50%"
             transform="translate(-50%, -50%)"
-            w="180%"
+            w="200%"
             h="140%"
             bgGradient="radial(at center, rgba(255,255,255,0.04), transparent)"
             filter="blur(100px)"
@@ -273,9 +273,9 @@ export default function ExperienceHeading() {
                 h="full"
                 display="flex"
                 flexDirection="column"
-                justifyContent="space-between"
+                justifyContent="space-evenly"
                 borderRadius="2xl"
-                bg="rgba(255, 255, 255, 0.08)"
+                bgGradient="linear(to-br, rgba(167, 139, 250, 0.06), rgba(255, 255, 255, 0.08))"
                 backdropFilter="blur(14px)"
                 border="1px solid rgba(255, 255, 255, 0.18)"
                 boxShadow="0 12px 32px rgba(0, 0, 0, 0.25), inset 0 0 20px rgba(255,255,255,0.05)"
@@ -287,7 +287,7 @@ export default function ExperienceHeading() {
                 color="whiteAlpha.900"
                 textAlign="center"
               >
-                <Box mb={6} color="white" textShadow="0 0 16px rgba(167, 139, 250, 0.5)">
+                <Box mb={6} color="white" textShadow="0 0 6px rgba(167, 139, 250, 0.3)">
                 <item.icon size={32} strokeWidth={1.2} />
               </Box>
               <Text fontWeight="bold" fontSize="2xl" letterSpacing="-0.5px" textShadow="0 0 4px rgba(255,255,255,0.05)" mb={6} flexGrow={1}>{item.title}</Text>
