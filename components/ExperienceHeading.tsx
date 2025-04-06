@@ -326,19 +326,33 @@ export default function ExperienceHeading() {
               <Input
   type="email"
   placeholder="Your email"
-  bg="rgba(255, 255, 255, 0.1)"
+  bg="rgba(255, 255, 255, 0.08)"
   color="white"
-  border="1px solid rgba(255, 255, 255, 0.4)"
+  border="1px solid rgba(255, 255, 255, 0.15)"
   backdropFilter="blur(14px)"
   borderRadius="xl"
   size="lg"
   _placeholder={{ color: 'whiteAlpha.600' }}
   _focus={{ borderColor: 'blue.300', boxShadow: '0 0 0 1px rgba(144,205,244,0.6)' }}
-  _hover={{ bg: 'rgba(255, 255, 255, 0.15)' }}
-  bgGradient="linear(to-r, rgba(144, 205, 244, 0.5), rgba(203, 152, 255, 0.5))" />
-              <Button type="submit" colorScheme="blue" size="lg" w="full">
-                Join Waitlist
-              </Button>
+/>
+              <Button
+  type="submit"
+  size="lg"
+  w="full"
+  color="white"
+  borderRadius="xl"
+  bg="rgba(255, 255, 255, 0.08)"
+  border="1px solid rgba(255, 255, 255, 0.2)"
+  backdropFilter="blur(14px)"
+  bgGradient="linear(to-r, blue.300, purple.300, pink.300)"
+  _hover={{
+    transform: 'translateY(-2px)',
+    boxShadow: '0 0 30px rgba(167, 139, 250, 0.4)',
+    bg: 'rgba(255, 255, 255, 0.15)'
+  }}
+>
+  Join Waitlist
+</Button>
             </VStack>
           </Box>
         </VStack>
