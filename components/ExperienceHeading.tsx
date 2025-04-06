@@ -289,10 +289,10 @@ export default function ExperienceHeading() {
                 <Box color={index === 0 ? 'blue.200' : index === 1 ? 'purple.200' : 'pink.200'} textShadow={index === 0 ? '0 0 8px rgba(147,197,253,0.4)' : index === 1 ? '0 0 8px rgba(216,180,254,0.4)' : '0 0 8px rgba(251,207,232,0.4)'} minH="40px">
   <item.icon size={32} strokeWidth={1.2} />
 </Box>
-              <Text fontWeight="bold" fontSize="2xl" letterSpacing="-0.5px" bgGradient={index === 0 ? 'linear(to-r, blue.200, whiteAlpha.900)' : index === 1 ? 'linear(to-r, purple.200, whiteAlpha.900)' : 'linear(to-r, pink.200, whiteAlpha.900)'} bgClip="text">
+              <Text fontWeight="bold" fontSize="2xl" letterSpacing="-0.5px" bgGradient={index === 0 ? 'linear(to-r, blue.200, blue.400)' : index === 1 ? 'linear(to-r, purple.200, purple.400)' : 'linear(to-r, pink.200, pink.400)'} textShadow="0 0 6px rgba(0,0,0,0.25)" bgClip="text">
   {item.title}
 </Text>
-              <Text fontSize="md" opacity={0.8}>{item.desc}</Text>
+              <Text fontSize="md" color="whiteAlpha.900">{item.desc}</Text>
               </VStack>
               </Box>
             </MotionBox>
