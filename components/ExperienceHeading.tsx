@@ -141,10 +141,10 @@ export default function ExperienceHeading() {
   top="50%"
   left="50%"
   transform="translate(-50%, -50%)"
-  w="200%"
-  h="200%"
-  bgGradient="radial(at center, rgba(255,255,255,0.12), transparent)"
-  filter="blur(120px)"
+  w="120%"
+  h="120%"
+  bgGradient="radial(at center, rgba(255,255,255,0.2), transparent)"
+  filter="blur(100px)"
   zIndex={-1}
   animation="pulseGlow 12s ease-in-out infinite"
   />
