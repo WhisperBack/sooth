@@ -275,7 +275,7 @@ export default function ExperienceHeading() {
                 flexDirection="column"
                 justifyContent="space-between"
                 borderRadius="2xl"
-                bgGradient="linear(to-br, rgba(255,255,255,0.05), rgba(255,255,255,0.03))"
+                bgGradient="linear(to-br, rgba(255,255,255,0.08), rgba(255,255,255,0.03))"
                 backdropFilter="blur(14px)"
                 border="1px solid rgba(255, 255, 255, 0.1)"
                 boxShadow="0 4px 12px rgba(0, 0, 0, 0.1)"
@@ -290,7 +290,7 @@ export default function ExperienceHeading() {
                 <Box mb={4} color="whiteAlpha.700">
                 <item.icon size={32} strokeWidth={1.2} />
               </Box>
-              <Text fontWeight="bold" fontSize="2xl" letterSpacing="-0.5px" textShadow="0 0 4px rgba(255,255,255,0.05)" mb={1}>{item.title}</Text>
+              <Text fontWeight="bold" fontSize="2xl" letterSpacing="-0.5px" textShadow="0 0 4px rgba(255,255,255,0.05)" mb={6}>{item.title}</Text>
               <Text fontSize="md" opacity={0.8}>{item.desc}</Text>
               </Box>
             </MotionBox>
