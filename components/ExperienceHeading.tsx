@@ -261,11 +261,23 @@ export default function ExperienceHeading() {
             { icon: MessageCircle, title: 'Clarity in Seconds', desc: 'Your insights. Summarized. In your words.' },
           ].map((item, index) => (
             <MotionBox
-              key={index} h="full"
+              key={index}
+              h="full"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
             >
               <Box
                 p={6}
                 borderRadius="2xl"
+                _hover={{
+                  transform: 'translateY(-4px)',
+                  boxShadow: '0 0 40px rgba(167, 139, 250, 0.3)',
+                  borderColor: 'rgba(255,255,255,0.3)'
+                }}
+                transition="all 0.3s ease"
+                cursor="default"
                 bg="rgba(255,255,255,0.10)"
                 backdropFilter="blur(20px)"
                 border="1px solid rgba(255, 255, 255, 0.18)"
