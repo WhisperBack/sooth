@@ -305,11 +305,11 @@ export default function ExperienceHeading() {
 
         <VStack spacing={6} mt={24} px={6} textAlign="center">
           <MotionHeading
-  fontSize={{ base: '3xl', md: '4xl' }}
+  fontSize={{ base: '4xl', md: '6xl' }}
   fontWeight="extrabold"
   letterSpacing="-0.5px"
   textShadow="0 1px 2px rgba(0,0,0,0.25)"
-  bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
+  bgGradient="linear(to-r, blue.200, purple.300, pink.100)"
   backgroundSize="300% 300%"
   animation="drift 20s ease-in-out infinite"
   bgClip="text"
