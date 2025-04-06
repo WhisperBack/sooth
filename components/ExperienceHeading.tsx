@@ -242,7 +242,19 @@ export default function ExperienceHeading() {
           </Box>
         </NextLink>
 
-        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} pt={16} maxW="6xl">
+        <Box position="relative" w="full" maxW="6xl" mx="auto">
+          <Box
+            position="absolute"
+            top="50%"
+            left="50%"
+            transform="translate(-50%, -50%)"
+            w="140%"
+            h="140%"
+            bgGradient="radial(at center, rgba(255,255,255,0.04), transparent)"
+            filter="blur(100px)"
+            zIndex={-1}
+          />
+          <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} pt={16} maxW="6xl">
           {[
             { icon: Mic, title: 'Whisper Freely', desc: 'Let your thoughts flow. No judgment. Just space.' },
             { icon: Sparkles, title: 'Gentle Reflections', desc: 'Sooth listens, then gives you back peace.' },
@@ -250,22 +262,19 @@ export default function ExperienceHeading() {
           ].map((item, index) => (
             <MotionBox
               key={index}
-              p={6}
-              borderRadius="2xl"
-              bg="rgba(255,255,255,0.06)"
-              backdropFilter="blur(14px)"
-              border="1px solid rgba(255, 255, 255, 0.1)"
-              color="whiteAlpha.900"
-              _hover={{ transform: 'translateY(-4px)', boxShadow: '2xl' }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 + index * 0.2, duration: 0.8, ease: 'easeOut' }}
             >
               <Box mb={4} color="whiteAlpha.700">
                 <item.icon size={32} strokeWidth={1.2} />
               </Box>
-              <Text fontWeight="bold" fontSize="xl" mb={1}>{item.title}</Text>
+              <Text fontWeight="bold" fontSize="2xl" letterSpacing="-0.5px" textShadow="0 0 4px rgba(255,255,255,0.05)" mb={1}>{item.title}</Text>
               <Text fontSize="md" opacity={0.8}>{item.desc}</Text>
             </MotionBox>
           ))}
         </SimpleGrid>
+        </Box>
 
         <VStack spacing={6} mt={24} px={6} textAlign="center" maxW="2xl" mx="auto">
           <Text fontSize="xl" fontStyle="italic" color="whiteAlpha.800">
