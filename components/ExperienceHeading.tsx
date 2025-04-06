@@ -218,22 +218,27 @@ export default function ExperienceHeading() {
             />
             <MotionButton
   as="a"
+  px={8}
+  py={6}
+  fontSize="lg"
+  fontWeight="semibold"
+  color="white"
   bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
   backgroundSize="300% 300%"
   animation="drift 18s ease-in-out infinite"
-              backdropFilter="blur(20px)"
-              border="1px solid rgba(255,255,255,0.3)"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.2, duration: 0.6, ease: 'easeOut' }}
-              whileHover={{ scale: 1.04 }}
-              _hover={{
-                transform: 'translateY(-2px)',
-                boxShadow: '0 0 30px rgba(167, 139, 250, 0.4)'
-              }}
-            >
-              Try the Demo
-            </MotionButton>
+  backdropFilter="blur(20px)"
+  border="1px solid rgba(255,255,255,0.3)"
+  initial={{ opacity: 0, scale: 0.95 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ delay: 1.2, duration: 0.6, ease: 'easeOut' }}
+  whileHover={{ scale: 1.04 }}
+  _hover={{
+    transform: 'translateY(-2px)',
+    boxShadow: '0 0 30px rgba(167, 139, 250, 0.4)'
+  }}
+>
+  Try the Demo
+</MotionButton>
           </Box>
         </NextLink>
 
@@ -338,6 +343,11 @@ export default function ExperienceHeading() {
 />
               <MotionButton
   type="submit"
+  px={8}
+  py={6}
+  fontSize="lg"
+  fontWeight="semibold"
+  color="white"
   bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
   backgroundSize="300% 300%"
   animation="drift 20s ease-in-out infinite"
