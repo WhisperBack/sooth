@@ -276,7 +276,7 @@ export default function ExperienceHeading() {
                 borderRadius="2xl"
                 _hover={{
   transform: 'translateY(-4px)',
-  boxShadow: `${index === 0 ? '0 0 96px rgba(144, 205, 244, 0.7)' : index === 1 ? '0 0 96px rgba(251, 182, 206, 0.7)' : '0 0 120px rgba(203, 152, 255, 1), 0 0 60px rgba(203, 152, 255, 0.7)'}, 0 0 36px rgba(255,255,255,0.3)`,
+  boxShadow: `${index === 0 ? '0 0 120px rgba(144, 205, 244, 1), 0 0 60px rgba(144, 205, 244, 0.7)' : index === 1 ? '0 0 120px rgba(251, 182, 206, 1), 0 0 60px rgba(251, 182, 206, 0.7)' : '0 0 120px rgba(203, 152, 255, 1), 0 0 60px rgba(203, 152, 255, 0.7)'}, 0 0 36px rgba(255,255,255,0.3)`,
   borderColor: 'rgba(255,255,255,0.3)'
 }}
                 transition="all 0.3s ease"
