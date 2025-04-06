@@ -289,7 +289,7 @@ export default function ExperienceHeading() {
                 <MotionBox whileHover={{ scale: 1.08 }} transition={{ duration: 0.3 }}>
   <item.icon size={32} strokeWidth={1.2} color={index === 0 ? '#90cdf4' : index === 1 ? '#fbb6ce' : '#d6bcfa'} />
 </MotionBox>
-              <Text fontWeight="bold" fontSize="2xl" letterSpacing="-0.5px" bgGradient={index === 0 ? 'linear(to-r, blue.100, blue.300)' : index === 1 ? 'linear(to-r, pink.100, pink.300)' : 'linear(to-r, purple.100, purple.300)'} textShadow="0 0 6px rgba(0,0,0,0.25)" bgClip="text">
+              <Text fontWeight="bold" fontSize="2xl" letterSpacing="-0.5px" bgGradient={index === 0 ? 'linear(to-r, blue.100, blue.300)' : index === 1 ? 'linear(to-r, pink.100, pink.300)' : 'linear(to-r, purple.100, purple.300)'} textShadow="0 1px 1px rgba(0,0,0,0.2)" bgClip="text">
   {item.title}
 </Text>
               <Text fontSize="lg" lineHeight="1.6" color="whiteAlpha.900">{item.desc}</Text>
