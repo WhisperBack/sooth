@@ -273,7 +273,7 @@ export default function ExperienceHeading() {
                 borderRadius="2xl"
                 _hover={{
   transform: 'translateY(-4px)',
-  boxShadow: `${index === 0 ? '0 0 96px rgba(144, 205, 244, 0.7)' : index === 1 ? '0 0 96px rgba(234, 202, 255, 0.85)' : '0 0 96px rgba(251, 182, 206, 0.7)'}, 0 0 32px rgba(255,255,255,0.25)`,
+  boxShadow: `${index === 0 ? '0 0 96px rgba(144, 205, 244, 0.7)' : index === 1 ? '0 0 96px rgba(251, 182, 206, 0.7)' : '0 0 96px rgba(234, 202, 255, 0.85)'}, 0 0 32px rgba(255,255,255,0.25)`,
   borderColor: 'rgba(255,255,255,0.3)'
 }}
                 transition="all 0.3s ease"
@@ -287,9 +287,9 @@ export default function ExperienceHeading() {
                 <VStack spacing={5} textAlign="center"
               >
                 <MotionBox whileHover={{ scale: 1.08 }} transition={{ duration: 0.3 }}>
-  <item.icon size={32} strokeWidth={1.2} color={index === 0 ? '#90cdf4' : index === 1 ? '#d6bcfa' : '#fbb6ce'} />
+  <item.icon size={32} strokeWidth={1.2} color={index === 0 ? '#90cdf4' : index === 1 ? '#fbb6ce' : '#d6bcfa'} />
 </MotionBox>
-              <Text fontWeight="bold" fontSize="2xl" letterSpacing="-0.5px" bgGradient={index === 0 ? 'linear(to-r, blue.300, blue.500)' : index === 1 ? 'linear(to-r, purple.300, purple.500)' : 'linear(to-r, pink.300, pink.500)'} textShadow="0 0 6px rgba(0,0,0,0.25)" bgClip="text">
+              <Text fontWeight="bold" fontSize="2xl" letterSpacing="-0.5px" bgGradient={index === 0 ? 'linear(to-r, blue.300, blue.500)' : index === 1 ? 'linear(to-r, pink.300, pink.500)' : 'linear(to-r, purple.300, purple.500)'} textShadow="0 0 6px rgba(0,0,0,0.25)" bgClip="text">
   {item.title}
 </Text>
               <Text fontSize="lg" lineHeight="1.6" color="whiteAlpha.900">{item.desc}</Text>
