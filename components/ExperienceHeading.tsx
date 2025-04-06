@@ -255,49 +255,54 @@ export default function ExperienceHeading() {
             zIndex={-1}
           />
           <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} pt={16} maxW="6xl" alignItems="stretch">
-          {[
-            { icon: Mic, title: 'Whisper Freely', desc: 'Let your thoughts flow. No judgment. Just space.' },
-            { icon: Sparkles, title: 'Gentle Reflections', desc: 'Sooth listens, then gives you back peace.' },
-            { icon: MessageCircle, title: 'Clarity in Seconds', desc: 'Your insights. Summarized. In your words.' },
-          ].map((item, index) => (
-            <MotionBox
-              key={index}
-              h="full"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
-            >
-              <Box
-                p={6}
-                borderRadius="2xl"
-                _hover={{
-                  transform: 'translateY(-4px)',
-                  boxShadow: '0 0 40px rgba(167, 139, 250, 0.3)',
-                  borderColor: 'rgba(255,255,255,0.3)'
-                }}
-                transition="all 0.3s ease"
-                cursor="default"
-                bg="rgba(255,255,255,0.10)"
-                backdropFilter="blur(20px)"
-                border="1px solid rgba(255, 255, 255, 0.18)"
-                boxShadow="0 8px 40px rgba(0,0,0,0.2), inset 0 0 20px rgba(255,255,255,0.05)"
-                h="full"
-              >
-                <VStack spacing={5} textAlign="center"
-              >
-                <MotionBox whileHover={{ scale: 1.08 }} transition={{ duration: 0.3 }}>
-  <item.icon size={32} strokeWidth={1.2} />
-</MotionBox>
-              <Text fontWeight="bold" fontSize="2xl" letterSpacing="-0.5px" bgGradient={index === 0 ? 'linear(to-r, blue.300, blue.500)' : index === 1 ? 'linear(to-r, purple.300, purple.500)' : 'linear(to-r, pink.300, pink.500)'} textShadow="0 0 6px rgba(0,0,0,0.25)" bgClip="text">
-  {item.title}
-</Text>
-              <Text fontSize="lg" lineHeight="1.6" color="whiteAlpha.900">{item.desc}</Text>
-              </VStack>
-              </Box>
-            </MotionBox>
-          ))}
-        </SimpleGrid>
+  {[
+    { icon: Mic, title: 'Whisper Freely', desc: 'Let your thoughts flow. No judgment. Just space.' },
+    { icon: Sparkles, title: 'Gentle Reflections', desc: 'Sooth listens, then gives you back peace.', pulse: true },
+    { icon: MessageCircle, title: 'Clarity in Seconds', desc: 'Your insights. Summarized. In your words.' }
+  ].map((item, index) => (
+    <MotionBox
+      key={index}
+      p={6}
+      borderRadius="2xl"
+      bg="rgba(255,255,255,0.06)"
+      backdropFilter="blur(14px)"
+      border="1px solid rgba(255, 255, 255, 0.1)"
+      color="whiteAlpha.900"
+      whileHover={{ y: -4 }}
+      transition={{ duration: 0.3 }}
+      animation={item.pulse ? "pulseGlow 4s ease-in-out infinite" : undefined}
+    >
+      <VStack spacing={5} textAlign="center" h="full">
+        <MotionBox
+          whileHover={{ scale: 1.08 }}
+          transition={{ duration: 0.3 }}
+          textShadow="0 0 6px rgba(255,255,255,0.08), 0 0 24px rgba(167,139,250,0.3)"
+        >
+          <item.icon size={32} strokeWidth={1.2} />
+        </MotionBox>
+        <Text
+          fontWeight="bold"
+          fontSize="2xl"
+          letterSpacing="-0.5px"
+          bgGradient={
+            index === 0
+              ? 'linear(to-r, blue.300, blue.500)'
+              : index === 1
+              ? 'linear(to-r, purple.300, purple.500)'
+              : 'linear(to-r, pink.300, pink.500)'
+          }
+          textShadow="0 0 6px rgba(0,0,0,0.25)"
+          bgClip="text"
+        >
+          {item.title}
+        </Text>
+        <Text fontSize="lg" lineHeight="1.6" color="whiteAlpha.900" textShadow="0 0 4px rgba(0,0,0,0.2)">
+          {item.desc}
+        </Text>
+      </VStack>
+    </MotionBox>
+  ))}
+</SimpleGrid>
         </Box>
 
         <VStack spacing={6} mt={24} px={6} textAlign="center" maxW="2xl" mx="auto">
