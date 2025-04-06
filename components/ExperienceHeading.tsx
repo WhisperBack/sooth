@@ -333,11 +333,7 @@ export default function ExperienceHeading() {
           </Box>
         </VStack>
 
-        <SimpleGrid mt={24} pt={12} borderTop="1px solid rgba(255,255,255,0.1)" columns={3} spacing={8} color="whiteAlpha.600" fontSize="sm" textAlign="center">
-          <NextLink href="/about">About</NextLink>
-          <NextLink href="/demo">Demo</NextLink>
-          <NextLink href="/privacy">Privacy</NextLink>
-        </SimpleGrid>
+        
 
         <Box mt={20} textAlign="center" fontSize="sm" color="whiteAlpha.700" px={6} pb={10}>
           “Peace begins with a whisper.”
