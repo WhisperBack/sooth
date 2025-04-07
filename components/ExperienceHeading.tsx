@@ -149,7 +149,7 @@ export default function ExperienceHeading() {
           {/* Mobile Hamburger Menu */}
           <Box display={{ base: 'flex', md: 'none' }} alignItems="center" justifyContent="flex-end" w="full">
             <IconButton
-              icon={<Box as="span" fontSize={{ base: '8xl', md: '6xl' }}>☰</Box>}
+              icon={<Box as="span" fontSize={{ base: '5xl', md: '4xl' }}>☰</Box>}
               variant="ghost"
               aria-label="Open Menu"
               onClick={onOpen}
@@ -157,9 +157,9 @@ export default function ExperienceHeading() {
             />
             <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
               <DrawerOverlay />
-              <DrawerContent bgGradient="linear(to-br, blue.200, purple.300, pink.200)" backgroundSize="300% 300%" animation="drift 20s ease-in-out infinite" backdropFilter="blur(24px)" borderLeft="1px solid rgba(255,255,255,0.1)">
+              <DrawerContent width="85%" maxW="320px">
                 <DrawerCloseButton color="whiteAlpha.800" mt={4} />
-                <DrawerHeader borderBottomWidth="1px" color="transparent" bgGradient="linear(to-r, blue.200, purple.300, pink.200)" bgClip="text" textShadow="0 0 8px rgba(255,255,255,0.2)" fontWeight="bold" fontSize="2xl">Menu</DrawerHeader>
+                <DrawerHeader fontSize="3xl">Menu</DrawerHeader>
                 <DrawerBody>
                   <Stack spacing={6} mt={4} fontWeight="bold" fontSize="2xl">
                     {[
