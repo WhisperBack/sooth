@@ -1,7 +1,7 @@
 'use client';
 
 import Hero from '@/components/Section01_Hero';
-import { Box, VStack, Heading, Text, SimpleGrid, Input, InputGroup, InputRightElement, Button, Divider } from '@chakra-ui/react';
+import { Box, VStack, Heading, Text, SimpleGrid, Input, InputGroup, InputRightElement, Button } from '@chakra-ui/react';
 import { useState } from 'react';
 
 
@@ -13,11 +13,25 @@ export default function HomePage() {
   
   return (
     <Box as="main" bg="black" color="white">
-      <Hero />
+      <Hero />$1
 
-      <Divider borderColor="whiteAlpha.100" maxW="5xl" mx="auto" opacity={0.2} my={10} />
-
-      {/* Embedded Demo Section */}
+      {/* Live Demo Button under Hero tagline */}
+      <VStack spacing={6} pt={6} pb={10} px={6} textAlign="center">
+        <Button
+          size="lg"
+          px={8}
+          py={6}
+          borderRadius="full"
+          bgGradient="linear(to-r, blue.300, purple.400, pink.300)"
+          color="white"
+          fontWeight="bold"
+          _hover={{ bgGradient: 'linear(to-r, blue.400, purple.500, pink.400)', boxShadow: 'lg' }}
+          onClick={() => alert('Demo experience triggered')}
+        >
+          🎙️ Speak Now
+        </Button>
+      </VStack>
+{/* Embedded Demo Section */}
       <VStack spacing={10} py={12} px={6} textAlign="center">
         
 
