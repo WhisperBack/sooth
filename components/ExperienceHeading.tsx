@@ -262,7 +262,7 @@ export default function ExperienceHeading() {
             fontSize={{ base: '2xl', md: '3xl' }}
             fontWeight="semibold"
             letterSpacing="-0.5px"
-            lineHeight="1.4"
+            lineHeight="1.5" textAlign="center"
             maxW="2xl"
             mx="auto"
             color="whiteAlpha.900"
@@ -456,7 +456,7 @@ export default function ExperienceHeading() {
     textAlign="center"
   >
     <Text
-  fontSize={{ base: '2xl', md: '4xl', lg: '4xl' }}
+  fontSize={{ base: '3xl', md: '4xl', lg: '4xl' }}
   fontWeight="bold"
   bgGradient="linear(to-r, blue.100, blue.300, purple.200, pink.200, pink.300)"
   bgClip="text"
