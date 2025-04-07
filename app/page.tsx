@@ -31,6 +31,58 @@ export default function HomePage() {
     <Box as="main" bg="black" color="white">
       <Hero />
 
+      {/* Embedded Demo Section */}
+      <VStack spacing={12} py={24} px={6} textAlign="center">
+        <Heading
+          size="2xl"
+          bgGradient="linear(to-r, blue.200, purple.300, pink.300)"
+          bgClip="text"
+          textShadow="0 0 18px rgba(255,255,255,0.15)"
+        >
+          Try Sooth Now
+        </Heading>
+
+        <MotionBox
+          borderRadius="full"
+          width={recording ? '100px' : '80px'}
+          height={recording ? '100px' : '80px'}
+          bgGradient="linear(to-r, blue.300, purple.300, pink.300)"
+          animate={{ scale: recording ? [1, 1.1, 1] : 1 }}
+          transition={{ duration: 1.2, repeat: Infinity }}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          cursor="pointer"
+          onClick={startRecording}
+          boxShadow="0 0 24px rgba(0,0,0,0.4)"
+        >
+          {recording ? <Spinner color="white" /> : <Text fontWeight="bold">Speak</Text>}
+        </MotionBox>
+
+        {transcript && (
+          <Box maxW="lg">
+            <Text fontSize="md" color="whiteAlpha.700">
+              {transcript}
+            </Text>
+          </Box>
+        )}
+
+        {response && (
+          <Box
+            maxW="xl"
+            p={6}
+            bg="whiteAlpha.50"
+            borderRadius="xl"
+            backdropFilter="blur(10px)"
+            border="1px solid rgba(255,255,255,0.05)"
+          >
+            <Text fontSize="lg" color="whiteAlpha.800">
+              {response}
+            </Text>
+          </Box>
+        )}
+      </VStack>
+
       {/* Features Section */}
       <VStack spacing={16} py={{ base: 20, md: 28 }} px={{ base: 6, md: 12 }} textAlign="center">
         <Heading
@@ -119,58 +171,6 @@ export default function HomePage() {
             </InputRightElement>
           </InputGroup>
         </Box>
-      </VStack>
-
-      {/* Embedded Demo Section */}
-      <VStack spacing={12} py={24} px={6} textAlign="center">
-        <Heading
-          size="2xl"
-          bgGradient="linear(to-r, blue.200, purple.300, pink.300)"
-          bgClip="text"
-          textShadow="0 0 18px rgba(255,255,255,0.15)"
-        >
-          Try Sooth Now
-        </Heading>
-
-        <MotionBox
-          borderRadius="full"
-          width={recording ? '100px' : '80px'}
-          height={recording ? '100px' : '80px'}
-          bgGradient="linear(to-r, blue.300, purple.300, pink.300)"
-          animate={{ scale: recording ? [1, 1.1, 1] : 1 }}
-          transition={{ duration: 1.2, repeat: Infinity }}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          cursor="pointer"
-          onClick={startRecording}
-          boxShadow="0 0 24px rgba(0,0,0,0.4)"
-        >
-          {recording ? <Spinner color="white" /> : <Text fontWeight="bold">Speak</Text>}
-        </MotionBox>
-
-        {transcript && (
-          <Box maxW="lg">
-            <Text fontSize="md" color="whiteAlpha.700">
-              {transcript}
-            </Text>
-          </Box>
-        )}
-
-        {response && (
-          <Box
-            maxW="xl"
-            p={6}
-            bg="whiteAlpha.50"
-            borderRadius="xl"
-            backdropFilter="blur(10px)"
-            border="1px solid rgba(255,255,255,0.05)"
-          >
-            <Text fontSize="lg" color="whiteAlpha.800">
-              {response}
-            </Text>
-          </Box>
-        )}
       </VStack>
 
       {/* Footer */}
