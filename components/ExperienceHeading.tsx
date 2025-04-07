@@ -17,6 +17,9 @@ const MotionBox = motion(Box);
 const ScrollbarStyles = () => (
   <Global
     styles={`
+      html, body {
+        overflow-x: hidden;
+      }
       ::-webkit-scrollbar {
   width: 12px;
 }
@@ -145,7 +148,7 @@ export default function ExperienceHeading() {
         </Flex>
       </Box>
 
-      <MotionVStack spacing={12} textAlign="center" py={{ base: 20, md: 28 }}>
+      <MotionVStack spacing={12} textAlign="center" py={{ base: 20, md: 28 }} overflow="hidden">
         <MotionHeading
   position="relative"
 >
