@@ -18,22 +18,22 @@ const ScrollbarStyles = () => (
   <Global
     styles={`
       ::-webkit-scrollbar {
-        width: 10px;
-      }
+  width: 6px;
+}
       ::-webkit-scrollbar-track {
         background: transparent;
       }
       ::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 8px;
-        backdrop-filter: blur(6px);
-      }
+  background: rgba(144, 205, 244, 0.25);
+  border-radius: 12px;
+  transition: background 0.3s ease;
+}
       ::-webkit-scrollbar-thumb:hover {
-        background: rgba(255, 255, 255, 0.4);
-      }
+  background: rgba(144, 205, 244, 0.5);
+}
       * {
-        scrollbar-width: thin;
-        scrollbar-color: rgba(255,255,255,0.2) transparent;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(144, 205, 244, 0.25) transparent;
       }
 
       @keyframes drift {
