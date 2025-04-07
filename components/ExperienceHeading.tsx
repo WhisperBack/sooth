@@ -383,26 +383,17 @@ export default function ExperienceHeading() {
 
         
 
-        <Box
-  mt={20}
-  w="100%"
-  overflow="hidden"
-  whiteSpace="nowrap"
-  position="relative"
-  px={6}
-  pb={10}
->
+        <Box mt={12} px={6} textAlign="center">
   <Box
     as="span"
     display="inline-block"
-    px={8}
+    px={4}
     fontSize={{ base: '2xl', md: '4xl', lg: '4xl' }}
     fontWeight="bold"
     bgGradient="linear(to-r, blue.100, blue.300, white, purple.200, white, pink.200, pink.300)"
     bgClip="text"
     backgroundSize="300% 300%"
-    animation="drift 18s ease-in-out infinite, scrollText 32s linear infinite"
-    minW="max-content"
+    animation="drift 18s ease-in-out infinite"
     color="transparent"
     textAlign="center"
   >
