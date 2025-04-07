@@ -21,14 +21,31 @@ const ScrollbarStyles = () => (
         overflow-x: hidden;
       }
       ::-webkit-scrollbar {
-  width: 12px;
+  width: 16px;
+  background: transparent;
+}
 }
       ::-webkit-scrollbar-track {
         background: transparent;
       }
-      ::-webkit-scrollbar-thumb {
+      ::-webkit-scrollbar-button:single-button:vertical:decrement {
+  height: 16px;
+  background: url('data:image/svg+xml;utf8,<svg fill="white" height="12" viewBox="0 0 24 24" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M7 14l5-5 5 5z"/></svg>') no-repeat center;
+  background-size: 10px;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  height: 16px;
+  background: url('data:image/svg+xml;utf8,<svg fill="white" height="12" viewBox="0 0 24 24" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat center;
+  background-size: 10px;
+}
+
+::-webkit-scrollbar-thumb {
   background: linear-gradient(to bottom, var(--chakra-colors-blue-200), var(--chakra-colors-purple-300), var(--chakra-colors-pink-200));
-  border-radius: 12px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
   transition: background 0.3s ease;
 }
       ::-webkit-scrollbar-thumb:hover {
