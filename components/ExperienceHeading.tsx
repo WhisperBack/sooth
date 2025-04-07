@@ -168,6 +168,8 @@ export default function ExperienceHeading() {
   <Box
     as="span"
     fontSize={{ base: '5xl', md: '7xl', lg: '8xl' }}
+    mb={2}
+    lineHeight="1.1"
     bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
     backgroundSize="300% 300%"
     animation="drift 18s ease-in-out infinite"
@@ -236,8 +238,8 @@ export default function ExperienceHeading() {
             />
             <MotionButton
   as="a"
-  px={8}
-  py={6}
+  px={{ base: 6, md: 8 }}
+  py={{ base: 5, md: 6 }}
   fontSize="lg"
   fontWeight="semibold"
   color="white"
@@ -272,7 +274,7 @@ export default function ExperienceHeading() {
             filter="blur(100px)"
             zIndex={-1}
           />
-          <SimpleGrid columns={{ base: 1, md: 3 }} px={{ base: 4, md: 0 }} spacing={8} pt={16} maxW="6xl" alignItems="stretch">
+          <SimpleGrid columns={{ base: 1, md: 3 }} px={{ base: 4, md: 0 }} spacing={{ base: 6, md: 8 }} pt={{ base: 10, md: 16 }} maxW="6xl" alignItems="stretch">
           {[
             { icon: Mic, title: 'Whisper Freely', desc: 'Let your thoughts flow. No judgment. Just space.' },
             { icon: Sparkles, title: 'Gentle Reflections', desc: 'Sooth listens, then gives you back peace.' },
@@ -323,7 +325,9 @@ export default function ExperienceHeading() {
         <VStack spacing={6} mt={{ base: 16, md: 24 }} px={{ base: 4, md: 6 }} textAlign="center">
           <MotionHeading
   position="relative"
-  fontSize="6xl"
+  fontSize={{ base: '4xl', md: '5xl', lg: '6xl' }}
+  maxW={{ base: '90%', md: '100%' }}
+  mx="auto"
   fontWeight="bold"
   bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
   backgroundSize="300% 300%"
@@ -354,7 +358,7 @@ export default function ExperienceHeading() {
   borderRadius="xl"
   size="lg"
   fontSize="lg"
-  _placeholder={{ color: 'whiteAlpha.800', fontSize: 'lg' }}
+  _placeholder={{ color: 'whiteAlpha.800', fontSize: { base: 'md', md: 'lg' } }}
   _focus={{ borderColor: 'blue.300', boxShadow: '0 0 0 1px rgba(144,205,244,0.6)' }}
   _hover={{ bg: 'rgba(255, 255, 255, 0.22)' }}
   bgGradient="linear(to-r, rgba(144, 205, 244, 0.4), rgba(203, 152, 255, 0.4))"
