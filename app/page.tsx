@@ -1,6 +1,6 @@
 'use client';
 
-
+import Hero from '@/components/Section01_Hero';
 import { Box, VStack, Heading, Text, SimpleGrid, Input, InputGroup, InputRightElement, Button } from '@chakra-ui/react';
 import { useState } from 'react';
 
@@ -11,7 +11,7 @@ export default function HomePage() {
   
   return (
     <Box as="main" bg="black" color="white">
-    
+      <Hero />
 
       {/* Live Demo Button under Hero tagline */}
       
