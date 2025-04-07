@@ -396,19 +396,19 @@ export default function ExperienceHeading() {
     textAlign="center"
   >
     <Text
-      fontSize={{ base: '2xl', md: '4xl', lg: '4xl' }}
-      fontWeight="bold"
-      bgGradient="linear(to-r, blue.100, blue.300, white, purple.200, white, pink.200, pink.300)"
-      bgClip="text"
-      backgroundSize="300% 300%"
-      animation="drift 18s ease-in-out infinite"
-      color="transparent"
-      textShadow="0 0 12px rgba(255,255,255,0.15)"
-      lineHeight="1.4"
-    >
-      Sooth is where your voice becomes feeling,<br />
-      your silence is sacred, and healing finally has a home.
-    </Text>
+  fontSize={{ base: '2xl', md: '4xl', lg: '4xl' }}
+  fontWeight="bold"
+  bgGradient="linear(to-r, blue.100, blue.300, purple.200, pink.200, pink.300)"
+  bgClip="text"
+  backgroundSize="300% 300%"
+  animation="drift 20s ease-in-out infinite"
+  color="transparent"
+  textShadow="0 0 12px rgba(255,255,255,0.15)"
+  lineHeight="1.4"
+>
+  Sooth is where your voice becomes feeling and your silence is sacred.<br />
+  Healing, finally, has a home.
+</Text>
   </Box>
 </Box>
 </MotionVStack>
