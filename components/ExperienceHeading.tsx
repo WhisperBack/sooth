@@ -163,7 +163,7 @@ export default function ExperienceHeading() {
   />
   <Box
     as="span"
-    fontSize="8xl"
+    fontSize={{ base: '5xl', md: '7xl', lg: '8xl' }}
     bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
     backgroundSize="300% 300%"
     animation="drift 18s ease-in-out infinite"
