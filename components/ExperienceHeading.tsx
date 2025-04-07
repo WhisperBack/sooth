@@ -209,32 +209,36 @@ export default function ExperienceHeading() {
     filter="blur(160px)"
     zIndex={-1}
   />
-  <Box
-    as="span"
-    display="block"
-    textAlign="center"
-    fontSize={{ base: '7xl', md: '7xl', lg: '8xl' }}
-    mb={4}
-    lineHeight="1.1"
-    bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
-    backgroundSize="300% 300%"
-    animation="drift 18s ease-in-out infinite"
-    
-    bgClip="text"
-  >
-    Experience
-  </Box>{' '}
-  <Box
-    as="span"
-    fontSize={{ base: '7xl', md: '7xl', lg: '8xl' }}
-    bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
-    textShadow="0 0 32px rgba(255, 255, 255, 0.1)"
-    backgroundSize="300% 300%"
-    animation="drift 20s ease-in-out infinite"
-    bgClip="text"
-  >
-    Sooth
-  </Box>
+  <VStack spacing={1} align="center">
+    <Box
+      as="span"
+      display="block"
+      textAlign="center"
+      fontSize={{ base: '6xl', md: '7xl', lg: '8xl' }}
+      mb={2}
+      lineHeight="1"
+      bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
+      backgroundSize="300% 300%"
+      animation="drift 18s ease-in-out infinite"
+      bgClip="text"
+    >
+      Experience
+    </Box>
+    <Box
+      as="span"
+      display="block"
+      textAlign="center"
+      fontSize={{ base: '6xl', md: '7xl', lg: '8xl' }}
+      bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
+      textShadow="0 0 32px rgba(255, 255, 255, 0.1)"
+      backgroundSize="300% 300%"
+      animation="drift 20s ease-in-out infinite"
+      bgClip="text"
+      lineHeight="1"
+    >
+      Sooth
+    </Box>
+  </VStack>
 </MotionHeading>
 
         <Box position="relative" display="inline-block" width="100%">
