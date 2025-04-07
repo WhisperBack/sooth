@@ -149,7 +149,7 @@ export default function ExperienceHeading() {
           {/* Mobile Hamburger Menu */}
           <Box display={{ base: 'flex', md: 'none' }} alignItems="center" justifyContent="flex-end" w="full">
             <IconButton
-              icon={<Box as="span" fontSize="xl">☰</Box>}
+              icon={<Box as="span" fontSize={{ base: '2xl', md: 'xl' }}>☰</Box>}
               variant="ghost"
               aria-label="Open Menu"
               onClick={onOpen}
@@ -190,7 +190,7 @@ export default function ExperienceHeading() {
         </Flex>
       </Box>
 
-      <MotionVStack spacing={12} textAlign="center" py={{ base: 20, md: 28 }} overflow="hidden">
+      <MotionVStack spacing={12} textAlign="center" py={{ base: 20, md: 28 }} pt={{ base: 8, md: 20 }} overflow="hidden" position="relative">
         <MotionHeading
   position="relative"
   px={{ base: 4, md: 0 }}
@@ -356,7 +356,7 @@ export default function ExperienceHeading() {
               <Text fontWeight="bold" fontSize="2xl" letterSpacing="-0.5px" bgGradient={index === 0 ? 'linear(to-r, blue.100, blue.300)' : index === 1 ? 'linear(to-r, pink.100, pink.300)' : 'linear(to-r, purple.100, purple.300)'} textShadow="0 1px 1px rgba(0,0,0,0.2)" bgClip="text">
   {item.title}
 </Text>
-              <Text fontSize="lg" lineHeight="1.6" color="whiteAlpha.900">{item.desc}</Text>
+              <Text fontSize="lg" lineHeight="1.6" color="whiteAlpha.900" pt={2}>{item.desc}</Text>
               </VStack>
               </Box>
             </MotionBox>
