@@ -1,12 +1,31 @@
 'use client';
 
 import Hero from '@/components/Section01_Hero';
-import { Box, VStack, Heading, Text, SimpleGrid, Input, InputGroup, InputRightElement, Button } from '@chakra-ui/react';
+import { Box, VStack, Heading, Text, SimpleGrid, Input, InputGroup, InputRightElement, Button, Spinner } from '@chakra-ui/react';
 import { useState } from 'react';
-import Link from 'next/link';
+import { motion } from 'framer-motion';
+
+const MotionBox = motion(Box);
 
 export default function HomePage() {
   const [email, setEmail] = useState('');
+  const [recording, setRecording] = useState(false);
+  const [transcript, setTranscript] = useState('');
+  const [response, setResponse] = useState('');
+
+  const startRecording = () => {
+    setRecording(true);
+    setTranscript('Listening...');
+    setResponse('');
+
+    setTimeout(() => {
+      setTranscript('I’ve been feeling really overwhelmed this week.');
+      setRecording(false);
+      setResponse(
+        'It’s okay to feel that way. Let’s take a breath together. You’re doing better than you think.'
+      );
+    }, 4000);
+  };
 
   return (
     <Box as="main" bg="black" color="white">
@@ -100,24 +119,58 @@ export default function HomePage() {
             </InputRightElement>
           </InputGroup>
         </Box>
+      </VStack>
 
-        <Box pt={6}>
-          <Button
-            as={Link}
-            href="/demo"
-            size="lg"
-            bgGradient="linear(to-r, blue.300, purple.300, pink.300)"
-            color="white"
-            px={8}
-            py={6}
-            borderRadius="full"
-            fontWeight="bold"
-            _hover={{ transform: 'scale(1.05)' }}
-            boxShadow="0 0 16px rgba(255,255,255,0.1)"
+      {/* Embedded Demo Section */}
+      <VStack spacing={12} py={24} px={6} textAlign="center">
+        <Heading
+          size="2xl"
+          bgGradient="linear(to-r, blue.200, purple.300, pink.300)"
+          bgClip="text"
+          textShadow="0 0 18px rgba(255,255,255,0.15)"
+        >
+          Try Sooth Now
+        </Heading>
+
+        <MotionBox
+          borderRadius="full"
+          width={recording ? '100px' : '80px'}
+          height={recording ? '100px' : '80px'}
+          bgGradient="linear(to-r, blue.300, purple.300, pink.300)"
+          animate={{ scale: recording ? [1, 1.1, 1] : 1 }}
+          transition={{ duration: 1.2, repeat: Infinity }}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          cursor="pointer"
+          onClick={startRecording}
+          boxShadow="0 0 24px rgba(0,0,0,0.4)"
+        >
+          {recording ? <Spinner color="white" /> : <Text fontWeight="bold">Speak</Text>}
+        </MotionBox>
+
+        {transcript && (
+          <Box maxW="lg">
+            <Text fontSize="md" color="whiteAlpha.700">
+              {transcript}
+            </Text>
+          </Box>
+        )}
+
+        {response && (
+          <Box
+            maxW="xl"
+            p={6}
+            bg="whiteAlpha.50"
+            borderRadius="xl"
+            backdropFilter="blur(10px)"
+            border="1px solid rgba(255,255,255,0.05)"
           >
-            Try the Sooth Demo
-          </Button>
-        </Box>
+            <Text fontSize="lg" color="whiteAlpha.800">
+              {response}
+            </Text>
+          </Box>
+        )}
       </VStack>
 
       {/* Footer */}
