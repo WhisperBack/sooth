@@ -1,6 +1,6 @@
 'use client';
 
-import { Heading, Text, VStack, Button, Box, Flex, Link as ChakraLink, SimpleGrid, Input } from '@chakra-ui/react';
+import { Heading, Text, VStack, Button, Box, Flex, Link as ChakraLink, SimpleGrid, Input, IconButton, useDisclosure, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, Stack } from '@chakra-ui/react';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import NextLink from 'next/link';
@@ -75,6 +75,7 @@ const ScrollbarStyles = () => (
 );
 
 export default function ExperienceHeading() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const pathname = usePathname();
   return (
     <>
@@ -94,8 +95,10 @@ export default function ExperienceHeading() {
             filter="blur(40px)"
             zIndex={-1}
           />
+          {/* Desktop Navigation */}
           <Flex
             as="nav"
+            display={{ base: 'none', md: 'flex' }}
             backgroundImage="linear(to right, var(--chakra-colors-blue-200), var(--chakra-colors-purple-300), var(--chakra-colors-pink-300))"
             backgroundColor="rgba(255, 255, 255, 0.025)"
             backgroundSize="300% 300%"
@@ -112,8 +115,7 @@ export default function ExperienceHeading() {
             border="1px solid rgba(255, 255, 255, 0.05)"
             boxShadow="0 4px 24px rgba(0, 0, 0, 0.2)"
           >
-
-          {[
+            {[
               { href: '/about', label: 'About' },
               { href: '/demo', label: 'Demo' },
               { href: '/privacy', label: 'Privacy' },
@@ -143,6 +145,48 @@ export default function ExperienceHeading() {
               </NextLink>
             ))}
           </Flex>
+
+          {/* Mobile Hamburger Menu */}
+          <Box display={{ base: 'flex', md: 'none' }} alignItems="center" justifyContent="flex-end" w="full">
+            <IconButton
+              icon={<Box as="span" fontSize="xl">☰</Box>}
+              variant="ghost"
+              aria-label="Open Menu"
+              onClick={onOpen}
+              color="whiteAlpha.800"
+            />
+            <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
+              <DrawerOverlay />
+              <DrawerContent bg="rgba(18, 18, 18, 0.9)" backdropFilter="blur(20px)" borderLeft="1px solid rgba(255,255,255,0.1)">
+                <DrawerCloseButton color="whiteAlpha.800" />
+                <DrawerHeader borderBottomWidth="1px" color="whiteAlpha.900">Menu</DrawerHeader>
+                <DrawerBody>
+                  <Stack spacing={4} mt={4}>
+                    {[
+                      { href: '/about', label: 'About' },
+                      { href: '/demo', label: 'Demo' },
+                      { href: '/privacy', label: 'Privacy' },
+                      { href: '/terms', label: 'Terms' },
+                      { href: '/how-it-works', label: 'How It Works' },
+                      { href: '/contact', label: 'Contact' }
+                    ].map((link, i) => (
+                      <NextLink key={i} href={link.href} passHref>
+                        <ChakraLink
+                          fontSize="lg"
+                          fontWeight="medium"
+                          color="whiteAlpha.900"
+                          _hover={{ color: 'blue.300' }}
+                          onClick={onClose}
+                        >
+                          {link.label}
+                        </ChakraLink>
+                      </NextLink>
+                    ))}
+                  </Stack>
+                </DrawerBody>
+              </DrawerContent>
+            </Drawer>
+          </Box>
         </Flex>
       </Box>
 
