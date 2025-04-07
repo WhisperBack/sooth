@@ -1,7 +1,7 @@
 'use client';
 
 import Hero from '@/components/Section01_Hero';
-import { Box, VStack, Heading, Text, SimpleGrid, Input, InputGroup, InputRightElement, Button, Spinner } from '@chakra-ui/react';
+import { Box, VStack, Heading, Text, SimpleGrid, Input, InputGroup, InputRightElement, Button, Spinner, Divider } from '@chakra-ui/react';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
@@ -31,8 +31,10 @@ export default function HomePage() {
     <Box as="main" bg="black" color="white">
       <Hero />
 
+      <Divider borderColor="whiteAlpha.100" maxW="5xl" mx="auto" opacity={0.2} my={10} />
+
       {/* Embedded Demo Section */}
-      <VStack spacing={12} py={24} px={6} textAlign="center">
+      <VStack spacing={10} py={12} px={6} textAlign="center">
         <Heading
           size="2xl"
           bgGradient="linear(to-r, blue.200, purple.300, pink.300)"
