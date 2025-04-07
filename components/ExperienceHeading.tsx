@@ -1,6 +1,7 @@
 'use client';
 
 import { Heading, Text, VStack, Button, Box, Flex, Link as ChakraLink, SimpleGrid, Input, IconButton, useDisclosure, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, Stack } from '@chakra-ui/react';
+import { HamburgerIcon } from '@chakra-ui/icons';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import NextLink from 'next/link';
@@ -149,7 +150,7 @@ export default function ExperienceHeading() {
           {/* Mobile Hamburger Menu */}
           <Box display={{ base: 'flex', md: 'none' }} alignItems="center" justifyContent="flex-end" w="full">
             <IconButton
-              icon={<Box as="span" fontSize={{ base: '4xl', md: '3xl' }}>☰</Box>}
+              icon={<HamburgerIcon boxSize={8} />}
               variant="ghost"
               aria-label="Open Menu"
               onClick={onOpen}
@@ -157,11 +158,11 @@ export default function ExperienceHeading() {
             />
             <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
               <DrawerOverlay />
-              <DrawerContent width="80%" maxW="280px">
+              <DrawerContent width="80%" maxW="280px" bgGradient="linear(to-br, blue.200, purple.300, pink.200)" backgroundSize="300% 300%" animation="drift 20s ease-in-out infinite" backdropFilter="blur(24px)">
                 <DrawerCloseButton color="whiteAlpha.800" mt={4} />
-                <DrawerHeader fontSize="3xl">Menu</DrawerHeader>
+                <DrawerHeader fontSize="3xl" bgGradient="linear(to-r, blue.200, purple.300, pink.200)" bgClip="text" textShadow="0 0 8px rgba(255,255,255,0.2)" fontWeight="bold">Menu</DrawerHeader>
                 <DrawerBody>
-                  <Stack spacing={6} mt={4} fontWeight="bold" fontSize="2xl">
+                  <Stack spacing={8} mt={4} fontWeight="bold" fontSize="2xl">
                     {[
                       { href: '/about', label: 'About' },
                       { href: '/demo', label: 'Demo' },
@@ -176,7 +177,7 @@ export default function ExperienceHeading() {
                           fontWeight="medium"
                           color="whiteAlpha.900"
                           _hover={{ color: 'blue.300' }}
-                          onClick={onClose} _active={{ transform: 'scale(0.95)' }}
+                          onClick={onClose} _active={{ transform: 'scale(0.95)' }} textShadow="0 0 6px rgba(0,0,0,0.2)"
                         >
                           {link.label}
                         </ChakraLink>
