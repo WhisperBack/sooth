@@ -383,7 +383,7 @@ export default function ExperienceHeading() {
 
         
 
-        <Box mt={12} px={6} textAlign="center">
+        <Box mt={8} px={6} textAlign="center">
   <Box
     maxW="3xl"
     mx="auto"
