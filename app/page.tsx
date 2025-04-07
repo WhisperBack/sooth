@@ -1,32 +1,16 @@
 'use client';
 
 import Hero from '@/components/Section01_Hero';
-import { Box, VStack, Heading, Text, SimpleGrid, Input, InputGroup, InputRightElement, Button, Spinner, Divider } from '@chakra-ui/react';
+import { Box, VStack, Heading, Text, SimpleGrid, Input, InputGroup, InputRightElement, Button, Divider } from '@chakra-ui/react';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 
-const MotionBox = motion(Box);
 
 export default function HomePage() {
   const [email, setEmail] = useState('');
-  const [recording, setRecording] = useState(false);
-  const [transcript, setTranscript] = useState('');
-  const [response, setResponse] = useState('');
+    const [transcript] = useState('');
+  const [response] = useState('');
 
-  const startRecording = () => {
-    setRecording(true);
-    setTranscript('Listening...');
-    setResponse('');
-
-    setTimeout(() => {
-      setTranscript('I’ve been feeling really overwhelmed this week.');
-      setRecording(false);
-      setResponse(
-        'It’s okay to feel that way. Let’s take a breath together. You’re doing better than you think.'
-      );
-    }, 4000);
-  };
-
+  
   return (
     <Box as="main" bg="black" color="white">
       <Hero />
@@ -35,31 +19,7 @@ export default function HomePage() {
 
       {/* Embedded Demo Section */}
       <VStack spacing={10} py={12} px={6} textAlign="center">
-        <Heading
-          size="2xl"
-          bgGradient="linear(to-r, blue.200, purple.300, pink.300)"
-          bgClip="text"
-          textShadow="0 0 18px rgba(255,255,255,0.15)"
-        >
-          Try Sooth Now
-        </Heading>
-
-        <MotionBox
-          borderRadius="full"
-          width={recording ? '100px' : '80px'}
-          height={recording ? '100px' : '80px'}
-          bgGradient="linear(to-r, blue.300, purple.300, pink.300)"
-          animate={{ scale: recording ? [1, 1.1, 1] : 1 }}
-          transition={{ duration: 1.2, repeat: Infinity }}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          cursor="pointer"
-          onClick={startRecording}
-          boxShadow="0 0 24px rgba(0,0,0,0.4)"
-        >
-          {recording ? <Spinner color="white" /> : <Text fontWeight="bold">Speak</Text>}
-        </MotionBox>
+        
 
         {transcript && (
           <Box maxW="lg">
