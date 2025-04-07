@@ -149,7 +149,7 @@ export default function ExperienceHeading() {
           {/* Mobile Hamburger Menu */}
           <Box display={{ base: 'flex', md: 'none' }} alignItems="center" justifyContent="flex-end" w="full">
             <IconButton
-              icon={<Box as="span" fontSize={{ base: '6xl', md: '4xl' }}>☰</Box>}
+              icon={<Box as="span" fontSize={{ base: '7xl', md: '5xl' }}>☰</Box>}
               variant="ghost"
               aria-label="Open Menu"
               onClick={onOpen}
@@ -161,7 +161,7 @@ export default function ExperienceHeading() {
                 <DrawerCloseButton color="whiteAlpha.800" />
                 <DrawerHeader borderBottomWidth="1px" color="whiteAlpha.900">Menu</DrawerHeader>
                 <DrawerBody>
-                  <Stack spacing={4} mt={4} fontWeight="semibold" fontSize="xl">
+                  <Stack spacing={6} mt={4} fontWeight="bold" fontSize="2xl">
                     {[
                       { href: '/about', label: 'About' },
                       { href: '/demo', label: 'Demo' },
@@ -172,7 +172,7 @@ export default function ExperienceHeading() {
                     ].map((link, i) => (
                       <NextLink key={i} href={link.href} passHref>
                         <ChakraLink
-                          fontSize="lg"
+                          fontSize="2xl"
                           fontWeight="medium"
                           color="whiteAlpha.900"
                           _hover={{ color: 'blue.300' }}
@@ -211,6 +211,8 @@ export default function ExperienceHeading() {
   />
   <Box
     as="span"
+    display="block"
+    textAlign="center"
     fontSize={{ base: '7xl', md: '7xl', lg: '8xl' }}
     mb={4}
     lineHeight="1.1"
