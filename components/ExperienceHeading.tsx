@@ -24,7 +24,7 @@ const ScrollbarStyles = () => (
         background: transparent;
       }
       ::-webkit-scrollbar-thumb {
-  background: rgba(144, 205, 244, 0.5);
+  background: linear-gradient(to bottom, var(--chakra-colors-blue-200), var(--chakra-colors-purple-300), var(--chakra-colors-pink-200));
   border-radius: 12px;
   transition: background 0.3s ease;
 }
@@ -33,7 +33,7 @@ const ScrollbarStyles = () => (
 }
       * {
   scrollbar-width: auto;
-  scrollbar-color: rgba(144, 205, 244, 0.25) transparent;
+  scrollbar-color: linear-gradient(to right, var(--chakra-colors-blue-200), var(--chakra-colors-purple-300), var(--chakra-colors-pink-200)) transparent;
       }
 
       @keyframes drift {
