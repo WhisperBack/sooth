@@ -149,7 +149,7 @@ export default function ExperienceHeading() {
           {/* Mobile Hamburger Menu */}
           <Box display={{ base: 'flex', md: 'none' }} alignItems="center" justifyContent="flex-end" w="full">
             <IconButton
-              icon={<Box as="span" fontSize={{ base: '3xl', md: '2xl' }}>☰</Box>}
+              icon={<Box as="span" fontSize={{ base: '6xl', md: '4xl' }}>☰</Box>}
               variant="ghost"
               aria-label="Open Menu"
               onClick={onOpen}
@@ -161,7 +161,7 @@ export default function ExperienceHeading() {
                 <DrawerCloseButton color="whiteAlpha.800" />
                 <DrawerHeader borderBottomWidth="1px" color="whiteAlpha.900">Menu</DrawerHeader>
                 <DrawerBody>
-                  <Stack spacing={4} mt={4}>
+                  <Stack spacing={4} mt={4} fontWeight="semibold" fontSize="xl">
                     {[
                       { href: '/about', label: 'About' },
                       { href: '/demo', label: 'Demo' },
@@ -211,8 +211,8 @@ export default function ExperienceHeading() {
   />
   <Box
     as="span"
-    fontSize={{ base: '6xl', md: '7xl', lg: '8xl' }}
-    mb={2}
+    fontSize={{ base: '7xl', md: '7xl', lg: '8xl' }}
+    mb={4}
     lineHeight="1.1"
     bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
     backgroundSize="300% 300%"
@@ -224,7 +224,7 @@ export default function ExperienceHeading() {
   </Box>{' '}
   <Box
     as="span"
-    fontSize={{ base: '6xl', md: '7xl', lg: '8xl' }}
+    fontSize={{ base: '7xl', md: '7xl', lg: '8xl' }}
     bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
     textShadow="0 0 32px rgba(255, 255, 255, 0.1)"
     backgroundSize="300% 300%"
