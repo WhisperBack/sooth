@@ -149,7 +149,7 @@ export default function ExperienceHeading() {
           {/* Mobile Hamburger Menu */}
           <Box display={{ base: 'flex', md: 'none' }} alignItems="center" justifyContent="flex-end" w="full">
             <IconButton
-              icon={<Box as="span" fontSize={{ base: '5xl', md: '4xl' }}>☰</Box>}
+              icon={<Box as="span" fontSize={{ base: '4xl', md: '3xl' }}>☰</Box>}
               variant="ghost"
               aria-label="Open Menu"
               onClick={onOpen}
@@ -157,7 +157,7 @@ export default function ExperienceHeading() {
             />
             <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
               <DrawerOverlay />
-              <DrawerContent width="85%" maxW="320px">
+              <DrawerContent width="80%" maxW="280px">
                 <DrawerCloseButton color="whiteAlpha.800" mt={4} />
                 <DrawerHeader fontSize="3xl">Menu</DrawerHeader>
                 <DrawerBody>
@@ -172,7 +172,7 @@ export default function ExperienceHeading() {
                     ].map((link, i) => (
                       <NextLink key={i} href={link.href} passHref>
                         <ChakraLink
-                          fontSize="2xl"
+                          fontSize="2xl" py={2} lineHeight="1.6"
                           fontWeight="medium"
                           color="whiteAlpha.900"
                           _hover={{ color: 'blue.300' }}
@@ -209,12 +209,12 @@ export default function ExperienceHeading() {
     filter="blur(160px)"
     zIndex={-1}
   />
-  <VStack spacing={3} align="center">
+  <VStack spacing={4} align="center" pb={{ base: 4, md: 6 }}>
     <Box
       as="span"
       display="block"
       textAlign="center"
-      fontSize={{ base: '6xl', md: '7xl', lg: '8xl' }}
+      fontSize={{ base: '5xl', md: '7xl', lg: '8xl' }}
       mb={2}
       lineHeight="1"
       bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
@@ -375,7 +375,9 @@ export default function ExperienceHeading() {
         <VStack spacing={6} mt={{ base: 16, md: 24 }} px={{ base: 4, md: 6 }} textAlign="center">
           <MotionHeading
   position="relative"
-  fontSize={{ base: '4xl', md: '5xl', lg: '6xl' }}
+  fontSize={{ base: '3xl', md: '5xl', lg: '6xl' }}
+  whiteSpace="normal"
+  wordBreak="break-word"
   maxW={{ base: '90%', md: '100%' }}
   mx="auto"
   fontWeight="bold"
