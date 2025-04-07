@@ -11,7 +11,7 @@ export default function HomePage() {
   
   return (
     <Box as="main" bg="black" color="white">
-      <Hero />$1
+      <Hero />
 
       {/* Live Demo Button under Hero tagline */}
       
