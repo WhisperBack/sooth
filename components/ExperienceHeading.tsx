@@ -24,7 +24,6 @@ const ScrollbarStyles = () => (
   width: 16px;
   background: transparent;
 }
-}
       ::-webkit-scrollbar-track {
         background: transparent;
       }
