@@ -150,7 +150,7 @@ export default function ExperienceHeading() {
           {/* Mobile Hamburger Menu */}
           <Box display={{ base: 'flex', md: 'none' }} alignItems="center" justifyContent="flex-end" w="full">
             <IconButton
-              icon={<HamburgerIcon boxSize={8} />}
+              icon={<HamburgerIcon boxSize={10} />}
               variant="ghost"
               aria-label="Open Menu"
               onClick={onOpen}
@@ -158,11 +158,11 @@ export default function ExperienceHeading() {
             />
             <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
               <DrawerOverlay />
-              <DrawerContent width="80%" maxW="280px" bgGradient="linear(to-br, blue.200, purple.300, pink.200)" backgroundSize="300% 300%" animation="drift 20s ease-in-out infinite" backdropFilter="blur(24px)">
-                <DrawerCloseButton color="whiteAlpha.800" mt={4} />
+              <DrawerContent width="80%" maxW="280px" bgGradient="linear(to-br, blue.200, purple.300, pink.200)" backgroundSize="300% 300%" animation="drift 30s ease-in-out infinite" backdropFilter="blur(24px)">
+                <DrawerCloseButton color="whiteAlpha.800" mt={4} _active={{ transform: 'scale(0.9)' }} />
                 <DrawerHeader fontSize="3xl" bgGradient="linear(to-r, blue.200, purple.300, pink.200)" bgClip="text" textShadow="0 0 8px rgba(255,255,255,0.2)" fontWeight="bold">Menu</DrawerHeader>
                 <DrawerBody>
-                  <Stack spacing={8} mt={4} fontWeight="bold" fontSize="2xl">
+                  <Stack spacing={8} mt={4} fontWeight="bold" fontSize="2xl" align="center">
                     {[
                       { href: '/about', label: 'About' },
                       { href: '/demo', label: 'Demo' },
@@ -173,7 +173,7 @@ export default function ExperienceHeading() {
                     ].map((link, i) => (
                       <NextLink key={i} href={link.href} passHref>
                         <ChakraLink
-                          fontSize="2xl" py={2} lineHeight="1.6"
+                          fontSize="2xl" py={2} px={2} lineHeight="1.6"
                           fontWeight="medium"
                           color="whiteAlpha.900"
                           _hover={{ color: 'blue.300' }}
@@ -215,7 +215,7 @@ export default function ExperienceHeading() {
       as="span"
       display="block"
       textAlign="center"
-      fontSize={{ base: '5xl', md: '7xl', lg: '8xl' }}
+      fontSize={{ base: '6xl', md: '7xl', lg: '8xl' }}
       mb={2}
       lineHeight="1"
       bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
