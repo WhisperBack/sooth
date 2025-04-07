@@ -383,21 +383,32 @@ export default function ExperienceHeading() {
 
         
 
-        <Box mt={12} px={6} textAlign="center">
+        <Box mt={20} px={6} textAlign="center">
   <Box
-    as="span"
-    display="inline-block"
-    px={4}
-    fontSize={{ base: '2xl', md: '4xl', lg: '4xl' }}
-    fontWeight="bold"
-    bgGradient="linear(to-r, blue.100, blue.300, white, purple.200, white, pink.200, pink.300)"
-    bgClip="text"
-    backgroundSize="300% 300%"
-    animation="drift 18s ease-in-out infinite"
-    color="transparent"
+    maxW="3xl"
+    mx="auto"
+    px={8}
+    py={6}
+    bg="rgba(255, 255, 255, 0.04)"
+    backdropFilter="blur(12px)"
+    border="1px solid rgba(255,255,255,0.1)"
+    borderRadius="xl"
     textAlign="center"
   >
-    Sooth is where your voice becomes feeling, your silence is sacred, and healing finally has a home.
+    <Text
+      fontSize={{ base: '2xl', md: '4xl', lg: '4xl' }}
+      fontWeight="bold"
+      bgGradient="linear(to-r, blue.100, blue.300, white, purple.200, white, pink.200, pink.300)"
+      bgClip="text"
+      backgroundSize="300% 300%"
+      animation="drift 18s ease-in-out infinite"
+      color="transparent"
+      textShadow="0 0 12px rgba(255,255,255,0.15)"
+      lineHeight="1.4"
+    >
+      Sooth is where your voice becomes feeling,<br />
+      your silence is sacred, and healing finally has a home.
+    </Text>
   </Box>
 </Box>
 </MotionVStack>
