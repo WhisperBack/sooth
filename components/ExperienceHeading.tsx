@@ -149,7 +149,7 @@ export default function ExperienceHeading() {
           {/* Mobile Hamburger Menu */}
           <Box display={{ base: 'flex', md: 'none' }} alignItems="center" justifyContent="flex-end" w="full">
             <IconButton
-              icon={<Box as="span" fontSize={{ base: '7xl', md: '5xl' }}>☰</Box>}
+              icon={<Box as="span" fontSize={{ base: '8xl', md: '6xl' }}>☰</Box>}
               variant="ghost"
               aria-label="Open Menu"
               onClick={onOpen}
@@ -158,8 +158,8 @@ export default function ExperienceHeading() {
             <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
               <DrawerOverlay />
               <DrawerContent bgGradient="linear(to-br, blue.200, purple.300, pink.200)" backgroundSize="300% 300%" animation="drift 20s ease-in-out infinite" backdropFilter="blur(24px)" borderLeft="1px solid rgba(255,255,255,0.1)">
-                <DrawerCloseButton color="whiteAlpha.800" />
-                <DrawerHeader borderBottomWidth="1px" color="whiteAlpha.900">Menu</DrawerHeader>
+                <DrawerCloseButton color="whiteAlpha.800" mt={4} />
+                <DrawerHeader borderBottomWidth="1px" color="transparent" bgGradient="linear(to-r, blue.200, purple.300, pink.200)" bgClip="text" textShadow="0 0 8px rgba(255,255,255,0.2)" fontWeight="bold" fontSize="2xl">Menu</DrawerHeader>
                 <DrawerBody>
                   <Stack spacing={6} mt={4} fontWeight="bold" fontSize="2xl">
                     {[
@@ -176,7 +176,7 @@ export default function ExperienceHeading() {
                           fontWeight="medium"
                           color="whiteAlpha.900"
                           _hover={{ color: 'blue.300' }}
-                          onClick={onClose}
+                          onClick={onClose} _active={{ transform: 'scale(0.95)' }}
                         >
                           {link.label}
                         </ChakraLink>
@@ -190,7 +190,7 @@ export default function ExperienceHeading() {
         </Flex>
       </Box>
 
-      <MotionVStack spacing={12} textAlign="center" py={{ base: 20, md: 28 }} pt={{ base: 8, md: 20 }} overflow="hidden" position="relative">
+      <MotionVStack spacing={12} textAlign="center" py={{ base: 20, md: 28 }} pt={{ base: 12, md: 20 }} overflow="hidden" position="relative">
         <MotionHeading
   position="relative"
   px={{ base: 4, md: 0 }}
@@ -209,7 +209,7 @@ export default function ExperienceHeading() {
     filter="blur(160px)"
     zIndex={-1}
   />
-  <VStack spacing={1} align="center">
+  <VStack spacing={3} align="center">
     <Box
       as="span"
       display="block"
