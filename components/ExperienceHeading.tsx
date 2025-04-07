@@ -149,6 +149,10 @@ export default function ExperienceHeading() {
       <MotionVStack spacing={12} textAlign="center" py={{ base: 20, md: 28 }} overflow="hidden">
         <MotionHeading
   position="relative"
+  px={{ base: 4, md: 0 }}
+  maxW={{ base: '90%', md: '100%' }}
+  mx="auto"
+  textAlign="center"
 >
   <MotionBox
     position="absolute"
@@ -174,7 +178,7 @@ export default function ExperienceHeading() {
   </Box>{' '}
   <Box
     as="span"
-    fontSize="8xl"
+    fontSize={{ base: '5xl', md: '7xl', lg: '8xl' }}
     bgGradient="linear(to-r, blue.200, purple.300, pink.200)"
     textShadow="0 0 32px rgba(255, 255, 255, 0.1)"
     backgroundSize="300% 300%"
@@ -268,7 +272,7 @@ export default function ExperienceHeading() {
             filter="blur(100px)"
             zIndex={-1}
           />
-          <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} pt={16} maxW="6xl" alignItems="stretch">
+          <SimpleGrid columns={{ base: 1, md: 3 }} px={{ base: 4, md: 0 }} spacing={8} pt={16} maxW="6xl" alignItems="stretch">
           {[
             { icon: Mic, title: 'Whisper Freely', desc: 'Let your thoughts flow. No judgment. Just space.' },
             { icon: Sparkles, title: 'Gentle Reflections', desc: 'Sooth listens, then gives you back peace.' },
@@ -316,7 +320,7 @@ export default function ExperienceHeading() {
 
         
 
-        <VStack spacing={6} mt={24} px={6} textAlign="center">
+        <VStack spacing={6} mt={{ base: 16, md: 24 }} px={{ base: 4, md: 6 }} textAlign="center">
           <MotionHeading
   position="relative"
   fontSize="6xl"
@@ -384,7 +388,7 @@ export default function ExperienceHeading() {
 
         
 
-        <Box mt={8} px={6} textAlign="center">
+        <Box mt={8} px={{ base: 4, md: 6 }} textAlign="center">
   <Box
     maxW="3xl"
     mx="auto"
