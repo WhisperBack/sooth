@@ -18,13 +18,13 @@ const ScrollbarStyles = () => (
   <Global
     styles={`
       ::-webkit-scrollbar {
-  width: 6px;
+  width: 12px;
 }
       ::-webkit-scrollbar-track {
         background: transparent;
       }
       ::-webkit-scrollbar-thumb {
-  background: rgba(144, 205, 244, 0.25);
+  background: rgba(144, 205, 244, 0.5);
   border-radius: 12px;
   transition: background 0.3s ease;
 }
@@ -32,7 +32,7 @@ const ScrollbarStyles = () => (
   background: rgba(144, 205, 244, 0.5);
 }
       * {
-  scrollbar-width: thin;
+  scrollbar-width: auto;
   scrollbar-color: rgba(144, 205, 244, 0.25) transparent;
       }
 
