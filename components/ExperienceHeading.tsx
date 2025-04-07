@@ -160,7 +160,16 @@ export default function ExperienceHeading() {
               <DrawerOverlay />
               <DrawerContent width="80%" maxW="280px" bgGradient="linear(to-br, blue.200, purple.300, pink.200)" backgroundSize="300% 300%" animation="drift 30s ease-in-out infinite" backdropFilter="blur(24px)">
                 <DrawerCloseButton color="whiteAlpha.800" mt={4} _active={{ transform: 'scale(0.9)' }} />
-                <DrawerHeader fontSize="3xl" bgGradient="linear(to-r, blue.200, purple.300, pink.200)" bgClip="text" textShadow="0 0 8px rgba(255,255,255,0.2)" fontWeight="bold">Menu</DrawerHeader>
+                <DrawerHeader
+  fontSize="3xl"
+  bgGradient="linear(to-r, whiteAlpha.800, whiteAlpha.900)"
+  bgClip="text"
+  textShadow="0 0 18px rgba(0,0,0,0.3), 0 0 6px rgba(255,255,255,0.1)"
+  fontWeight="extrabold"
+  letterSpacing="wide"
+>
+  Menu
+</DrawerHeader>
                 <DrawerBody>
                   <Stack spacing={8} mt={4} fontWeight="bold" fontSize="2xl" align="center">
                     {[
