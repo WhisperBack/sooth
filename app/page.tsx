@@ -7,57 +7,52 @@ import { useState } from 'react';
 
 export default function HomePage() {
   const [email, setEmail] = useState('');
-    const [transcript] = useState('');
-  const [response] = useState('');
-
+      
   
   return (
     <Box as="main" bg="black" color="white">
       <Hero />$1
 
       {/* Live Demo Button under Hero tagline */}
-      <VStack spacing={6} pt={6} pb={10} px={6} textAlign="center">
-        <Button
-          size="lg"
-          px={8}
-          py={6}
-          borderRadius="full"
-          bgGradient="linear(to-r, blue.300, purple.400, pink.300)"
-          color="white"
-          fontWeight="bold"
-          _hover={{ bgGradient: 'linear(to-r, blue.400, purple.500, pink.400)', boxShadow: 'lg' }}
-          onClick={() => alert('Demo experience triggered')}
-        >
-          🎙️ Speak Now
-        </Button>
-      </VStack>
+      
 {/* Embedded Demo Section */}
       <VStack spacing={10} py={12} px={6} textAlign="center">
-        
+  <Box
+    borderRadius="full"
+    width="100px"
+    height="100px"
+    bgGradient="linear(to-r, blue.300, purple.400, pink.300)"
+    animation="pulse 2s ease-in-out infinite"
+    display="flex"
+    alignItems="center"
+    justifyContent="center"
+    boxShadow="0 0 24px rgba(255,255,255,0.15)"
+    mx="auto"
+  >
+    <Text fontWeight="bold" color="white">
+      🎙️
+    </Text>
+  </Box>
 
-        {transcript && (
-          <Box maxW="lg">
-            <Text fontSize="md" color="whiteAlpha.700">
-              {transcript}
-            </Text>
-          </Box>
-        )}
+  <Box maxW="lg">
+    <Text fontSize="md" color="whiteAlpha.700">
+      I’ve been feeling kind of lost lately, like I’m drifting and don’t know how to ground myself.
+    </Text>
+  </Box>
 
-        {response && (
-          <Box
-            maxW="xl"
-            p={6}
-            bg="whiteAlpha.50"
-            borderRadius="xl"
-            backdropFilter="blur(10px)"
-            border="1px solid rgba(255,255,255,0.05)"
-          >
-            <Text fontSize="lg" color="whiteAlpha.800">
-              {response}
-            </Text>
-          </Box>
-        )}
-      </VStack>
+  <Box
+    maxW="xl"
+    p={6}
+    bg="whiteAlpha.50"
+    borderRadius="xl"
+    backdropFilter="blur(10px)"
+    border="1px solid rgba(255,255,255,0.05)"
+  >
+    <Text fontSize="lg" color="whiteAlpha.800">
+      That’s okay. Let’s pause together. You are not alone in this moment, and peace is already on its way.
+    </Text>
+  </Box>
+</VStack>
 
       {/* Features Section */}
       <VStack spacing={16} py={{ base: 20, md: 28 }} px={{ base: 6, md: 12 }} textAlign="center">
