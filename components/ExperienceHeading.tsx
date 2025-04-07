@@ -30,6 +30,8 @@ const ScrollbarStyles = () => (
       ::-webkit-scrollbar-thumb {
   background: linear-gradient(to bottom, var(--chakra-colors-blue-200), var(--chakra-colors-purple-300), var(--chakra-colors-pink-200));
   border-radius: 999px;
+  background-size: 300% 300%;
+  animation: drift 20s ease-in-out infinite;
   transition: background 0.3s ease;
 }
       ::-webkit-scrollbar-thumb:hover {
