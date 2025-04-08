@@ -1,22 +1,20 @@
 import '@fontsource-variable/geist'
 import '@fontsource-variable/geist-mono'
-import type { Metadata } from 'next'
-import Providers from './providers'
+import { ReactNode } from 'react'
+import { ChakraProvider } from '@chakra-ui/react'
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Sooth',
   description: 'Your voice-first AI companion',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <Providers>{children}</Providers>
+        <ChakraProvider>
+          {children}
+        </ChakraProvider>
       </body>
     </html>
   )
