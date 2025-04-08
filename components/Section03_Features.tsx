@@ -1,61 +1,64 @@
 'use client';
 
-import { VStack, SimpleGrid, Box, Heading, Text } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
+import { Box, Flex, Heading, SimpleGrid, Text, VStack } from '@chakra-ui/react';
+import { CircleDollarSign, HeartHandshake, MicVocal, LucideIcon } from 'lucide-react';
 
-const MotionBox = motion(Box);
-
-const features = [
-  {
-    title: 'Whisper Freely',
-    description: 'Speak openly and without judgment. Sooth listens with presence and calm.',
-  },
-  {
-    title: 'Gentle Reflections',
-    description: 'Receive thoughtful, AI-powered reflections to help you process and understand.',
-  },
-  {
-    title: 'Clarity in Seconds',
-    description: 'Let your voice clear the mental fog — one breath, one reflection, one moment at a time.',
-  },
-];
-
-export default function Features() {
+export default function Section03_Features() {
   return (
-    <VStack spacing={16} py={{ base: 20, md: 28 }} px={{ base: 6, md: 12 }}>
-      <Heading
-        size="2xl"
-        textAlign="center"
-        bgGradient="linear(to-r, blue.200, purple.300, pink.300)"
-        bgClip="text"
-        textShadow="0 0 16px rgba(255, 255, 255, 0.1)"
-      >
-        What Sooth Offers
-      </Heading>
+    <Box as="section" py={{ base: 20, md: 32 }} px={{ base: 6, md: 16 }}>
+      <VStack spacing={8} textAlign="center">
+        <Heading fontSize={{ base: '3xl', md: '5xl' }} fontWeight="bold">
+          Experience Sooth
+        </Heading>
+        <Text maxW="3xl" fontSize={{ base: 'md', md: 'lg' }} color="gray.300">
+          The voice-first mental health companion that listens, understands, and reflects.
+        </Text>
+      </VStack>
 
-      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} w="full" maxW="6xl">
-        {features.map((feature, i) => (
-          <MotionBox
-            key={i}
-            p={6}
-            rounded="2xl"
-            bg="whiteAlpha.50"
-            backdropFilter="blur(20px)"
-            border="1px solid rgba(255,255,255,0.05)"
-            boxShadow="0 0 24px rgba(0,0,0,0.2)"
-            textAlign="center"
-            whileHover={{ scale: 1.03 }}
-            transition={{ duration: 0.4, ease: 'easeInOut' }}
-          >
-            <Heading size="lg" mb={3} color="whiteAlpha.900">
-              {feature.title}
-            </Heading>
-            <Text fontSize="md" color="whiteAlpha.800">
-              {feature.description}
-            </Text>
-          </MotionBox>
-        ))}
+      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={12} mt={20}>
+        <Feature
+          icon={MicVocal}
+          title="Whisper Freely"
+          description="Speak your mind without judgment. Sooth listens and holds space for your feelings."
+        />
+        <Feature
+          icon={HeartHandshake}
+          title="Gentle Reflections"
+          description="Receive calm, thoughtful reflections that help you process and understand your inner world."
+        />
+        <Feature
+          icon={CircleDollarSign}
+          title="Clarity in Seconds"
+          description="Within moments, Sooth gives you a clear, compassionate reflection you can return to anytime."
+        />
       </SimpleGrid>
+    </Box>
+  );
+}
+
+type FeatureProps = {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+};
+
+function Feature({ icon: Icon, title, description }: FeatureProps) {
+  return (
+    <VStack spacing={4} align="center">
+      <Flex
+        bg="whiteAlpha.200"
+        w={16}
+        h={16}
+        align="center"
+        justify="center"
+        borderRadius="full"
+      >
+        <Icon size={28} />
+      </Flex>
+      <Heading fontSize="xl">{title}</Heading>
+      <Text color="gray.400" fontSize="md" maxW="64" textAlign="center">
+        {description}
+      </Text>
     </VStack>
   );
 }

@@ -9,11 +9,12 @@ export default function Footer() {
       py={{ base: 16, md: 24 }}
       px={{ base: 6, md: 12 }}
       textAlign="center"
-      bg="transparent"
+      bg="rgba(0, 0, 0, 0.6)"
+      borderRadius="xl"
     >
       <Text
         fontSize={{ base: 'lg', md: 'xl' }}
-        color="whiteAlpha.700"
+        color="white"
         fontStyle="italic"
         maxW="3xl"
       >
@@ -21,7 +22,7 @@ export default function Footer() {
       </Text>
 
       <Box pt={4}>
-        <Text fontSize="sm" color="whiteAlpha.500">
+        <Text fontSize="sm" color="whiteAlpha.700">
           &copy; {new Date().getFullYear()} Sooth. All rights reserved.
         </Text>
       </Box>

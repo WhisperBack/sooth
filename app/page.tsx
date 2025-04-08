@@ -1,9 +1,8 @@
 'use client';
 
 import Hero from '@/components/Section01_Hero';
-import { Box, VStack, Heading, Text, SimpleGrid, Input, InputGroup, InputRightElement } from '@chakra-ui/react';
+import { Box, VStack, Heading, Text, SimpleGrid, Input, InputGroup, InputRightElement, Button } from '@chakra-ui/react';
 import { useState } from 'react';
-
 
 export default function HomePage() {
   const [email, setEmail] = useState('');
@@ -13,20 +12,46 @@ export default function HomePage() {
     <Box as="main" bg="black" color="white">
       <Hero />
 
-      {/* Experience Sooth Heading */}
-      <VStack spacing={8} py={12} px={6} textAlign="center">
-        <Heading
-          size="3xl"
-          bgGradient="linear(to-r, blue.300, purple.400, pink.300)"
-          bgClip="text"
-          textShadow="0 0 20px rgba(255, 255, 255, 0.2)"
-        >
-          Experience Sooth
-        </Heading>
-      </VStack>
-
       {/* Live Demo Button under Hero tagline */}
       
+{/* Embedded Demo Section */}
+      <VStack spacing={10} py={12} px={6} textAlign="center">
+  <Box
+    borderRadius="full"
+    width="100px"
+    height="100px"
+    bgGradient="linear(to-r, blue.300, purple.400, pink.300)"
+    animation="pulse 2s ease-in-out infinite"
+    display="flex"
+    alignItems="center"
+    justifyContent="center"
+    boxShadow="0 0 24px rgba(255,255,255,0.15)"
+    mx="auto"
+  >
+    <Text fontWeight="bold" color="white">
+      🎙️
+    </Text>
+  </Box>
+
+  <Box maxW="lg">
+    <Text fontSize="md" color="whiteAlpha.700">
+      I’ve been feeling kind of lost lately, like I’m drifting and don’t know how to ground myself.
+    </Text>
+  </Box>
+
+  <Box
+    maxW="xl"
+    p={6}
+    bg="whiteAlpha.50"
+    borderRadius="xl"
+    backdropFilter="blur(10px)"
+    border="1px solid rgba(255,255,255,0.05)"
+  >
+    <Text fontSize="lg" color="whiteAlpha.800">
+      That’s okay. Let’s pause together. You are not alone in this moment, and peace is already on its way.
+    </Text>
+  </Box>
+</VStack>
 
       {/* Features Section */}
       <VStack spacing={16} py={{ base: 20, md: 28 }} px={{ base: 6, md: 12 }} textAlign="center">
@@ -103,7 +128,16 @@ export default function HomePage() {
               borderRadius="xl"
             />
             <InputRightElement width="auto" mr={2}>
-              
+              <Button
+                h="1.75rem"
+                size="sm"
+                colorScheme="purple"
+                px={4}
+                borderRadius="xl"
+                onClick={() => alert(`You entered: ${email}`)}
+              >
+                Join
+              </Button>
             </InputRightElement>
           </InputGroup>
         </Box>
