@@ -1,7 +1,7 @@
 'use client';
 
 import Hero from '@/components/Section01_Hero';
-import { Box, VStack, Heading, Text, SimpleGrid, Input, InputGroup, InputRightElement, Button } from '@chakra-ui/react';
+import { Box, VStack, Heading, Text, SimpleGrid, Input, InputGroup, InputRightElement } from '@chakra-ui/react';
 import { useState } from 'react';
 
 
@@ -129,16 +129,7 @@ export default function HomePage() {
               borderRadius="xl"
             />
             <InputRightElement width="auto" mr={2}>
-              <Button
-                h="1.75rem"
-                size="sm"
-                colorScheme="purple"
-                px={4}
-                borderRadius="xl"
-                onClick={() => alert(`You entered: ${email}`)}
-              >
-                Join
-              </Button>
+              
             </InputRightElement>
           </InputGroup>
         </Box>
