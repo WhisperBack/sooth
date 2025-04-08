@@ -1,114 +1,131 @@
-// Section01_Hero.tsx
-
 'use client';
 
-import { VStack, Box, Heading, Text, Button } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { Global } from '@emotion/react';
+import Hero from '@/components/Section01_Hero';
+import { Box, VStack, Heading, Text, SimpleGrid, Input, InputGroup, InputRightElement, Button } from '@chakra-ui/react';
+import { useState } from 'react';
 
-const MotionHeading = motion(Heading);
-const MotionText = motion(Text);
+export default function HomePage() {
+  const [email, setEmail] = useState('');
 
-const ScrollbarStyles = () => (
-  <Global
-    styles={`
-      html, body {
-        overflow-x: hidden;
-      }
-      ::-webkit-scrollbar {
-        width: 16px;
-        background: transparent;
-      }
-      ::-webkit-scrollbar-track {
-        background: transparent;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: linear-gradient(to bottom, var(--chakra-colors-blue-200), var(--chakra-colors-purple-300), var(--chakra-colors-pink-200));
-        border-radius: 999px;
-        background-size: 300% 300%;
-        animation: drift 20s ease-in-out infinite;
-        transition: background 0.3s ease;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: rgba(144, 205, 244, 0.5);
-      }
-      * {
-        scrollbar-width: auto;
-        scrollbar-color: linear-gradient(to right, var(--chakra-colors-blue-200), var(--chakra-colors-purple-300), var(--chakra-colors-pink-200)) transparent;
-      }
-      @keyframes drift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-      }
-    `}
-  />
-);
-
-export default function Hero() {
   return (
-    <>
-      <ScrollbarStyles />
+    <Box as="main" bg="black" color="white">
+      <Hero />
 
-      <VStack
-        spacing={8}
-        minH="100vh"
-        align="center"
-        justify="center"
-        textAlign="center"
-        px={6}
-        py={24}
-        position="relative"
-      >
-        <MotionHeading
-          size="4xl"
+      {/* Features Section */}
+      <VStack spacing={16} py={{ base: 20, md: 28 }} px={{ base: 6, md: 12 }} textAlign="center">
+        <Heading
+          size="2xl"
           bgGradient="linear(to-r, blue.200, purple.300, pink.300)"
           bgClip="text"
-          textShadow="0 0 12px rgba(255,255,255,0.15)"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: 'easeOut' }}
+          textShadow="0 0 16px rgba(255, 255, 255, 0.1)"
         >
-          Experience Sooth
-        </MotionHeading>
+          What Sooth Offers
+        </Heading>
 
-        <MotionText
-          fontSize={{ base: 'xl', md: '2xl' }}
-          color="whiteAlpha.800"
-          maxW="lg"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 1.2, ease: 'easeOut' }}
-        >
-          Your voice. Your peace. Just speak — Sooth will listen.
-        </MotionText>
-
-        <Box as={Link} href="/demo" passHref>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.3 }}
-          >
-            <Button
-              size="lg"
-              borderRadius="full"
-              px={8}
-              py={6}
-              fontSize="xl"
-              fontWeight="bold"
-              color="white"
-              bgGradient="linear(to-r, blue.300, purple.300, pink.300)"
-              backgroundSize="300% 300%"
-              animation="drift 18s ease-in-out infinite"
-              boxShadow="0 4px 20px rgba(0,0,0,0.25)"
-              _hover={{ transform: 'scale(1.05)' }}
+        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} maxW="6xl" w="full">
+          {[
+            {
+              title: 'Whisper Freely',
+              desc: 'Speak openly without judgment. Sooth listens with calm presence.',
+            },
+            {
+              title: 'Gentle Reflections',
+              desc: 'Thoughtful AI-powered responses to help you reflect and grow.',
+            },
+            {
+              title: 'Clarity in Seconds',
+              desc: 'Let your voice clear the fog — one breath, one moment at a time.',
+            },
+          ].map((feature, i) => (
+            <Box
+              key={i}
+              p={6}
+              rounded="2xl"
+              bg="whiteAlpha.50"
+              backdropFilter="blur(20px)"
+              border="1px solid rgba(255,255,255,0.05)"
+              boxShadow="0 0 24px rgba(0,0,0,0.2)"
             >
-              Try the Demo
-            </Button>
-          </motion.div>
+              <Heading size="lg" mb={3} color="whiteAlpha.900">
+                {feature.title}
+              </Heading>
+              <Text fontSize="md" color="whiteAlpha.800">
+                {feature.desc}
+              </Text>
+            </Box>
+          ))}
+        </SimpleGrid>
+      </VStack>
+
+      {/* Founder Note + Email */}
+      <VStack spacing={10} py={{ base: 20, md: 28 }} px={{ base: 6, md: 12 }} textAlign="center">
+        <Heading
+          size="2xl"
+          bgGradient="linear(to-r, blue.200, purple.300, pink.300)"
+          bgClip="text"
+          textShadow="0 0 16px rgba(255, 255, 255, 0.1)"
+        >
+          Get Early Access
+        </Heading>
+
+        <Text fontSize={{ base: 'lg', md: 'xl' }} color="whiteAlpha.800" maxW="2xl">
+          Sooth was born from a deeply personal need — a way to feel heard, understood,
+          and grounded. I&apos;m building this by hand so it can feel real to you, too.
+        </Text>
+
+        <Box maxW="lg" w="full">
+          <InputGroup size="lg">
+            <Input
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              variant="filled"
+              bg="whiteAlpha.100"
+              _placeholder={{ color: 'whiteAlpha.600' }}
+              color="whiteAlpha.900"
+              borderRadius="xl"
+            />
+            <InputRightElement width="auto" mr={2}>
+              <Button
+                h="1.75rem"
+                size="sm"
+                colorScheme="purple"
+                px={4}
+                borderRadius="xl"
+                onClick={() => alert(`You entered: ${email}`)}
+              >
+                Join
+              </Button>
+            </InputRightElement>
+          </InputGroup>
+        </Box>
+
+        
+      </VStack>
+
+      {/* Footer */}
+      <VStack
+        spacing={6}
+        py={{ base: 16, md: 24 }}
+        px={{ base: 6, md: 12 }}
+        textAlign="center"
+        bg="transparent"
+      >
+        <Text
+          fontSize={{ base: 'lg', md: 'xl' }}
+          color="whiteAlpha.700"
+          fontStyle="italic"
+          maxW="3xl"
+        >
+          &quot;Sooth is where your voice becomes feeling, your emotion finds expression, and your presence returns to peace.&quot;
+        </Text>
+
+        <Box pt={4}>
+          <Text fontSize="sm" color="whiteAlpha.500">
+            &copy; {new Date().getFullYear()} Sooth. All rights reserved.
+          </Text>
         </Box>
       </VStack>
-    </>
+    </Box>
   );
 }
