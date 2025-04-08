@@ -14,13 +14,25 @@ const pulse = keyframes`
 export default function Page() {
   const [showLine1, setShowLine1] = useState(false)
   const [showLine2, setShowLine2] = useState(false)
+  const [showLine3, setShowLine3] = useState(false)
+  const [showLine4, setShowLine4] = useState(false)
+  const [showLine5, setShowLine5] = useState(false)
+  const [showLine6, setShowLine6] = useState(false)
 
   useEffect(() => {
     const timer1 = setTimeout(() => setShowLine1(true), 2000)
     const timer2 = setTimeout(() => setShowLine2(true), 4000)
+    const timer3 = setTimeout(() => setShowLine3(true), 6000)
+    const timer4 = setTimeout(() => setShowLine4(true), 8000)
+    const timer5 = setTimeout(() => setShowLine5(true), 10000)
+    const timer6 = setTimeout(() => setShowLine6(true), 12000)
     return () => {
       clearTimeout(timer1)
       clearTimeout(timer2)
+      clearTimeout(timer3)
+      clearTimeout(timer4)
+      clearTimeout(timer5)
+      clearTimeout(timer6)
     }
   }, [])
 
@@ -55,6 +67,30 @@ export default function Page() {
       {showLine2 && (
         <Text fontSize="lg" color="gray.500" textAlign="center" mt={2}>
           Let the world quiet.
+        </Text>
+      )}
+
+      {showLine3 && (
+        <Text fontSize="lg" color="gray.400" textAlign="center" mt={10}>
+          This is Sooth.
+        </Text>
+      )}
+
+      {showLine4 && (
+        <Text fontSize="lg" color="gray.500" textAlign="center" mt={2}>
+          A voice-first companion for your heart.
+        </Text>
+      )}
+
+      {showLine5 && (
+        <Text fontSize="lg" color="gray.600" textAlign="center" mt={2}>
+          Speak your mind. I’ll listen. I’ll reflect.
+        </Text>
+      )}
+
+      {showLine6 && (
+        <Text fontSize="lg" color="gray.700" textAlign="center" mt={2}>
+          Because even the strongest souls need to be seen.
         </Text>
       )}
     </Box>
