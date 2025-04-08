@@ -1,42 +1,45 @@
-'use client';
+"use client";
 
-import { Box, Heading, Text, VStack } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
+import { Box, Text, Heading } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 const MotionBox = motion(Box);
 
-export default function Hero() {
+export default function SectionHero() {
   return (
-    <Box as="section" bg="black" color="white" pt={{ base: 20, md: 32 }} pb={{ base: 24, md: 36 }} px={6} textAlign="center">
-      <VStack spacing={8} justifyContent="center">
+    <MotionBox
+      as="section"
+      h="100vh"
+      w="100%"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      bgGradient="linear(to-b, #0D0D0D, #1A1A1A)"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 2 }}
+    >
+      <Box textAlign="center" px={4}>
         <Heading
-          size="3xl"
-          bgGradient="linear(to-r, blue.300, purple.400, pink.300)"
-          bgClip="text"
-          textShadow="0 0 16px rgba(255, 255, 255, 0.1)"
+          as="h1"
+          size="2xl"
+          color="white"
+          mb={4}
+          fontWeight="medium"
+          textShadow="0 0 30px rgba(255,255,255,0.1)"
         >
-          Your voice. Your peace. Just speak — Sooth will listen.
+          Sooth
         </Heading>
-
-        <MotionBox
-          borderRadius="full"
-          width="100px"
-          height="100px"
-          bgGradient="linear(to-r, blue.300, purple.400, pink.300)"
-          animation="pulse 2s ease-in-out infinite"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          boxShadow="0 0 24px rgba(255,255,255,0.15)"
+        <Text
+          fontSize="lg"
+          color="gray.300"
+          maxW="xl"
           mx="auto"
+          opacity={0.8}
         >
-          <Text fontSize="3xl" fontWeight="bold" color="white">
-            🎙️
-          </Text>
-        </MotionBox>
-
-        
-      </VStack>
-    </Box>
+          Let your world quiet.
+        </Text>
+      </Box>
+    </MotionBox>
   );
 }
