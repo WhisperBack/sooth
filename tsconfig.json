@@ -1,11 +1,18 @@
 {
   "compilerOptions": {
+<<<<<<< HEAD
     "target": "es5",
+=======
+    "target": "ES2017",
+>>>>>>> a95be3da81155fbf4b78cf3ecd9435850868ab91
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
+<<<<<<< HEAD
     "forceConsistentCasingInFileNames": true,
+=======
+>>>>>>> a95be3da81155fbf4b78cf3ecd9435850868ab91
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -13,8 +20,22 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+<<<<<<< HEAD
     "types": ["@emotion/react/types/css-prop"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+=======
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+>>>>>>> a95be3da81155fbf4b78cf3ecd9435850868ab91
   "exclude": ["node_modules"]
 }
