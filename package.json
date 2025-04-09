@@ -9,23 +9,50 @@
     "lint": "next lint"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@chakra-ui/react": "^2.8.2",
+=======
+<<<<<<< HEAD
+    "@chakra-ui/react": "^3.15.1",
+>>>>>>> 33c32240d502b10c26be9890be3f03dbf74435d1
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@fontsource-variable/geist": "^5.2.5",
     "@fontsource-variable/geist-mono": "^5.2.5",
     "framer-motion": "^12.6.3",
+<<<<<<< HEAD
+=======
+=======
+    "@chakra-ui/icons": "^2.2.4",
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "framer-motion": "^12.6.3",
+    "lucide-react": "^0.487.0",
+>>>>>>> a95be3da81155fbf4b78cf3ecd9435850868ab91
+>>>>>>> 33c32240d502b10c26be9890be3f03dbf74435d1
     "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+<<<<<<< HEAD
+=======
+    "@tailwindcss/postcss": "^4",
+>>>>>>> 33c32240d502b10c26be9890be3f03dbf74435d1
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.2.4",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+    "tailwindcss": "^4",
+>>>>>>> a95be3da81155fbf4b78cf3ecd9435850868ab91
+>>>>>>> 33c32240d502b10c26be9890be3f03dbf74435d1
     "typescript": "^5"
   }
 }
