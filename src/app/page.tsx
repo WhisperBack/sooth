@@ -2,97 +2,192 @@
 
 'use client'
 
-import { Box, Text } from '@chakra-ui/react'
-import { keyframes } from '@emotion/react'
+import {
+  VStack,
+  Text,
+  Heading,
+  Button,
+  keyframes,
+} from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const pulse = keyframes`
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.05); }
+  0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
 `
 
+const MotionButton = motion(Button)
+
+// Extend window and define missing types
+// This avoids relying on lib.dom definitions for SpeechRecognition
+
+declare global {
+  interface SpeechRecognitionResult {
+    readonly isFinal: boolean;
+    readonly length: number;
+    item(index: number): SpeechRecognitionAlternative;
+    [index: number]: SpeechRecognitionAlternative;
+  }
+
+  interface SpeechRecognitionAlternative {
+    readonly transcript: string;
+    readonly confidence: number;
+  }
+
+  interface SpeechRecognitionResultList {
+    readonly length: number;
+    item(index: number): SpeechRecognitionResult;
+    [index: number]: SpeechRecognitionResult;
+  }
+
+  interface SpeechRecognitionEvent extends Event {
+    readonly results: SpeechRecognitionResultList;
+  }
+
+  interface SpeechRecognition {
+    continuous: boolean;
+    interimResults: boolean;
+    lang: string;
+    start(): void;
+    onresult: ((event: SpeechRecognitionEvent) => void) | null;
+    onerror: ((event: Event) => void) | null;
+  }
+
+  interface Window {
+    webkitSpeechRecognition: new () => SpeechRecognition;
+  }
+}
+
 export default function Page() {
-  const [showLine1, setShowLine1] = useState(false)
-  const [showLine2, setShowLine2] = useState(false)
-  const [showLine3, setShowLine3] = useState(false)
-  const [showLine4, setShowLine4] = useState(false)
-  const [showLine5, setShowLine5] = useState(false)
-  const [showLine6, setShowLine6] = useState(false)
+  const [invitationShown, setInvitationShown] = useState(false)
+  const [currentLine, setCurrentLine] = useState(0)
+  const invitationLines = [
+    'This is not an app.',
+    'It’s a presence. A companion.',
+    'A space to feel, to speak, to be heard.',
+    'Welcome to Sooth.'
+  ]
 
   useEffect(() => {
-    const timer1 = setTimeout(() => setShowLine1(true), 2000)
-    const timer2 = setTimeout(() => setShowLine2(true), 4000)
-    const timer3 = setTimeout(() => setShowLine3(true), 6000)
-    const timer4 = setTimeout(() => setShowLine4(true), 8000)
-    const timer5 = setTimeout(() => setShowLine5(true), 10000)
-    const timer6 = setTimeout(() => setShowLine6(true), 12000)
-    return () => {
-      clearTimeout(timer1)
-      clearTimeout(timer2)
-      clearTimeout(timer3)
-      clearTimeout(timer4)
-      clearTimeout(timer5)
-      clearTimeout(timer6)
+    if (currentLine < invitationLines.length) {
+      const timeout = setTimeout(() => {
+        setCurrentLine((prev) => prev + 1)
+      }, 1800)
+      return () => clearTimeout(timeout)
+    } else {
+      setInvitationShown(true)
     }
-  }, [])
+  }, [currentLine, invitationLines.length])
+
+  // Live Demo Logic
+  const [isListening, setIsListening] = useState(false)
+  const [transcript, setTranscript] = useState('')
+  const [reflection, setReflection] = useState('')
+
+  const handleListen = async () => {
+    setIsListening(true)
+    setTranscript('')
+    setReflection('')
+
+    const SpeechRecognitionClass = window.webkitSpeechRecognition
+
+    if (!SpeechRecognitionClass) {
+      console.error('Speech recognition not supported.')
+      setIsListening(false)
+      return
+    }
+
+    const recognition = new SpeechRecognitionClass()
+    recognition.continuous = false
+    recognition.interimResults = false
+    recognition.lang = 'en-US'
+
+    recognition.start()
+
+    recognition.onresult = (event) => {
+      const spoken = event.results[0][0].transcript
+      setTranscript(spoken)
+
+      // Simulate reflection generation
+      setTimeout(() => {
+        setReflection(`“${spoken}” — I hear you. That’s a lot to carry. Let’s sit with it together.`)
+        setIsListening(false)
+      }, 2000)
+    }
+
+    recognition.onerror = () => {
+      setTranscript('')
+      setIsListening(false)
+    }
+  }
 
   return (
-    <Box
-      as="main"
-      h="100vh"
-      w="100%"
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      justifyContent="center"
-      bg="#0e0e0e"
-      px={6}
-    >
-      <Text
-        fontSize={["5xl", "6xl"]}
-        fontWeight="bold"
-        color="white"
-        mb={6}
-        animation={`${pulse} 5s ease-in-out infinite`}
+    <VStack minH="100vh" spacing={12} px={6} py={24} bg="#0e0e0e" color="white">
+      {/* Section 01: Sooth Title */}
+      <Heading
+        fontSize="7xl"
+        textAlign="center"
+        bgGradient="linear(to-r, teal.200, purple.300)"
+        bgClip="text"
+        animation={`${pulse} 3s infinite`}
       >
         Sooth
-      </Text>
+      </Heading>
 
-      {showLine1 && (
-        <Text fontSize="lg" color="gray.400" textAlign="center">
-          You’ve arrived.
-        </Text>
-      )}
+      {/* Section 02: Living Invitation */}
+      <VStack spacing={2}>
+        {invitationLines.slice(0, currentLine).map((line, idx) => (
+          <Text key={idx} fontSize="xl" opacity={0.9}>{line}</Text>
+        ))}
+      </VStack>
 
-      {showLine2 && (
-        <Text fontSize="lg" color="gray.500" textAlign="center" mt={2}>
-          Let the world quiet.
-        </Text>
-      )}
+      {/* Section 03: Live Demo — Nova Appears */}
+      {invitationShown && (
+        <VStack spacing={6} pt={16}>
+          <Text fontSize="lg" opacity={0.7}>
+            When you’re ready, speak.
+          </Text>
+          <MotionButton
+            size="lg"
+            variant="outline"
+            borderRadius="full"
+            px={8}
+            py={6}
+            animation={isListening ? `${pulse} 2s infinite` : 'none'}
+            onClick={handleListen}
+          >
+            {isListening ? 'Listening…' : 'Speak to Nova'}
+          </MotionButton>
 
-      {showLine3 && (
-        <Text fontSize="lg" color="gray.400" textAlign="center" mt={10}>
-          This is Sooth.
-        </Text>
-      )}
+          <AnimatePresence>
+            {transcript && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+              >
+                <Text fontSize="md" mt={4} fontStyle="italic" opacity={0.8}>
+                  {transcript}
+                </Text>
+              </motion.div>
+            )}
 
-      {showLine4 && (
-        <Text fontSize="lg" color="gray.500" textAlign="center" mt={2}>
-          A voice-first companion for your heart.
-        </Text>
+            {reflection && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+              >
+                <Text mt={6} fontSize="xl" opacity={0.9} maxW="xl">
+                  {reflection}
+                </Text>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </VStack>
       )}
-
-      {showLine5 && (
-        <Text fontSize="lg" color="gray.600" textAlign="center" mt={2}>
-          Speak your mind. I’ll listen. I’ll reflect.
-        </Text>
-      )}
-
-      {showLine6 && (
-        <Text fontSize="lg" color="gray.700" textAlign="center" mt={2}>
-          Because even the strongest souls need to be seen.
-        </Text>
-      )}
-    </Box>
+    </VStack>
   )
 }
