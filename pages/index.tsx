@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
-import '../styles/globals.css';
+
 
 export default function Home() {
   const [showSubline, setShowSubline] = useState(false);
