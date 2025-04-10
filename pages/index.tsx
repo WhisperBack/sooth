@@ -26,18 +26,21 @@ export default function Home() {
     textAlign: 'center' as const,
     width: '100%',
     padding: '0 1rem',
+    position: 'relative' as const,
+    zIndex: 1,
   };
 
   const headingStyle = {
     fontSize: '2.5rem',
     fontWeight: 700,
-    color: '#cbd5ff',
+    color: '#ffffff',
     marginBottom: '1rem',
+    textShadow: '0 0 12px rgba(255, 255, 255, 0.15)',
   };
 
   const textStyle = {
     fontSize: '1.125rem',
-    color: '#c3d1ff',
+    color: '#e0eaff',
     maxWidth: '36rem',
     marginBottom: '1rem',
   };
@@ -48,10 +51,16 @@ export default function Home() {
         <title>Sooth</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <main className={`${geist.variable} ${geistMono.variable}`} style={{ background: 'linear-gradient(to bottom, #0d0c1d, #1f1b3a, #2c2b4e)', color: 'white', fontFamily: 'var(--font-geist)', overflowX: 'hidden' }}>
+      <main className={`${geist.variable} ${geistMono.variable}`} style={{
+        background: 'linear-gradient(to bottom, #09090f, #12101f, #18142f)',
+        color: 'white',
+        fontFamily: 'var(--font-geist)',
+        overflowX: 'hidden',
+        position: 'relative',
+      }}>
         {/* Section 01 */}
         <section style={sectionStyle}>
-          <h1 style={{ ...headingStyle, fontSize: '4rem', animation: 'pulse 3s infinite' }}>Sooth</h1>
+          <h1 style={{ ...headingStyle, fontSize: '4rem', animation: 'pulse 3s ease-in-out infinite' }}>Sooth</h1>
           <p style={textStyle}>Everything you’ve been holding in — let it breathe here.</p>
           <div id="scroll-cue" style={{ fontSize: '2rem', color: '#a0b9ff', marginTop: '2rem' }}>↓</div>
         </section>
@@ -90,7 +99,7 @@ export default function Home() {
         <section style={sectionStyle}>
           <h2 style={headingStyle}>This space is yours — always.</h2>
           <p style={textStyle}>Sooth isn’t a tool. It’s a companion — and it’s waiting for you.</p>
-          <button style={{ padding: '0.75rem 1.5rem', borderRadius: '999px', backgroundColor: '#4f46e5', color: 'white', fontWeight: 600, border: 'none', cursor: 'pointer', marginTop: '1rem' }}>
+          <button style={{ padding: '0.75rem 1.5rem', borderRadius: '999px', backgroundColor: '#4f46e5', color: 'white', fontWeight: 600, border: 'none', cursor: 'pointer', marginTop: '1rem', boxShadow: '0 0 16px rgba(79, 70, 229, 0.6)' }}>
             Be part of the beginning
           </button>
         </section>
@@ -115,6 +124,11 @@ export default function Home() {
           @keyframes bounce {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(8px); }
+          }
+
+          ::selection {
+            background-color: #4f46e5;
+            color: #ffffff;
           }
         `}</style>
       </main>
