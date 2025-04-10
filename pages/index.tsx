@@ -72,6 +72,7 @@ export default function Home() {
   return (
     <div className={`container ${geist.className}`}>
       <canvas id="starfield" className="starfield" />
+      <div className="nebula-bloom" />
       <div className="ambient-shimmer" />
 
       <section className="section section-01">
@@ -85,14 +86,15 @@ export default function Home() {
         </motion.h1>
 
         {showSubline && (
-          <motion.p
+          <motion.div
             className="subline"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: 'easeOut' }}
           >
-            Everything you’ve been holding in — let it breathe here.
-          </motion.p>
+            <p>Everything you’ve been holding in —</p>
+            <p>let it breathe here.</p>
+          </motion.div>
         )}
 
         {showScrollIndicator && (
@@ -139,6 +141,17 @@ export default function Home() {
           z-index: 0;
         }
 
+        .nebula-bloom {
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+          pointer-events: none;
+          background: radial-gradient(circle at 50% 60%, rgba(200,150,255,0.15), transparent 60%),
+                      radial-gradient(circle at 60% 40%, rgba(255,200,180,0.08), transparent 70%);
+          filter: blur(60px);
+          animation: bloomPulse 24s ease-in-out infinite;
+        }
+
         .section-01 {
           text-align: center;
           position: relative;
@@ -146,7 +159,7 @@ export default function Home() {
         }
 
         .title {
-          font-size: 9rem;
+          font-size: clamp(4rem, 14vw, 14rem);
           font-weight: 700;
           color: #e0ecff;
           text-shadow:
@@ -159,7 +172,7 @@ export default function Home() {
 
         .subline {
           margin-top: 2.4rem;
-          font-size: 2.8rem;
+          font-size: clamp(1.6rem, 3vw, 3rem);
           color: #bcd8ff;
           max-width: 780px;
           margin-left: auto;
@@ -176,24 +189,6 @@ export default function Home() {
 
         .scroll-indicator.idle-pulse {
           animation: float 4s ease-in-out infinite, shimmerPulse 6s ease-in-out infinite;
-        }
-
-        @media (max-width: 768px) {
-          .title {
-            font-size: 6rem;
-          }
-          .subline {
-            font-size: 2rem;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .title {
-            font-size: 4rem;
-          }
-          .subline {
-            font-size: 1.6rem;
-          }
         }
 
         @keyframes pulse {
@@ -243,6 +238,17 @@ export default function Home() {
           }
           50% {
             text-shadow: 0 0 12px rgba(190, 220, 255, 0.35);
+          }
+        }
+
+        @keyframes bloomPulse {
+          0%, 100% {
+            opacity: 0.7;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.9;
+            transform: scale(1.05);
           }
         }
       `}</style>
