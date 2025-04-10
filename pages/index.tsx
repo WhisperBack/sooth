@@ -21,8 +21,57 @@ export default function Home() {
     };
   }, []);
 
+  useEffect(() => {
+    const canvas = document.getElementById('starfield') as HTMLCanvasElement;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let animationFrameId: number;
+    const stars: { x: number; y: number; radius: number; speed: number; opacity: number }[] = [];
+
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    window.addEventListener('resize', resize);
+    resize();
+
+    for (let i = 0; i < 150; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 1.2,
+        speed: 0.1 + Math.random() * 0.2,
+        opacity: 0.3 + Math.random() * 0.5,
+      });
+    }
+
+    const draw = () => {
+      if (!ctx) return;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (const star of stars) {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+        ctx.fill();
+        star.y += star.speed;
+        if (star.y > canvas.height) {
+          star.y = 0;
+          star.x = Math.random() * canvas.width;
+        }
+      }
+      animationFrameId = requestAnimationFrame(draw);
+    };
+    draw();
+
+    return () => {
+      window.removeEventListener('resize', resize);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
+
   return (
     <div className={`container ${geist.className}`}>
+      <canvas id="starfield" className="starfield" />
       <div className="ambient-shimmer" />
 
       <section className="section section-01">
@@ -73,6 +122,13 @@ export default function Home() {
           padding: 0 1rem;
         }
 
+        .starfield {
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+          pointer-events: none;
+        }
+
         .ambient-shimmer {
           position: absolute;
           inset: 0;
@@ -90,7 +146,7 @@ export default function Home() {
         }
 
         .title {
-          font-size: 6rem;
+          font-size: 9rem;
           font-weight: 700;
           color: #e0ecff;
           text-shadow:
@@ -102,13 +158,13 @@ export default function Home() {
         }
 
         .subline {
-          margin-top: 2.2rem;
-          font-size: 2.2rem;
+          margin-top: 2.4rem;
+          font-size: 2.8rem;
           color: #bcd8ff;
-          max-width: 740px;
+          max-width: 780px;
           margin-left: auto;
           margin-right: auto;
-          line-height: 1.45;
+          line-height: 1.5;
           animation: sublineGlow 12s ease-in-out infinite;
         }
 
@@ -120,6 +176,24 @@ export default function Home() {
 
         .scroll-indicator.idle-pulse {
           animation: float 4s ease-in-out infinite, shimmerPulse 6s ease-in-out infinite;
+        }
+
+        @media (max-width: 768px) {
+          .title {
+            font-size: 6rem;
+          }
+          .subline {
+            font-size: 2rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .title {
+            font-size: 4rem;
+          }
+          .subline {
+            font-size: 1.6rem;
+          }
         }
 
         @keyframes pulse {
