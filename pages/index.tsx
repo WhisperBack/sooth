@@ -53,7 +53,9 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: 'easeOut' }}
           >
-            <span>↓</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="#b9d8ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </motion.div>
         )}
       </section>
@@ -66,7 +68,6 @@ export default function Home() {
           justify-content: center;
           align-items: center;
           background: radial-gradient(ellipse at bottom, #0b0f2a, #050610);
-          color: #e0f2ff;
           overflow: hidden;
           position: relative;
           padding: 0 1rem;
@@ -74,13 +75,11 @@ export default function Home() {
 
         .ambient-shimmer {
           position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: radial-gradient(circle at 30% 70%, rgba(150, 150, 255, 0.05), transparent),
-                      radial-gradient(circle at 70% 30%, rgba(255, 200, 255, 0.05), transparent);
-          animation: shimmer 30s ease-in-out infinite;
+          inset: 0;
+          background: radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.03), transparent 70%),
+                      radial-gradient(circle at 60% 40%, rgba(200, 200, 255, 0.04), transparent 70%),
+                      radial-gradient(circle at 50% 50%, rgba(255, 220, 255, 0.02), transparent 70%);
+          animation: shimmer-bg 40s ease-in-out infinite;
           z-index: 0;
         }
 
@@ -91,32 +90,36 @@ export default function Home() {
         }
 
         .title {
-          font-size: 4rem;
+          font-size: 6rem;
           font-weight: 700;
-          color: #dbeaff;
-          text-shadow: 0 0 12px rgba(220, 230, 255, 0.6);
+          color: #e0ecff;
+          text-shadow:
+            0 0 12px rgba(180, 210, 255, 0.4),
+            0 0 24px rgba(200, 230, 255, 0.3),
+            0 0 40px rgba(220, 240, 255, 0.2);
           animation: pulse 8s ease-in-out infinite;
+          line-height: 1.1;
         }
 
         .subline {
-          margin-top: 1.5rem;
-          font-size: 1.5rem;
-          color: #b2d4f7;
-          max-width: 600px;
+          margin-top: 2.2rem;
+          font-size: 2.2rem;
+          color: #bcd8ff;
+          max-width: 740px;
           margin-left: auto;
           margin-right: auto;
+          line-height: 1.45;
+          animation: sublineGlow 12s ease-in-out infinite;
         }
 
         .scroll-indicator {
-          margin-top: 3rem;
-          font-size: 1.5rem;
-          animation: float 3s ease-in-out infinite;
-          color: #94c2f5;
+          margin-top: 3.5rem;
+          animation: float 4s ease-in-out infinite;
+          opacity: 0.8;
         }
 
         .scroll-indicator.idle-pulse {
-          animation: float 3s ease-in-out infinite, shimmerPulse 4s ease-in-out infinite;
-          color: #b9d8ff;
+          animation: float 4s ease-in-out infinite, shimmerPulse 6s ease-in-out infinite;
         }
 
         @keyframes pulse {
@@ -125,8 +128,8 @@ export default function Home() {
             opacity: 1;
           }
           50% {
-            transform: scale(1.025);
-            opacity: 0.85;
+            transform: scale(1.02);
+            opacity: 0.9;
           }
         }
 
@@ -139,7 +142,7 @@ export default function Home() {
           }
         }
 
-        @keyframes shimmer {
+        @keyframes shimmer-bg {
           0% {
             background-position: 0% 50%;
           }
@@ -153,10 +156,19 @@ export default function Home() {
 
         @keyframes shimmerPulse {
           0%, 100% {
-            opacity: 0.6;
+            opacity: 0.4;
           }
           50% {
             opacity: 1;
+          }
+        }
+
+        @keyframes sublineGlow {
+          0%, 100% {
+            text-shadow: 0 0 6px rgba(180, 200, 255, 0.15);
+          }
+          50% {
+            text-shadow: 0 0 12px rgba(190, 220, 255, 0.35);
           }
         }
       `}</style>
